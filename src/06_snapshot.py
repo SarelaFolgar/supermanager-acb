@@ -32,20 +32,22 @@ resp = requests.get(URL, params=params, headers=headers, timeout=30)
 resp.raise_for_status()
 jugadores = resp.json()
 
-ahora = datetime.now().strftime("%Y-%m-%d_%H%M")
+# Un snapshot por día: sobrescribe el de hoy si ya existe
+hoy = datetime.now().strftime("%Y-%m-%d")
 Path("data/raw").mkdir(parents=True, exist_ok=True)
 Path("data/mercado").mkdir(parents=True, exist_ok=True)
 
-# Copia íntegra de la respuesta, por si luego necesitas algo que ahora no uses
-with open(f"data/raw/mercado_{ahora}.json", "w", encoding="utf-8") as f:
+ruta_json = f"data/raw/mercado_{hoy}.json"
+ruta_csv = f"data/mercado/mercado_{hoy}.csv"
+
+with open(ruta_json, "w", encoding="utf-8") as f:
     json.dump(jugadores, f, ensure_ascii=False)
 
-# Tabla plana (sin las estadísticas por jornada anidadas)
 df = pd.json_normalize(jugadores)
 df = df[[c for c in df.columns if not c.startswith("playerStats")]]
-df.insert(0, "captura", ahora)
-df.to_csv(f"data/mercado/mercado_{ahora}.csv", index=False)
+df.insert(0, "captura", hoy)
+df.to_csv(ruta_csv, index=False)
 
-print(f"Guardados {len(df)} jugadores en data/mercado/mercado_{ahora}.csv")
+print(f"Guardados {len(df)} jugadores en {ruta_csv}")
 cols = ["shortName", "nameTeam", "position", "price", "injuredDays", "fisicStatus", "competitionAverage"]
 print(df[cols].head(10).to_string(index=False))
