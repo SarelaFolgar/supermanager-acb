@@ -1,0 +1,332 @@
+[
+  {
+    "suavizado": 2,
+    "w_j2": 0.5,
+    "top": [
+      {
+        "shortName": "T. Maledon",
+        "nameTeam": "Real Madrid",
+        "position": 1,
+        "puntos_esperados_J2": 24.735
+      },
+      {
+        "shortName": "T. Hlinason",
+        "nameTeam": "Surne Bilbao",
+        "position": 5,
+        "puntos_esperados_J2": 22.31042829632607
+      },
+      {
+        "shortName": "J. Batemon",
+        "nameTeam": "iLERNA Lleida",
+        "position": 3,
+        "puntos_esperados_J2": 20.82116527700282
+      },
+      {
+        "shortName": "D. Mavra",
+        "nameTeam": "Río Breogán",
+        "position": 1,
+        "puntos_esperados_J2": 20.14427749580932
+      },
+      {
+        "shortName": "R. Rubio",
+        "nameTeam": "Asisa Joventut",
+        "position": 1,
+        "puntos_esperados_J2": 20.024659651643947
+      },
+      {
+        "shortName": "Luwawu-Cabarrot",
+        "nameTeam": "Real Madrid",
+        "position": 3,
+        "puntos_esperados_J2": 19.595333333333336
+      },
+      {
+        "shortName": "D. Brankovic",
+        "nameTeam": "Río Breogán",
+        "position": 5,
+        "puntos_esperados_J2": 19.30848613484856
+      },
+      {
+        "shortName": "C. Duarte",
+        "nameTeam": "Kosner Baskonia",
+        "position": 3,
+        "puntos_esperados_J2": 18.080823472306864
+      },
+      {
+        "shortName": "F. Alonso",
+        "nameTeam": "Río Breogán",
+        "position": 3,
+        "puntos_esperados_J2": 17.55161858017594
+      },
+      {
+        "shortName": "M. Huertas",
+        "nameTeam": "La Laguna Tenerife",
+        "position": 1,
+        "puntos_esperados_J2": 17.290955028790187
+      }
+    ]
+  },
+  {
+    "suavizado": 3,
+    "w_j2": 0.4,
+    "top": [
+      {
+        "shortName": "T. Maledon",
+        "nameTeam": "Real Madrid",
+        "position": 1,
+        "puntos_esperados_J2": 22.3818374922162
+      },
+      {
+        "shortName": "T. Hlinason",
+        "nameTeam": "Surne Bilbao",
+        "position": 5,
+        "puntos_esperados_J2": 21.47208332545183
+      },
+      {
+        "shortName": "J. Batemon",
+        "nameTeam": "iLERNA Lleida",
+        "position": 3,
+        "puntos_esperados_J2": 19.7154084769812
+      },
+      {
+        "shortName": "Luwawu-Cabarrot",
+        "nameTeam": "Real Madrid",
+        "position": 3,
+        "puntos_esperados_J2": 19.67022442833739
+      },
+      {
+        "shortName": "R. Rubio",
+        "nameTeam": "Asisa Joventut",
+        "position": 1,
+        "puntos_esperados_J2": 19.3338063710192
+      },
+      {
+        "shortName": "D. Mavra",
+        "nameTeam": "Río Breogán",
+        "position": 1,
+        "puntos_esperados_J2": 18.483024918923476
+      },
+      {
+        "shortName": "D. Brankovic",
+        "nameTeam": "Río Breogán",
+        "position": 5,
+        "puntos_esperados_J2": 18.29324688528583
+      },
+      {
+        "shortName": "C. Duarte",
+        "nameTeam": "Kosner Baskonia",
+        "position": 3,
+        "puntos_esperados_J2": 17.229476181160518
+      },
+      {
+        "shortName": "M. Huertas",
+        "nameTeam": "La Laguna Tenerife",
+        "position": 1,
+        "puntos_esperados_J2": 17.205966337011137
+      },
+      {
+        "shortName": "F. Alonso",
+        "nameTeam": "Río Breogán",
+        "position": 3,
+        "puntos_esperados_J2": 17.12068974888181
+      }
+    ]
+  },
+  {
+    "suavizado": 4,
+    "w_j2": 0.333,
+    "top": [
+      {
+        "shortName": "T. Hlinason",
+        "nameTeam": "Surne Bilbao",
+        "position": 5,
+        "puntos_esperados_J2": 20.91043970376628
+      },
+      {
+        "shortName": "T. Maledon",
+        "nameTeam": "Real Madrid",
+        "position": 1,
+        "puntos_esperados_J2": 20.800405979246975
+      },
+      {
+        "shortName": "Luwawu-Cabarrot",
+        "nameTeam": "Real Madrid",
+        "position": 3,
+        "puntos_esperados_J2": 19.70346914651057
+      },
+      {
+        "shortName": "J. Batemon",
+        "nameTeam": "iLERNA Lleida",
+        "position": 3,
+        "puntos_esperados_J2": 18.978237276966787
+      },
+      {
+        "shortName": "R. Rubio",
+        "nameTeam": "Asisa Joventut",
+        "position": 1,
+        "puntos_esperados_J2": 18.939759084973435
+      },
+      {
+        "shortName": "D. Brankovic",
+        "nameTeam": "Río Breogán",
+        "position": 5,
+        "puntos_esperados_J2": 17.614867531041142
+      },
+      {
+        "shortName": "D. Mavra",
+        "nameTeam": "Río Breogán",
+        "position": 1,
+        "puntos_esperados_J2": 17.37880357561557
+      },
+      {
+        "shortName": "M. Huertas",
+        "nameTeam": "La Laguna Tenerife",
+        "position": 1,
+        "puntos_esperados_J2": 17.15052395052394
+      },
+      {
+        "shortName": "F. Alonso",
+        "nameTeam": "Río Breogán",
+        "position": 3,
+        "puntos_esperados_J2": 16.82798767962258
+      },
+      {
+        "shortName": "C. Duarte",
+        "nameTeam": "Kosner Baskonia",
+        "position": 3,
+        "puntos_esperados_J2": 16.651952339503854
+      }
+    ]
+  },
+  {
+    "suavizado": 6,
+    "w_j2": 0.25,
+    "top": [
+      {
+        "shortName": "T. Hlinason",
+        "nameTeam": "Surne Bilbao",
+        "position": 5,
+        "puntos_esperados_J2": 20.205346085153423
+      },
+      {
+        "shortName": "Luwawu-Cabarrot",
+        "nameTeam": "Real Madrid",
+        "position": 3,
+        "puntos_esperados_J2": 19.73401823100428
+      },
+      {
+        "shortName": "T. Maledon",
+        "nameTeam": "Real Madrid",
+        "position": 1,
+        "puntos_esperados_J2": 18.82243826139416
+      },
+      {
+        "shortName": "R. Rubio",
+        "nameTeam": "Asisa Joventut",
+        "position": 1,
+        "puntos_esperados_J2": 18.51618668598157
+      },
+      {
+        "shortName": "J. Batemon",
+        "nameTeam": "iLERNA Lleida",
+        "position": 3,
+        "puntos_esperados_J2": 18.05677327694877
+      },
+      {
+        "shortName": "M. Huertas",
+        "nameTeam": "La Laguna Tenerife",
+        "position": 1,
+        "puntos_esperados_J2": 17.08261556992335
+      },
+      {
+        "shortName": "D. Brankovic",
+        "nameTeam": "Río Breogán",
+        "position": 5,
+        "puntos_esperados_J2": 16.766705903698405
+      },
+      {
+        "shortName": "F. Alonso",
+        "nameTeam": "Río Breogán",
+        "position": 3,
+        "puntos_esperados_J2": 16.45683171866502
+      },
+      {
+        "shortName": "J. Robinson",
+        "nameTeam": "Barça",
+        "position": 1,
+        "puntos_esperados_J2": 16.28098272945524
+      },
+      {
+        "shortName": "D. Mavra",
+        "nameTeam": "Río Breogán",
+        "position": 1,
+        "puntos_esperados_J2": 16.00458290807575
+      }
+    ]
+  },
+  {
+    "suavizado": 8,
+    "w_j2": 0.2,
+    "top": [
+      {
+        "shortName": "T. Hlinason",
+        "nameTeam": "Surne Bilbao",
+        "position": 5,
+        "puntos_esperados_J2": 19.78069290226666
+      },
+      {
+        "shortName": "Luwawu-Cabarrot",
+        "nameTeam": "Real Madrid",
+        "position": 3,
+        "puntos_esperados_J2": 19.745638347988084
+      },
+      {
+        "shortName": "R. Rubio",
+        "nameTeam": "Asisa Joventut",
+        "position": 1,
+        "puntos_esperados_J2": 18.29670180372884
+      },
+      {
+        "shortName": "T. Maledon",
+        "nameTeam": "Real Madrid",
+        "position": 1,
+        "puntos_esperados_J2": 17.63564889986083
+      },
+      {
+        "shortName": "J. Batemon",
+        "nameTeam": "iLERNA Lleida",
+        "position": 3,
+        "puntos_esperados_J2": 17.503894876937963
+      },
+      {
+        "shortName": "M. Huertas",
+        "nameTeam": "La Laguna Tenerife",
+        "position": 1,
+        "puntos_esperados_J2": 17.042622242156288
+      },
+      {
+        "shortName": "J. Robinson",
+        "nameTeam": "Barça",
+        "position": 1,
+        "puntos_esperados_J2": 16.61901778308456
+      },
+      {
+        "shortName": "E. Happ",
+        "nameTeam": "La Laguna Tenerife",
+        "position": 5,
+        "puntos_esperados_J2": 16.40398456831199
+      },
+      {
+        "shortName": "D. Brankovic",
+        "nameTeam": "Río Breogán",
+        "position": 5,
+        "puntos_esperados_J2": 16.258491309799943
+      },
+      {
+        "shortName": "F. Alonso",
+        "nameTeam": "Río Breogán",
+        "position": 3,
+        "puntos_esperados_J2": 16.231805234609464
+      }
+    ]
+  }
+]

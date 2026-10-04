@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informe Supermanager ACB — J3</title>
+<style>
+  :root {
+    --bg: #0f1115; --fg: #e6e6e6; --muted: #a0a0a0;
+    --accent: #ff6b35; --card: #1a1d24; --border: #2a2d36;
+    --good: #4ade80; --bad: #f87171; --warn: #fbbf24;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 1100px; margin: 0 auto; padding: 32px 24px;
+    line-height: 1.6;
+  }
+  h1 { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 12px; }
+  h2 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-top: 40px; }
+  h3 { color: var(--fg); margin-top: 28px; }
+  a { color: var(--accent); }
+  hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+  table {
+    width: 100%; border-collapse: collapse; margin: 16px 0;
+    background: var(--card); border-radius: 6px; overflow: hidden;
+    font-size: 14px;
+  }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: #22252d; color: var(--accent); font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover { background: #1f2229; }
+  code {
+    background: var(--card); padding: 2px 6px; border-radius: 4px;
+    font-family: "SF Mono", Consolas, monospace; font-size: 0.9em;
+    color: var(--warn);
+  }
+  pre {
+    background: var(--card); padding: 16px; border-radius: 6px;
+    overflow-x: auto; border-left: 3px solid var(--accent);
+  }
+  pre code { background: none; padding: 0; color: var(--fg); }
+  blockquote {
+    border-left: 4px solid var(--warn); margin: 16px 0;
+    padding: 8px 16px; background: rgba(251,191,36,0.08);
+    border-radius: 4px; color: var(--muted);
+  }
+  ul, ol { padding-left: 24px; }
+  strong { color: #fff; }
+  em { color: var(--muted); }
+  @media print {
+    body { background: #fff; color: #000; max-width: 100%; }
+    h1, h2, h3 { color: #000; }
+    table { background: #fff; }
+    th { background: #f0f0f0; color: #000; }
+    tr:hover { background: transparent; }
+    pre, code, blockquote { background: #f5f5f5; }
+    a { color: #000; }
+  }
+</style>
+</head>
+<body>
+<h1 id="informe-supermanager-acb-j3">Informe Supermanager ACB — J3</h1>
+<p><strong>Fecha:</strong> 2026-10-05 00:45<br />
+<strong>Equipo:</strong> equipo pocho (<code>246638</code>)<br />
+<strong>Caja:</strong> 28,000 € · <strong>Valor:</strong> 5,438,675 € · <strong>Posición general:</strong> 68443</p>
+<p><strong>Configuración activa:</strong> peso broker = 11.89 · peso modelo v2 (minutos) = 0.033</p>
+<blockquote>
+<p>Los puntos esperados son un ranking relativo, no una previsión exacta. Sirven para ordenar opciones y comparar jugadores entre sí.</p>
+<p><strong>Modelo probabilístico</strong>: las columnas de revalorización usan simulación. No comparan un punto con un umbral: calculan la probabilidad de subir/bajar el 15% y el reval esperado sobre la distribución de la valoración del próximo partido.</p>
+</blockquote>
+<hr />
+<h2 id="cambios-recomendados">Cambios recomendados</h2>
+<p>Esta sección es la más importante del informe. Propone los 4 cambios que maximizan el score del optimizador respetando todas las reglas del juego.</p>
+<h3 id="vender">Vender</h3>
+<table>
+<thead>
+<tr>
+<th>Jugador</th>
+<th>Equipo</th>
+<th>Pos</th>
+<th>Precio</th>
+<th>Pts esp. J3</th>
+<th style="text-align: right;">P(↑15%)</th>
+<th style="text-align: right;">P(↓15%)</th>
+<th style="text-align: right;">Reval. €</th>
+<th style="text-align: center;">Pronóstico</th>
+<th>Motivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D. Baugh</td>
+<td>Kosner Baskonia</td>
+<td>1</td>
+<td>634,800 €</td>
+<td>11.19</td>
+<td style="text-align: right;">24%</td>
+<td style="text-align: right;">19%</td>
+<td style="text-align: right;">+5,508 €</td>
+<td style="text-align: center;">≈ Se mantiene</td>
+<td>Bajo rendimiento</td>
+</tr>
+<tr>
+<td>M. Geben</td>
+<td>FIATC Girona</td>
+<td>5</td>
+<td>815,000 €</td>
+<td>14.69</td>
+<td style="text-align: right;">13%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">-18,623 €</td>
+<td style="text-align: center;">≈ Se mantiene</td>
+<td>Bajo rendimiento</td>
+</tr>
+<tr>
+<td>López-Arostegui</td>
+<td>La Laguna Tenerife</td>
+<td>3</td>
+<td>489,325 €</td>
+<td>9.97</td>
+<td style="text-align: right;">47%</td>
+<td style="text-align: right;">12%</td>
+<td style="text-align: right;">+28,065 €</td>
+<td style="text-align: center;">↑ Sube</td>
+<td>Bajo rendimiento</td>
+</tr>
+<tr>
+<td>A. Barcello</td>
+<td>Monbus Obradoiro</td>
+<td>3</td>
+<td>400,775 €</td>
+<td>8.19</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">29%</td>
+<td style="text-align: right;">+491 €</td>
+<td style="text-align: center;">↑ Sube</td>
+<td>Bajo rendimiento</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cómo se lee esta tabla:</strong></p>
+<ul>
+<li><strong>Precio</strong>: lo que obtienes al venderlo ahora.</li>
+<li><strong>Pts esp.</strong>: valoración que se espera que haga (media de la distribución).</li>
+<li><strong>P(↑15%)</strong>: probabilidad estimada de que su precio suba el 15% (tope máximo).</li>
+<li><strong>P(↓15%)</strong>: probabilidad estimada de que baje el 15% (tope mínimo).</li>
+<li><strong>Reval. €</strong>: media de la variación esperada del precio en euros. Es el número que usa el optimizador para valorar el broker.</li>
+<li><strong>Pronóstico</strong>: resumen visual del cruce entre P(↑15%) y P(↓15%). No es un punto, es una distribución.</li>
+<li><strong>Motivo</strong>: por qué el optimizador quiere venderlo:</li>
+<li><strong>Lesionado</strong>: <code>injuredDays &gt; 0</code> o <code>fisicStatus != "fit"</code>.</li>
+<li><strong>Bajo rendimiento</strong>: pts esp. por debajo de la mediana (15.06).</li>
+<li><strong>Liberar caja</strong>: puntúa bien pero se vende para financiar fichajes.</li>
+</ul>
+<h3 id="fichar">Fichar</h3>
+<table>
+<thead>
+<tr>
+<th>Jugador</th>
+<th>Equipo</th>
+<th>Pos</th>
+<th>Precio</th>
+<th>Pts esp. J3</th>
+<th style="text-align: right;">P(↑15%)</th>
+<th style="text-align: right;">P(↓15%)</th>
+<th style="text-align: right;">Reval. €</th>
+<th style="text-align: center;">Pronóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T. Maledon</td>
+<td>Real Madrid</td>
+<td>1</td>
+<td>780,275 €</td>
+<td>20.64</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+117,041 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>C. Duarte</td>
+<td>Kosner Baskonia</td>
+<td>3</td>
+<td>555,450 €</td>
+<td>16.55</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+83,177 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>D. Hilliard</td>
+<td>Surne Bilbao</td>
+<td>3</td>
+<td>595,125 €</td>
+<td>14.94</td>
+<td style="text-align: right;">99%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+88,830 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>T. Sedekerskis</td>
+<td>Kosner Baskonia</td>
+<td>5</td>
+<td>423,200 €</td>
+<td>12.01</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+63,479 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cómo se lee:</strong> igual que la de vender. Lo ideal es combinar <strong>pts esp. altos</strong> con <strong>reval. € positivos</strong>. Si un jugador tiene solo una de las dos cosas, el optimizador ha decidido que compensa por el otro lado.</p>
+<h2 id="resumen-economico">Resumen económico</h2>
+<p>Caja después de aplicar los cambios. El saldo final nunca puede ser negativo.</p>
+<table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th style="text-align: right;">Importe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Caja inicial</td>
+<td style="text-align: right;">28,000 €</td>
+</tr>
+<tr>
+<td>Total ventas</td>
+<td style="text-align: right;">2,339,900 €</td>
+</tr>
+<tr>
+<td>Total compras</td>
+<td style="text-align: right;">2,354,050 €</td>
+</tr>
+<tr>
+<td><strong>Caja tras los cambios</strong></td>
+<td style="text-align: right;"><strong>13,850 €</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="proyeccion-economica">Proyección económica</h2>
+<p>¿Cómo quedaría tu equipo después de la jornada, si se cumplen las revalorizaciones esperadas (media de la distribución)?</p>
+<table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th style="text-align: right;">Importe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Caja tras los cambios</td>
+<td style="text-align: right;">13,850 €</td>
+</tr>
+<tr>
+<td>+ Reval. esperada de la nueva plantilla</td>
+<td style="text-align: right;">+653,393 €</td>
+</tr>
+<tr>
+<td><strong>= Caja final proyectada</strong></td>
+<td style="text-align: right;"><strong>667,243 €</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Valor del equipo ahora:</strong> 5,438,675 € → <strong>proyectado:</strong> 6,092,068 €</p>
+<blockquote>
+<p><strong>Aviso:</strong> estas cifras son medias de una distribución, no promesas. El intervalo real incluye jornadas buenas y malas.</p>
+</blockquote>
+<h2 id="impacto-en-puntos">Impacto en puntos</h2>
+<ul>
+<li>Puntos esperados <strong>antes</strong>: 135.52</li>
+<li>Puntos esperados <strong>después</strong>: 155.61</li>
+<li><strong>Diferencia: +20.09 puntos</strong></li>
+</ul>
+<h2 id="ranking-mayor-subida-esperada-euros">Ranking — mayor subida esperada (euros)</h2>
+<p>Top 15 jugadores del mercado (excluyendo tu plantilla y lesionados) por <strong>ganancia esperada de precio en euros</strong> (media de la distribución).</p>
+<table>
+<thead>
+<tr>
+<th>Jugador</th>
+<th>Equipo</th>
+<th>Pos</th>
+<th>Precio</th>
+<th style="text-align: right;">Pts esp.</th>
+<th style="text-align: right;">P(↑15%)</th>
+<th style="text-align: right;">P(↓15%)</th>
+<th style="text-align: right;">Reval. €</th>
+<th style="text-align: center;">Pronóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J. Batemon</td>
+<td>iLERNA Lleida</td>
+<td>3</td>
+<td>872,850 €</td>
+<td style="text-align: right;">18.9</td>
+<td style="text-align: right;">93%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+125,970 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>T. Hlinason</td>
+<td>Surne Bilbao</td>
+<td>5</td>
+<td>859,625 €</td>
+<td style="text-align: right;">20.8</td>
+<td style="text-align: right;">91%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+122,874 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>T. Maledon</td>
+<td>Real Madrid</td>
+<td>1</td>
+<td>780,275 €</td>
+<td style="text-align: right;">20.6</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+117,041 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>D. Brankovic</td>
+<td>Río Breogán</td>
+<td>5</td>
+<td>767,050 €</td>
+<td style="text-align: right;">17.5</td>
+<td style="text-align: right;">94%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+111,622 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>TJ Shorts</td>
+<td>Valencia Basket</td>
+<td>1</td>
+<td>723,350 €</td>
+<td style="text-align: right;">16.0</td>
+<td style="text-align: right;">85%</td>
+<td style="text-align: right;">1%</td>
+<td style="text-align: right;">+97,815 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>D. Mavra</td>
+<td>Río Breogán</td>
+<td>1</td>
+<td>608,350 €</td>
+<td style="text-align: right;">17.3</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+91,225 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>T. Brown</td>
+<td>Río Breogán</td>
+<td>3</td>
+<td>687,700 €</td>
+<td style="text-align: right;">13.8</td>
+<td style="text-align: right;">82%</td>
+<td style="text-align: right;">1%</td>
+<td style="text-align: right;">+89,675 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>D. Hilliard</td>
+<td>Surne Bilbao</td>
+<td>3</td>
+<td>595,125 €</td>
+<td style="text-align: right;">14.9</td>
+<td style="text-align: right;">99%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+88,830 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>K. Faried</td>
+<td>Kosner Baskonia</td>
+<td>5</td>
+<td>595,125 €</td>
+<td style="text-align: right;">13.3</td>
+<td style="text-align: right;">98%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+88,144 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>M. Huertas</td>
+<td>La Laguna Tenerife</td>
+<td>1</td>
+<td>690,000 €</td>
+<td style="text-align: right;">17.1</td>
+<td style="text-align: right;">76%</td>
+<td style="text-align: right;">2%</td>
+<td style="text-align: right;">+83,428 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>C. Duarte</td>
+<td>Kosner Baskonia</td>
+<td>3</td>
+<td>555,450 €</td>
+<td style="text-align: right;">16.5</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+83,177 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>Z. Perrin</td>
+<td>iLERNA Lleida</td>
+<td>5</td>
+<td>555,450 €</td>
+<td style="text-align: right;">12.1</td>
+<td style="text-align: right;">97%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+81,714 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>A. Noua</td>
+<td>Unicaja</td>
+<td>5</td>
+<td>555,450 €</td>
+<td style="text-align: right;">13.3</td>
+<td style="text-align: right;">96%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+81,504 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>J. Pérez</td>
+<td>FIATC Girona</td>
+<td>3</td>
+<td>529,000 €</td>
+<td style="text-align: right;">15.4</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+79,273 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+<tr>
+<td>H. Frey</td>
+<td>Surne Bilbao</td>
+<td>1</td>
+<td>529,000 €</td>
+<td style="text-align: right;">12.4</td>
+<td style="text-align: right;">97%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+77,993 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cómo se lee:</strong> los jugadores están ordenados por Reval. € (no por %). Un jugador barato con P(↑15%) alta puede generar poco dinero; uno caro con P(↑15%) media puede generar más.</p>
+<h2 id="frontera-puntos-vs-broker">Frontera puntos vs. broker</h2>
+<p>El optimizador tiene un dilema: <strong>no puede maximizar puntos y broker a la vez</strong>. Para verlo, se ejecuta varias veces con distintos pesos del broker y se muestran los cambios que haría en cada caso.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Peso</th>
+<th style="text-align: right;">Cambios</th>
+<th style="text-align: right;">Pts netos</th>
+<th style="text-align: right;">Reval neta (€)</th>
+<th>Vender</th>
+<th>Fichar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">+23.70</td>
+<td style="text-align: right;">+204,617 €</td>
+<td>D. Baugh, D. Brizuela, M. Geben, A. Barcello</td>
+<td>T. Maledon, C. Duarte, G. Corbalán, E. Happ</td>
+</tr>
+<tr>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">+23.70</td>
+<td style="text-align: right;">+204,617 €</td>
+<td>D. Baugh, D. Brizuela, M. Geben, A. Barcello</td>
+<td>T. Maledon, C. Duarte, G. Corbalán, E. Happ</td>
+</tr>
+<tr>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">+23.70</td>
+<td style="text-align: right;">+204,617 €</td>
+<td>D. Baugh, D. Brizuela, M. Geben, A. Barcello</td>
+<td>T. Maledon, C. Duarte, G. Corbalán, E. Happ</td>
+</tr>
+<tr>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">+23.70</td>
+<td style="text-align: right;">+204,617 €</td>
+<td>D. Baugh, D. Brizuela, M. Geben, A. Barcello</td>
+<td>T. Maledon, C. Duarte, G. Corbalán, E. Happ</td>
+</tr>
+<tr>
+<td style="text-align: right;">4.00</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">+20.59</td>
+<td style="text-align: right;">+325,433 €</td>
+<td>D. Baugh, M. Geben, López-Arostegui, A. Barcello</td>
+<td>D. Mavra, C. Duarte, T. Nakic, T. Hlinason</td>
+</tr>
+<tr>
+<td style="text-align: right;">8.00</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">+20.09</td>
+<td style="text-align: right;">+337,087 €</td>
+<td>D. Baugh, M. Geben, López-Arostegui, A. Barcello</td>
+<td>T. Maledon, C. Duarte, D. Hilliard, T. Sedekerskis</td>
+</tr>
+<tr>
+<td style="text-align: right;">11.89 *</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">+20.09</td>
+<td style="text-align: right;">+337,087 €</td>
+<td>D. Baugh, M. Geben, López-Arostegui, A. Barcello</td>
+<td>T. Maledon, C. Duarte, D. Hilliard, T. Sedekerskis</td>
+</tr>
+<tr>
+<td style="text-align: right;">15.00</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">+20.09</td>
+<td style="text-align: right;">+337,087 €</td>
+<td>D. Baugh, M. Geben, López-Arostegui, A. Barcello</td>
+<td>T. Maledon, C. Duarte, D. Hilliard, T. Sedekerskis</td>
+</tr>
+</tbody>
+</table>
+<p>* = configuración actual para J3: <code>PESO_REVAL = 11.89</code>.</p>
+<p><strong>Cómo se lee esta tabla:</strong></p>
+<p>Cada fila es una <strong>ejecución distinta del optimizador</strong> con un peso del broker distinto:</p>
+<ul>
+<li><strong>Peso 0.00</strong> = solo le importan los puntos. Ignora la revalorización.</li>
+<li><strong>Peso 15.00</strong> = el broker pesa muchísimo. Sacrifica puntos por ganar dinero.</li>
+<li><strong>Peso 11.89 *</strong> = es el que tienes configurado para la J3. Con él se ha generado la sección 'Cambios recomendados'.</li>
+</ul>
+<p><strong>Qué mirar:</strong></p>
+<ol>
+<li><strong>¿Las ventas son estables?</strong> Si los mismos jugadores aparecen en casi todas las filas, la decisión es robusta.</li>
+<li><strong>¿Los fichajes son estables?</strong> Igual con la columna Fichar. Un núcleo fijo indica que son claramente buenos.</li>
+<li><strong>¿Dónde está el codo?</strong> Busca la fila donde más reval se gana sin sacrificar demasiados puntos. Normalmente es tu <code>PESO_REVAL</code> actual.</li>
+</ol>
+<p><strong>¿De dónde sale el peso 11.89?</strong></p>
+<p>No es un valor óptimo calculado. Es una fórmula lineal que decae entre J1 (peso 15) y J10 (peso 1). La justificación:</p>
+<ul>
+<li><strong>En J1-J3 tu caja es escasa.</strong> Sin caja no puedes fichar. La única forma de conseguir caja es que tus jugadores suban de precio.</li>
+<li><strong>En J10+ la plantilla ya está consolidada.</strong> Importan más los puntos que el dinero.</li>
+<li><strong>Equivalencia práctica:</strong> 100.000 € de reval valen ~2 puntos de media por jornada en el mercado. Aceptar una pérdida de 2 puntos ahora a cambio de +84.000 € es un intercambio razonable a 5-10 jornadas vista.</li>
+</ul>
+<h2 id="sensibilidad-al-peso-del-historico">Sensibilidad al peso del histórico</h2>
+<p>Igual que con el broker, aquí exploramos cuánto tarda la temporada actual en pesar más que el histórico. El modelo se ejecuta con distintos valores de <code>SUAVIZADO_JORNADAS</code> y se ve qué candidatos salen en cada caso.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">SUAVIZADO</th>
+<th style="text-align: right;">W (2 partidos)</th>
+<th>Top 6 candidatos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.50</td>
+<td>T. Maledon (24.7) · T. Hlinason (22.3) · J. Batemon (20.8) · D. Mavra (20.1) · R. Rubio (20.0) · Luwawu-Cabarrot (19.6)</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.40</td>
+<td>T. Maledon (22.4) · T. Hlinason (21.5) · J. Batemon (19.7) · Luwawu-Cabarrot (19.7) · R. Rubio (19.3) · D. Mavra (18.5)</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.33</td>
+<td>T. Hlinason (20.9) · T. Maledon (20.8) · Luwawu-Cabarrot (19.7) · J. Batemon (19.0) · R. Rubio (18.9) · D. Brankovic (17.6)</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.25</td>
+<td>T. Hlinason (20.2) · Luwawu-Cabarrot (19.7) · T. Maledon (18.8) · R. Rubio (18.5) · J. Batemon (18.1) · M. Huertas (17.1)</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0.20</td>
+<td>T. Hlinason (19.8) · Luwawu-Cabarrot (19.7) · R. Rubio (18.3) · T. Maledon (17.6) · J. Batemon (17.5) · M. Huertas (17.0)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cómo se lee:</strong></p>
+<ul>
+<li><strong>SUAVIZADO bajo (2)</strong>: W sube rápido. Con 2 partidos ya está 50/50.</li>
+<li><strong>SUAVIZADO alto (8)</strong>: W sube despacio. Con 8 partidos aún no llega a 50/50.</li>
+<li><strong>SUAVIZADO = 4</strong> (valor actual): el óptimo según el backtest.</li>
+</ul>
+<p><strong>Qué mirar:</strong> si los candidatos del top son parecidos en todos los valores, el modelo es robusto al peso del histórico. Si cambian mucho, el parámetro es sensible y conviene fiarse del valor óptimo (4).</p>
+<p><strong>Tabla de pesos por jornada:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">SUAVIZADO</th>
+<th style="text-align: right;">J1</th>
+<th style="text-align: right;">J2</th>
+<th style="text-align: right;">J4</th>
+<th style="text-align: right;">J8</th>
+<th style="text-align: right;">J10</th>
+<th>Comportamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0,33</td>
+<td style="text-align: right;">0,50</td>
+<td style="text-align: right;">0,67</td>
+<td style="text-align: right;">0,80</td>
+<td style="text-align: right;">0,83</td>
+<td>Reacciona rápido al presente</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0,25</td>
+<td style="text-align: right;">0,40</td>
+<td style="text-align: right;">0,57</td>
+<td style="text-align: right;">0,73</td>
+<td style="text-align: right;">0,77</td>
+<td>Un poco más lento</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>4</strong></td>
+<td style="text-align: right;"><strong>0,20</strong></td>
+<td style="text-align: right;"><strong>0,33</strong></td>
+<td style="text-align: right;"><strong>0,50</strong></td>
+<td style="text-align: right;"><strong>0,67</strong></td>
+<td style="text-align: right;"><strong>0,71</strong></td>
+<td>Óptimo según backtest</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0,14</td>
+<td style="text-align: right;">0,25</td>
+<td style="text-align: right;">0,40</td>
+<td style="text-align: right;">0,57</td>
+<td style="text-align: right;">0,63</td>
+<td>Fía más del histórico</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0,11</td>
+<td style="text-align: right;">0,20</td>
+<td style="text-align: right;">0,33</td>
+<td style="text-align: right;">0,50</td>
+<td style="text-align: right;">0,56</td>
+<td>Se fía mucho del histórico</td>
+</tr>
+</tbody>
+</table>
+<p>En cualquier caso, <strong>el histórico nunca se ignora del todo</strong>: <code>1 − W</code> siempre es positivo. Para ignorarlo haría falta <code>SUAVIZADO = 0</code>, y eso no tiene sentido.</p>
+<h2 id="plantilla-actual-puntos-esperados-j3">Plantilla actual — puntos esperados J3</h2>
+<p>Tus 10 jugadores actuales, ordenados por puntos esperados (de mayor a menor). La columna <strong>Decisión</strong> indica si el optimizador los vendería o los mantendría.</p>
+<table>
+<thead>
+<tr>
+<th>Pos</th>
+<th>Jugador</th>
+<th>Equipo</th>
+<th>Precio</th>
+<th style="text-align: right;">Pts esp.</th>
+<th style="text-align: right;">P(↑15%)</th>
+<th style="text-align: right;">P(↓15%)</th>
+<th style="text-align: right;">Reval. €</th>
+<th style="text-align: center;">Pronóstico</th>
+<th>Decisión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>O. Balcerowski</td>
+<td>Barça</td>
+<td>462,875 €</td>
+<td style="text-align: right;">17.33</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+69,431 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+<td>Mantener</td>
+</tr>
+<tr>
+<td>5</td>
+<td>J. Pradilla</td>
+<td>Real Madrid</td>
+<td>596,275 €</td>
+<td style="text-align: right;">17.15</td>
+<td style="text-align: right;">61%</td>
+<td style="text-align: right;">7%</td>
+<td style="text-align: right;">+54,123 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+<td>Mantener</td>
+</tr>
+<tr>
+<td>5</td>
+<td>W. Tavares</td>
+<td>Real Madrid</td>
+<td>600,000 €</td>
+<td style="text-align: right;">16.94</td>
+<td style="text-align: right;">47%</td>
+<td style="text-align: right;">11%</td>
+<td style="text-align: right;">+37,650 €</td>
+<td style="text-align: center;">↑ Sube</td>
+<td>Mantener</td>
+</tr>
+<tr>
+<td>1</td>
+<td>M. Pantzar</td>
+<td>Unicaja</td>
+<td>459,425 €</td>
+<td style="text-align: right;">16.09</td>
+<td style="text-align: right;">51%</td>
+<td style="text-align: right;">15%</td>
+<td style="text-align: right;">+26,274 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+<td>Mantener</td>
+</tr>
+<tr>
+<td>3</td>
+<td>J. Pérez</td>
+<td>FIATC Girona</td>
+<td>529,000 €</td>
+<td style="text-align: right;">15.42</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">+79,273 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+<td>Mantener</td>
+</tr>
+<tr>
+<td>5</td>
+<td>M. Geben</td>
+<td>FIATC Girona</td>
+<td>815,000 €</td>
+<td style="text-align: right;">14.69</td>
+<td style="text-align: right;">13%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">-18,623 €</td>
+<td style="text-align: center;">≈ Se mantiene</td>
+<td>Vender</td>
+</tr>
+<tr>
+<td>1</td>
+<td>D. Baugh</td>
+<td>Kosner Baskonia</td>
+<td>634,800 €</td>
+<td style="text-align: right;">11.19</td>
+<td style="text-align: right;">24%</td>
+<td style="text-align: right;">19%</td>
+<td style="text-align: right;">+5,508 €</td>
+<td style="text-align: center;">≈ Se mantiene</td>
+<td>Vender</td>
+</tr>
+<tr>
+<td>3</td>
+<td>López-Arostegui</td>
+<td>La Laguna Tenerife</td>
+<td>489,325 €</td>
+<td style="text-align: right;">9.97</td>
+<td style="text-align: right;">47%</td>
+<td style="text-align: right;">12%</td>
+<td style="text-align: right;">+28,065 €</td>
+<td style="text-align: center;">↑ Sube</td>
+<td>Vender</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D. Brizuela</td>
+<td>Barça</td>
+<td>423,200 €</td>
+<td style="text-align: right;">8.55</td>
+<td style="text-align: right;">57%</td>
+<td style="text-align: right;">9%</td>
+<td style="text-align: right;">+34,113 €</td>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+<td>Mantener</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A. Barcello</td>
+<td>Monbus Obradoiro</td>
+<td>400,775 €</td>
+<td style="text-align: right;">8.19</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">29%</td>
+<td style="text-align: right;">+491 €</td>
+<td style="text-align: center;">↑ Sube</td>
+<td>Vender</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cómo se lee:</strong></p>
+<ul>
+<li>Los de arriba son tus mejores jugadores según el modelo. Si están en 'Mantener', los conservas.</li>
+<li>Los de abajo probablemente se venden (bajo rendimiento o liberar caja).</li>
+<li>Fíjate en <strong>Pts esp. vs P(↑15%)</strong>: si un jugador tiene 15 pts esperados y P(↑15%) = 30%, no es lo mismo que si tiene 15 pts y P(↑15%) = 80%.</li>
+</ul>
+<h2 id="plantilla-resultante">Plantilla resultante</h2>
+<p>Tu equipo después de aplicar los cambios recomendados. Es el equipo con el que jugarías la próxima jornada.</p>
+<table>
+<thead>
+<tr>
+<th>Pos</th>
+<th>Jugador</th>
+<th>Equipo</th>
+<th>Precio</th>
+<th style="text-align: right;">Pts esp.</th>
+<th>Cupo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>M. Pantzar</td>
+<td>Unicaja</td>
+<td>459,425 €</td>
+<td style="text-align: right;">16.09</td>
+<td>JFL</td>
+</tr>
+<tr>
+<td>1</td>
+<td>T. Maledon</td>
+<td>Real Madrid</td>
+<td>780,275 €</td>
+<td style="text-align: right;">20.64</td>
+<td>—</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C. Duarte</td>
+<td>Kosner Baskonia</td>
+<td>555,450 €</td>
+<td style="text-align: right;">16.55</td>
+<td>—</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D. Brizuela</td>
+<td>Barça</td>
+<td>423,200 €</td>
+<td style="text-align: right;">8.55</td>
+<td>JFL</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D. Hilliard</td>
+<td>Surne Bilbao</td>
+<td>595,125 €</td>
+<td style="text-align: right;">14.94</td>
+<td>EXT</td>
+</tr>
+<tr>
+<td>3</td>
+<td>J. Pérez</td>
+<td>FIATC Girona</td>
+<td>529,000 €</td>
+<td style="text-align: right;">15.42</td>
+<td>—</td>
+</tr>
+<tr>
+<td>5</td>
+<td>J. Pradilla</td>
+<td>Real Madrid</td>
+<td>596,275 €</td>
+<td style="text-align: right;">17.15</td>
+<td>JFL</td>
+</tr>
+<tr>
+<td>5</td>
+<td>O. Balcerowski</td>
+<td>Barça</td>
+<td>462,875 €</td>
+<td style="text-align: right;">17.33</td>
+<td>JFL</td>
+</tr>
+<tr>
+<td>5</td>
+<td>T. Sedekerskis</td>
+<td>Kosner Baskonia</td>
+<td>423,200 €</td>
+<td style="text-align: right;">12.01</td>
+<td>JFL</td>
+</tr>
+<tr>
+<td>5</td>
+<td>W. Tavares</td>
+<td>Real Madrid</td>
+<td>600,000 €</td>
+<td style="text-align: right;">16.94</td>
+<td>JFL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cómo se lee:</strong></p>
+<ul>
+<li><strong>Pos</strong>: 1=base, 3=alero, 5=pívot. Deben ser 2/4/4.</li>
+<li><strong>Cupo</strong>: EXT (extracomunitario, máx. 2), JFL (formado local, mín. 4), — (ni uno ni otro).</li>
+</ul>
+<h2 id="verificacion-de-reglas">Verificación de reglas</h2>
+<p>El solver comprueba que la plantilla resultante cumple todas las reglas del juego.</p>
+<ul>
+<li>[OK] Bases: 2 / 2</li>
+<li>[OK] Aleros: 4 / 4</li>
+<li>[OK] Pivots: 4 / 4</li>
+<li>[OK] Extracomunitarios: 1 / 2</li>
+<li>[OK] Locales: 6 / minimo 4</li>
+<li>[OK] Saldo no negativo: 13,850 EUR</li>
+</ul>
+<p><strong>Si alguna regla sale como FALLO</strong>, hay un bug en el optimizador. No apliques los cambios y avisa.</p>
+<hr />
+<h2 id="como-funciona-el-modelo">Cómo funciona el modelo</h2>
+<p>Esta sección explica con detalle de dónde sale cada número del informe. Está pensada para que alguien que lo vea por primera vez entienda todo sin ayuda.</p>
+<h3 id="1-que-es-la-valoracion">1. ¿Qué es la 'valoración'?</h3>
+<p>En el Supermanager, cuando hablamos de 'puntos' nos referimos a la <strong>valoración ACB</strong>, no a las canastas. La fórmula es:</p>
+<pre><code>valoración = PTS + asistencias + rebotes + tapones a favor + robos
+           + faltas recibidas + T1C + T2C + T3C
+           − pérdidas − tapones en contra − faltas personales
+           − T1I − T2I − T3I
+</code></pre>
+<p>Donde <code>TxC</code> son tiros anotados y <code>TxI</code> son tiros fallados.</p>
+<p>Un jugador que anota 10 puntos reales (5 canastas de 2), coge 8 rebotes, pone 2 tapones, recibe 3 faltas y falla 4 tiros tendría <code>10 + 8 + 2 + 3 − 4 = 19</code> de valoración.</p>
+<p><strong>Bonus por victoria:</strong> si el equipo gana y la valoración es positiva, el Supermanager multiplica los puntos por 1,2. Si pierde, o si la valoración es ≤ 0, no hay bonus.</p>
+<h3 id="2-puntos-esperados-pts-esp">2. Puntos esperados (Pts esp.)</h3>
+<p>Es la valoración ACB que <strong>esperamos</strong> que haga el jugador en la próxima jornada. Se calcula en 6 pasos:</p>
+<h4 id="paso-1-cuanto-pesa-cada-temporada">Paso 1 — ¿Cuánto pesa cada temporada?</h4>
+<pre><code>W = partidos_jugados / (partidos_jugados + SUAVIZADO)
+</code></pre>
+<p>Con <code>SUAVIZADO = 4</code>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Partidos jugados</th>
+<th style="text-align: right;">W (temporada actual)</th>
+<th style="text-align: right;">1−W (histórico)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0,20</td>
+<td style="text-align: right;">0,80</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0,33</td>
+<td style="text-align: right;">0,67</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0,43</td>
+<td style="text-align: right;">0,57</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0,50</td>
+<td style="text-align: right;">0,50</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0,56</td>
+<td style="text-align: right;">0,44</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0,67</td>
+<td style="text-align: right;">0,33</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0,83</td>
+<td style="text-align: right;">0,17</td>
+</tr>
+</tbody>
+</table>
+<p><strong>No hay que tocar nada.</strong> Se ajusta solo. En J1 se fía casi todo del histórico. En J5 lo actual ya pesa más. En J20 lo actual pesa 83%.</p>
+<h4 id="paso-2-peso-del-historico-segun-cambio-de-equipo">Paso 2 — Peso del histórico según cambio de equipo</h4>
+<pre><code>factor_hist = 0,3  si cambió de equipo y lleva ≥ 3 partidos en el nuevo
+factor_hist = 1,0  en cualquier otro caso
+peso_hist = (1 − W) × factor_hist
+peso_actual = 1 − peso_hist
+</code></pre>
+<p>Si un jugador cambió de equipo, su histórico se pondera al 30% porque su rol puede ser distinto. Pero solo si ya lleva 3+ partidos en el nuevo (evita el caso T. Allen: una sola jornada espectacular inflaba la predicción).</p>
+<h4 id="paso-3-media-esperada-sin-bonus">Paso 3 — Media esperada sin bonus</h4>
+<pre><code>media_sin_bonus = peso_actual × media_actual + peso_hist × media_2526
+</code></pre>
+<p>Las medias son de <strong>valoración sin bonus</strong>. El bonus se añade en el paso 5.</p>
+<h4 id="paso-4-probabilidad-de-victoria">Paso 4 — Probabilidad de victoria</h4>
+<pre><code>p_win = sigmoide((fuerza_equipo − fuerza_rival) × 4 + localía × 5)
+</code></pre>
+<p>La fuerza del equipo combina win% de 2025-26 con win% de esta temporada (ponderadas por W). Localía: +0,10 en casa, −0,10 fuera.</p>
+<h4 id="paso-5-bonus-esperado-por-victoria">Paso 5 — Bonus esperado por victoria</h4>
+<pre><code>puntos_v1 = media_sin_bonus × (1 + 0,2 × p_win)
+</code></pre>
+<p>Si el equipo ganara seguro (p_win=1), +20%. Si perdiera seguro (p_win=0), 0%. En el medio, proporcional.</p>
+<h4 id="paso-6-blend-con-el-modelo-de-minutos-v2">Paso 6 — Blend con el modelo de minutos (v2)</h4>
+<pre><code>puntos_final = (1 − peso_v2) × puntos_v1 + peso_v2 × puntos_v2
+puntos_v2 = minutos_esperados × PPM_esperado × (1 + 0,2 × p_win)
+</code></pre>
+<p>En J3, <code>peso_v2 = 0.033</code>. v2 se pondera poco porque el backtest sobre 2025-26 (6.261 predicciones) demostró que predice similar a v1 (MAE 5,58 vs 5,61).</p>
+<h4 id="jugadores-sin-historico-2025-26">Jugadores sin histórico 2025-26</h4>
+<p>Si un jugador no jugó en ACB la temporada pasada, no tiene <code>media_2526</code>. En su lugar usamos:</p>
+<pre><code>media_referencia = initialPrice / 50.000
+</code></pre>
+<p>El <code>initialPrice</code> es lo que la propia ACB esperaba de él al fijarle precio. Se mezcla con la media actual usando la misma W:</p>
+<pre><code>media_sin_bonus = W × media_actual + (1 − W) × media_referencia
+</code></pre>
+<p>Con J1 (W=0,20): 20% su partido real, 80% la referencia inicial. Con J10 (W=0,71): 71% sus partidos, 29% la referencia.</p>
+<h4 id="ejemplo-real-tavares-j3">Ejemplo real (Tavares, J3)</h4>
+<table>
+<thead>
+<tr>
+<th>Paso</th>
+<th style="text-align: right;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Media 2025-26 sin bonus</td>
+<td style="text-align: right;">16,43</td>
+</tr>
+<tr>
+<td>Media actual (2 partidos) sin bonus</td>
+<td style="text-align: right;">~12,15</td>
+</tr>
+<tr>
+<td>W (2 partidos)</td>
+<td style="text-align: right;">0,33</td>
+</tr>
+<tr>
+<td>factor_hist</td>
+<td style="text-align: right;">1,0 (sigue en Real Madrid)</td>
+</tr>
+<tr>
+<td>peso_hist / peso_actual</td>
+<td style="text-align: right;">0,67 / 0,33</td>
+</tr>
+<tr>
+<td>media_sin_bonus</td>
+<td style="text-align: right;">0,33×12,15 + 0,67×16,43 = <strong>15,02</strong></td>
+</tr>
+<tr>
+<td>p_win (contra Obradoiro, en casa)</td>
+<td style="text-align: right;">~0,72</td>
+</tr>
+<tr>
+<td><strong>Pts esp. v1</strong></td>
+<td style="text-align: right;">15,02 × (1 + 0,2×0,72) = <strong>17,17</strong></td>
+</tr>
+<tr>
+<td>Pts esp. v2</td>
+<td style="text-align: right;">16,90</td>
+</tr>
+<tr>
+<td><strong>Pts esp. final</strong></td>
+<td style="text-align: right;">0,97 × 17,17 + 0,03 × 16,90 = <strong>17,16</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-cuando-empieza-a-pesar-mas-la-temporada-actual">3. ¿Cuándo empieza a pesar más la temporada actual?</h3>
+<p>Con <code>SUAVIZADO = 4</code> (óptimo según el backtest):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Partidos jugados</th>
+<th style="text-align: right;">Peso actual (W)</th>
+<th style="text-align: right;">Peso histórico (1−W)</th>
+<th>¿Cuál manda?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">J1</td>
+<td style="text-align: right;">0,20</td>
+<td style="text-align: right;">0,80</td>
+<td>Histórico</td>
+</tr>
+<tr>
+<td style="text-align: right;">J2</td>
+<td style="text-align: right;">0,33</td>
+<td style="text-align: right;">0,67</td>
+<td>Histórico</td>
+</tr>
+<tr>
+<td style="text-align: right;">J3</td>
+<td style="text-align: right;">0,43</td>
+<td style="text-align: right;">0,57</td>
+<td>Histórico</td>
+</tr>
+<tr>
+<td style="text-align: right;">J4</td>
+<td style="text-align: right;">0,50</td>
+<td style="text-align: right;">0,50</td>
+<td>Empate</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>J5</strong></td>
+<td style="text-align: right;"><strong>0,56</strong></td>
+<td style="text-align: right;"><strong>0,44</strong></td>
+<td><strong>Temporada actual</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">J10</td>
+<td style="text-align: right;">0,71</td>
+<td style="text-align: right;">0,29</td>
+<td>Temporada actual</td>
+</tr>
+<tr>
+<td style="text-align: right;">J20</td>
+<td style="text-align: right;">0,83</td>
+<td style="text-align: right;">0,17</td>
+<td>Temporada actual</td>
+</tr>
+</tbody>
+</table>
+<p>Esto significa que <strong>a partir de la J5 el modelo se fía más de lo que el jugador está haciendo esta temporada que de lo que hizo el año pasado.</strong> Se ajusta solo.</p>
+<h3 id="4-como-se-eligio-suavizado-4-backtest">4. Cómo se eligió SUAVIZADO = 4 (backtest)</h3>
+<p>El valor óptimo de <code>SUAVIZADO_JORNADAS</code> se obtuvo con un <strong>backtest sobre la temporada 2025-26</strong> (34 jornadas, ~250 jugadores, 6.261 predicciones).</p>
+<p>El método fue:</p>
+<ol>
+<li><strong>Dividir la temporada de cada jugador</strong> en dos partes: los <strong>primeros 5 partidos</strong> (simulan el 'histórico') y los <strong>partidos 6 a 34</strong> (simulan la temporada en curso).</li>
+<li><strong>Para cada jornada J ≥ 6</strong>, predecir J usando solo datos hasta J−1, probando varios valores de SUAVIZADO.</li>
+<li><strong>Comparar la predicción con lo que realmente hizo</strong> el jugador en J.</li>
+<li><strong>Calcular el MAE</strong> (error medio absoluto) para cada valor.</li>
+</ol>
+<p>Resultados:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">SUAVIZADO</th>
+<th style="text-align: right;">MAE</th>
+<th style="text-align: right;">RMSE</th>
+<th style="text-align: right;">Correlación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5,592</td>
+<td style="text-align: right;">7,162</td>
+<td style="text-align: right;">0,453</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5,578</td>
+<td style="text-align: right;">7,146</td>
+<td style="text-align: right;">0,455</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>4</strong></td>
+<td style="text-align: right;"><strong>5,575</strong></td>
+<td style="text-align: right;"><strong>7,143</strong></td>
+<td style="text-align: right;"><strong>0,456</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">5,584</td>
+<td style="text-align: right;">7,155</td>
+<td style="text-align: right;">0,454</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">5,600</td>
+<td style="text-align: right;">7,174</td>
+<td style="text-align: right;">0,451</td>
+</tr>
+</tbody>
+</table>
+<p>El valor 4 minimiza el MAE. <strong>Las diferencias son ruido</strong> (5,575 a 5,600), así que cualquier valor entre 3 y 6 funcionaría igual de bien. Elegimos 4 por ser el más redondo, no porque sea demostrablemente superior.</p>
+<p><strong>¿Por qué funciona el backtest sin datos de otra temporada?</strong> Porque no necesita 'histórico de años anteriores'. Mide: <em>¿cuánto peso dar a los primeros partidos vs a los más recientes?</em> Eso es exactamente el mismo problema matemático que resolverá W.</p>
+<h3 id="5-modelo-probabilistico-de-revalorizacion">5. Modelo probabilístico de revalorización</h3>
+<p>Para predecir la revalorización de precio <strong>no basta con un solo punto</strong>. Si un jugador tiene 15,7 pts esperados y su umbral de subida es 15,4, no es un 'sube 15%' seguro: es prácticamente una moneda al aire. La varianza jornada a jornada es de ±5-7 puntos.</p>
+<p>Para capturarlo, usamos <strong>simulación Monte Carlo</strong>:</p>
+<pre><code>valoración_simulada ~ Normal(mu = pts_esperados, sd = 4.5 + 0.25 × mu)
+objetivo = 50.000 × (S + valoración_simulada) / (N + 1)
+precio_nuevo = clip(objetivo, precio × 0.85, precio × 1.15)
+</code></pre>
+<p>Con <code>4,000</code> simulaciones por jugador. De la distribución de <code>precio_nuevo − precio</code> obtenemos:</p>
+<ul>
+<li><strong>Reval. €</strong>: media de la variación (lo que usa el optimizador).</li>
+<li><strong>P(↑15%)</strong>: fracción de simulaciones donde toca el techo del +15%.</li>
+<li><strong>P(↓15%)</strong>: fracción de simulaciones donde toca el suelo del −15%.</li>
+</ul>
+<p><strong>Ejemplo:</strong> un jugador con 15,7 pts esperados y umbral de subida 15,4 puede tener P(↑15%) = 52%, es decir, una moneda al aire. En cambio, uno con 20 pts esperados y umbral 15,4 tendría P(↑15%) = 90%.</p>
+<p>La desviación típica <code>4.5 + 0.25 × mu</code> está ajustada empíricamente sobre 2025-26: los jugadores que puntúan más tienen también más varianza.</p>
+<h3 id="6-umbrales-de-precio">6. Umbrales de precio</h3>
+<p>Regla oficial del Supermanager:</p>
+<pre><code>precio_nuevo = 50.000 × media_acumulada
+media_acumulada = (suma de valoraciones de la temporada) / (partidos jugados)
+</code></pre>
+<p>Con tope del <strong>±15%</strong> por jornada. Despejando la valoración <code>X</code> necesaria para cada umbral:</p>
+<pre><code>X_mantiene = P × (N+1) / 50.000 − S
+X_sube_15 = P × 1,15 × (N+1) / 50.000 − S
+X_baja_15 = P × 0,85 × (N+1) / 50.000 − S
+</code></pre>
+<p>Donde <code>P</code> es el precio actual, <code>N</code> los partidos jugados esta temporada, y <code>S</code> la suma de valoraciones esta temporada.</p>
+<p><strong>Verificación empírica:</strong> hemos validado esta fórmula contra las capturas reales del mercado. Resultados:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Contar jornadas sin jugar (0 pts)</th>
+<th style="text-align: right;">Error medio</th>
+<th style="text-align: right;">Aciertos &lt; 1%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: right;">1,05%</td>
+<td style="text-align: right;">236 / 250</td>
+</tr>
+<tr>
+<td style="text-align: center;">No</td>
+<td style="text-align: right;">1,62%</td>
+<td style="text-align: right;">231 / 250</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusión:</strong> la fórmula funciona, y una jornada sin jugar cuenta como 0 en la media (no se salta). El error del 1% es ruido de redondeo.</p>
+<p><strong>Ejemplo con Tavares (J1):</strong><br />
+- Precio: 637.500 € · Partidos: 1 · Suma de valoraciones: 10,8.<br />
+- <code>X_mantiene = 637.500 × 2 / 50.000 − 10,8 = 14,7</code>.<br />
+- <code>X_sube_15 = 637.500 × 1,15 × 2 / 50.000 − 10,8 = 18,5</code>.<br />
+- <code>X_baja_15 = 637.500 × 0,85 × 2 / 50.000 − 10,8 = 10,9</code>.</p>
+<h3 id="7-pronostico-por-probabilidades">7. Pronóstico por probabilidades</h3>
+<p>El pronóstico ya no compara un punto con un umbral: se basa en las probabilidades.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Pronóstico</th>
+<th>Condición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">↑↑ Sube 15%</td>
+<td>P(↑15%) ≥ 50%</td>
+</tr>
+<tr>
+<td style="text-align: center;">↑ Sube</td>
+<td>25% ≤ P(↑15%) &lt; 50%</td>
+</tr>
+<tr>
+<td style="text-align: center;">≈ Se mantiene</td>
+<td>P(↑15%) &lt; 25% y P(↓15%) &lt; 25%</td>
+</tr>
+<tr>
+<td style="text-align: center;">↓ Baja</td>
+<td>25% ≤ P(↓15%) &lt; 50%</td>
+</tr>
+<tr>
+<td style="text-align: center;">↓↓ Baja 15%</td>
+<td>P(↓15%) ≥ 50%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="8-score-del-optimizador">8. Score del optimizador</h3>
+<p>El optimizador maximiza:</p>
+<pre><code>score = pts_final + 11.89 × reval_euros / 100.000
+</code></pre>
+<p>En J3, cada 100.000 € de reval valen <strong>11.89 puntos</strong> en el score. El peso broker decae con las jornadas: en J1 vale 15.0, en J10+ vale 1.0.</p>
+<h3 id="9-restricciones">9. Restricciones</h3>
+<p>El solver <code>pulp</code> busca la combinación de 4 cambios (ventas + fichajes) que maximiza el score total, sujeto a:</p>
+<ul>
+<li>2 bases, 4 aleros, 4 pívots.</li>
+<li>Máximo 2 extracomunitarios.</li>
+<li>Mínimo 4 formados localmente.</li>
+<li>Caja + ventas − compras ≥ 0 (nunca negativa).</li>
+<li>Máximo 4 cambios en total.</li>
+<li>Si <code>FORZAR_VENTA_LESIONADOS</code>, todo jugador con <code>injuredDays &gt; 0</code> o <code>fisicStatus != 'fit'</code> se vende obligatoriamente.</li>
+</ul>
+<h3 id="10-frontera-puntos-vs-broker">10. Frontera puntos vs. broker</h3>
+<p>El optimizador tiene un dilema: no puede maximizar puntos y broker a la vez. Para verlo, se ejecuta con varios pesos del broker. Cada fila de la tabla muestra qué cambios haría con ese peso. Sirve para ver si la recomendación es <strong>robusta</strong> (mismos jugadores en varias filas) o sensible al peso.</p>
+<h3 id="11-sensibilidad-al-historico">11. Sensibilidad al histórico</h3>
+<p>El modelo se ejecuta también con distintos valores de <code>SUAVIZADO_JORNADAS</code>. Si el top de candidatos es parecido en todos los valores, el modelo es robusto. Si cambia mucho, la decisión de cuánto histórico usar importa.</p>
+<h3 id="12-pesos-dinamicos-por-jornada">12. Pesos dinámicos por jornada</h3>
+<table>
+<thead>
+<tr>
+<th>Jornada</th>
+<th style="text-align: right;">Peso broker</th>
+<th style="text-align: right;">Peso v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J1</td>
+<td style="text-align: right;">15.00</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr>
+<td>J3</td>
+<td style="text-align: right;">11.89</td>
+<td style="text-align: right;">0.033</td>
+</tr>
+<tr>
+<td>J5</td>
+<td style="text-align: right;">8.78</td>
+<td style="text-align: right;">0.100</td>
+</tr>
+<tr>
+<td>J10</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.100</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-glosario">13. Glosario</h3>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Valoración</strong></td>
+<td>Puntos Supermanager (fórmula arriba).</td>
+</tr>
+<tr>
+<td><strong>Pts esp.</strong></td>
+<td>Media esperada de la valoración en la próxima jornada.</td>
+</tr>
+<tr>
+<td><strong>P(↑15%)</strong></td>
+<td>Probabilidad estimada de subir el 15% (tope máximo).</td>
+</tr>
+<tr>
+<td><strong>P(↓15%)</strong></td>
+<td>Probabilidad estimada de bajar el 15% (tope mínimo).</td>
+</tr>
+<tr>
+<td><strong>Reval. €</strong></td>
+<td>Variación esperada del precio, en euros (media de la distribución).</td>
+</tr>
+<tr>
+<td><strong>Score</strong></td>
+<td>Valor que el optimizador maximiza.</td>
+</tr>
+<tr>
+<td><strong>W</strong></td>
+<td>Peso de la temporada actual vs el histórico.</td>
+</tr>
+<tr>
+<td><strong>PPM</strong></td>
+<td>Puntos por minuto (valoración / minutos).</td>
+</tr>
+<tr>
+<td><strong>P(ganar)</strong></td>
+<td>Probabilidad de que gane el equipo.</td>
+</tr>
+<tr>
+<td><strong>K</strong></td>
+<td>Euros por punto de media (50.000).</td>
+</tr>
+<tr>
+<td><strong>EXT</strong></td>
+<td>Extracomunitario (máx. 2).</td>
+</tr>
+<tr>
+<td><strong>JFL</strong></td>
+<td>Formado localmente (mín. 4).</td>
+</tr>
+<tr>
+<td><strong>v1</strong></td>
+<td>Modelo basado en puntos históricos.</td>
+</tr>
+<tr>
+<td><strong>v2</strong></td>
+<td>Modelo basado en minutos.</td>
+</tr>
+<tr>
+<td><strong>Blend</strong></td>
+<td>Mezcla ponderada de v1 y v2.</td>
+</tr>
+<tr>
+<td><strong>Pareto</strong></td>
+<td>Exploración del óptimo con distintos pesos de broker.</td>
+</tr>
+<tr>
+<td><strong>Sensibilidad</strong></td>
+<td>Exploración del óptimo con distintos pesos de histórico.</td>
+</tr>
+<tr>
+<td><strong>MAE</strong></td>
+<td>Error medio absoluto (métrica del backtest).</td>
+</tr>
+<tr>
+<td><strong>Monte Carlo</strong></td>
+<td>Simulación de la distribución de valoración del próximo partido.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="14-limitaciones-conocidas">14. Limitaciones conocidas</h3>
+<ul>
+<li>El modelo <strong>no usa racha ni estado de forma a corto plazo</strong> (solo media).</li>
+<li>La <strong>probabilidad de victoria</strong> se estima con win% + localía, sin tener en cuenta bajas, enfrentamientos previos, ni el rival concreto.</li>
+<li>Los <strong>jugadores sin histórico</strong> usan <code>initialPrice / 50.000</code> como estimación.</li>
+<li><strong>El factor de cambio de equipo</strong> es una aproximación: no detecta jugadores que cambian de rol sin cambiar de equipo.</li>
+<li>La <strong>desviación típica</strong> de la valoración (4.5 + 0.25 × mu) está ajustada empíricamente sobre 2025-26; no es una ley universal.</li>
+<li>El <strong>backtest sobre 2025-26</strong> es la mejor validación disponible, pero no garantiza los mismos resultados en 2026-27.</li>
+<li>El <strong>reval. € es una media de una distribución</strong>, no una promesa. La varianza real puede ser grande.</li>
+</ul>
+</body>
+</html>

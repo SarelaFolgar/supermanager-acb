@@ -1,11 +1,11 @@
 idPlayer,shortName,fullName,nameTeam,position,initialPrice,fisicStatus,injuredDays,isExtraCommunity,license,isNational,prox_rival_logo,prox_local,rival
-1,A. Barcello,Alex Barcello,Monbus Obradoiro,3,410000.0,fit,0,True,EXT,False,2324RealMadrid_Logoweb.png,True,Real Madrid
-29,López-Arostegui,Xabi López-Arostegui,La Laguna Tenerife,3,370000.0,fit,0,False,JFL,True,2324UnicajaLogo.png,False,Unicaja
-52,A. Díaz,Alberto Díaz,Unicaja,1,350000.0,injured,0,False,JFL,True,2425LaLagunaTenerifeLogo.png,True,La Laguna Tenerife
-57,W. Tavares,Edy Tavares,Real Madrid,5,750000.0,fit,0,False,JFL,True,202627MonbusObradoiroLogoPositivoOK.png,False,Monbus Obradoiro
-58,J. Pradilla,Jaime Pradilla,Real Madrid,5,610000.0,fit,0,False,JFL,True,202627MonbusObradoiroLogoPositivoOK.png,False,Monbus Obradoiro
-67,F. Campazzo,Facu Campazzo,Real Madrid,1,460000.0,fit,0,False,EUR,False,202627MonbusObradoiroLogoPositivoOK.png,False,Monbus Obradoiro
-111,K. Taylor,Kameron Taylor,Valencia Basket,3,630000.0,fit,0,True,EXT,False,2425CasademontZaragoza.png,False,Casademont Zaragoza
-141,M. Geben,Martinas Geben,FIATC Girona,5,620000.0,fit,0,False,EUR,False,2526KosnerBaskoniaLogo.png,False,Kosner Baskonia
-192,K. Robertson,Kassius Robertson,MoraBanc Andorra,3,400000.0,fit,0,False,COT,False,202526AsisaJoventutLogoPosisitvo.png,False,Asisa Joventut
-226,R. Kurucs,Rodions Kurucs,Kosner Baskonia,5,400000.0,fit,0,False,JFL,True,202627FIATCGironaLogoPositivo.png,True,FIATC Girona
+241,D. Baugh,Damion Baugh,Kosner Baskonia,1,480000.0,fit,0,False,COT,False,,,
+180,D. Brizuela,Darío Brizuela,Barça,3,320000.0,fit,0,False,JFL,True,,,
+170,O. Balcerowski,Olek Balcerowski,Barça,5,350000.0,fit,0,False,JFL,True,,,
+141,M. Geben,Martinas Geben,FIATC Girona,5,620000.0,fit,0,False,EUR,False,,,
+137,J. Pérez,Jassel Perez,FIATC Girona,3,400000.0,fit,0,False,COT,False,,,
+58,J. Pradilla,Jaime Pradilla,Real Madrid,5,610000.0,fit,0,False,JFL,True,,,
+57,W. Tavares,Edy Tavares,Real Madrid,5,750000.0,fit,0,False,JFL,True,,,
+50,M. Pantzar,Melwin Pantzar,Unicaja,1,470000.0,fit,0,False,JFL,True,,,
+29,López-Arostegui,Xabi López-Arostegui,La Laguna Tenerife,3,370000.0,fit,0,False,JFL,True,,,
+1,A. Barcello,Alex Barcello,Monbus Obradoiro,3,410000.0,fit,0,True,EXT,False,,,

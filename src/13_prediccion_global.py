@@ -1,5 +1,6 @@
 import glob
 import json
+import sys
 from collections import defaultdict
 
 import numpy as np
@@ -7,17 +8,20 @@ import pandas as pd
 
 import config
 
+# Override por línea de comandos (usado por 20_explorar_suavizado.py)
+if len(sys.argv) > 1:
+    try:
+        config.SUAVIZADO_JORNADAS = int(sys.argv[1])
+        print(f"  SUAVIZADO override: {config.SUAVIZADO_JORNADAS}")
+    except ValueError:
+        pass
+
 # === 1. Mercado actual ===
 archivo_mercado = sorted(glob.glob("data/raw/mercado_*.json"))[-1]
-print(f"Mercado: {archivo_mercado}")
 with open(archivo_mercado, encoding="utf-8") as f:
     mercado = json.load(f)
 
 # === 2. Detectar resultado por equipo y jornada ===
-# Si el equipo ganó, los puntos son valoración × 1.2.
-# - Múltiplo de 1.2 que NO es entero → ganó (imposible sin bonus).
-# - Entero que NO es múltiplo de 1.2 → perdió (valoración cruda).
-# - Todos enteros múltiplos de 1.2 → ambiguo.
 def es_multiplo_12(pts):
     if pts is None or pd.isna(pts) or pts <= 0:
         return False
@@ -48,13 +52,12 @@ for j in mercado:
 
 resultados = {k: detectar_resultado(v) for k, v in pts_por_equipo_jornada.items()}
 
-# === 3. Construir DataFrame del mercado ===
+# === 3. DataFrame del mercado ===
 filas = []
 for j in mercado:
     eq = j["nameTeam"]
     rival_logo = None
     prox_local = None
-
     pts_jugadas = []
     pts_sin_bonus = []
     for e in j.get("playerStats", []):
@@ -87,13 +90,13 @@ for j in mercado:
         "isNational": j.get("isNational"),
         "license": j.get("license"),
         "partidos_actual": len(pts_jugadas),
+        "sum_points_actual": sum(pts_jugadas) if pts_jugadas else 0.0,
         "media_actual_sin_bonus": np.mean(pts_sin_bonus) if pts_sin_bonus else np.nan,
         "rival_logo": rival_logo,
         "prox_local": prox_local,
     })
 
 df = pd.DataFrame(filas)
-print(f"Jugadores en el mercado: {len(df)}")
 
 # === 4. Histórico 2025-26 ===
 stats_raw = pd.read_csv("data/stats_jornada_2526.csv")
@@ -113,7 +116,7 @@ agg = stats_2526.groupby("idPlayer").agg(
     minutos_2526=("minutos", "mean"),
 ).reset_index()
 agg = agg.merge(
-    jug_2526[["idPlayer", "nick", "birthdate", "fullName"]],
+    jug_2526[["idPlayer", "nick", "birthdate", "fullName", "nameTeam"]],
     on="idPlayer", how="left",
 )
 agg = agg.rename(columns={
@@ -121,6 +124,7 @@ agg = agg.rename(columns={
     "nick": "nick_2526",
     "birthdate": "birthdate_2526",
     "fullName": "fullName_2526",
+    "nameTeam": "nameTeam_2526",
 })
 
 def buscar(row):
@@ -139,23 +143,29 @@ def buscar(row):
 df["idPlayer_2526"] = df.apply(buscar, axis=1)
 df = df.merge(
     agg[["idPlayer_2526", "partidos_2526", "media_2526_sin_bonus",
-         "media_2526_con_bonus", "minutos_2526"]],
+         "media_2526_con_bonus", "minutos_2526", "nameTeam_2526"]],
     on="idPlayer_2526", how="left",
 )
-print(f"Con histórico 2025-26: {df['media_2526_con_bonus'].notna().sum()} / {len(df)}")
 
-# === 5. Fuerza de equipo (win% 2025-26 + win% actual, ponderado) ===
+def normaliza(eq):
+    if pd.isna(eq):
+        return None
+    return str(eq).strip().lower()
+
+df["cambio_equipo"] = (
+    df["nameTeam_2526"].notna()
+    & (df["nameTeam"].apply(normaliza) != df["nameTeam_2526"].apply(normaliza))
+)
+
+# === 5. Fuerza de equipo ===
 eq_jornada = stats_raw.groupby(["nameTeam", "numberJourney"])["bonusVictory"].max().reset_index()
 eq_jornada["gano"] = eq_jornada["bonusVictory"] > 0
 win_pct_2526 = eq_jornada.groupby("nameTeam")["gano"].mean()
 df["win_pct_equipo_2526"] = df["nameTeam"].map(win_pct_2526).fillna(0.5)
 
-# Win% actual (jornadas jugadas de esta temporada)
 jornadas_jugadas = sorted(set(n for (_, n) in resultados.keys()))
 n_jugadas = len(jornadas_jugadas)
 PESO_ACTUAL = n_jugadas / (n_jugadas + config.SUAVIZADO_JORNADAS) if n_jugadas > 0 else 0.0
-print(f"Jornadas jugadas detectadas: {jornadas_jugadas}")
-print(f"Peso del win% actual vs 2025-26: {PESO_ACTUAL:.2f} / {1 - PESO_ACTUAL:.2f}")
 
 win_actual = {}
 for eq in df["nameTeam"].unique():
@@ -190,74 +200,126 @@ df["hfa"] = df["prox_local"].apply(lambda x: 0.10 if x else -0.10)
 df["p_win_J2"] = sigmoid((df["fuerza_equipo"] - df["fuerza_rival"]) * 4 + df["hfa"] * 5)
 df["p_win_J2"] = df["p_win_J2"].clip(0.05, 0.95)
 
-# === 7. W dinámico ===
+# === 7. W dinámico y factor histórico ===
 df["W"] = df["partidos_actual"] / (df["partidos_actual"] + config.SUAVIZADO_JORNADAS)
 df["W"] = df["W"].clip(0, 1)
+
+df["factor_hist"] = np.where(
+    df["cambio_equipo"] & (df["partidos_actual"] >= config.MIN_PARTIDOS_FACTOR_HIST),
+    config.FACTOR_HIST_CAMBIO_EQUIPO,
+    config.FACTOR_HIST_MISMO_EQUIPO,
+)
+df["peso_hist"] = (1 - df["W"]) * df["factor_hist"]
+df["peso_actual"] = 1 - df["peso_hist"]
 
 # === 8. Media sin bonus esperada ===
 has_hist = df["media_2526_con_bonus"].notna()
 jugo = df["partidos_actual"] > 0
 df["media_sin_bonus"] = np.nan
 
-# Con histórico + jugó esta temporada
 m = has_hist & jugo
 df.loc[m, "media_sin_bonus"] = (
-    df.loc[m, "W"] * df.loc[m, "media_actual_sin_bonus"]
-    + (1 - df.loc[m, "W"]) * df.loc[m, "media_2526_sin_bonus"]
+    df.loc[m, "peso_actual"] * df.loc[m, "media_actual_sin_bonus"]
+    + df.loc[m, "peso_hist"] * df.loc[m, "media_2526_sin_bonus"]
 )
 
-# Con histórico pero sin datos actuales (lesionado toda la temporada, etc.)
 m = has_hist & ~jugo
 df.loc[m, "media_sin_bonus"] = df.loc[m, "media_2526_sin_bonus"]
 
-# Sin histórico: initialPrice / K como proxy de la media esperada por ACB
 media_acb_sin_bonus = (
     df["initialPrice"] / config.K_PRECIO / (1 + 0.2 * df["win_pct_equipo_2526"])
 )
 
-# Sin histórico + jugó
 m = ~has_hist & jugo
 df.loc[m, "media_sin_bonus"] = (
     df.loc[m, "W"] * df.loc[m, "media_actual_sin_bonus"]
     + (1 - df.loc[m, "W"]) * media_acb_sin_bonus[m]
 )
 
-# Sin histórico + no jugó
 m = ~has_hist & ~jugo
 df.loc[m, "media_sin_bonus"] = media_acb_sin_bonus[m]
 
 # === 9. Puntos esperados ===
 df["puntos_esperados_J2"] = df["media_sin_bonus"] * (1 + 0.2 * df["p_win_J2"])
 
-# === 10. Precio proyectado J3 y reval esperada ===
+# === 10. Modelo probabilístico de revalorización ===
 K = config.K_PRECIO
-df["media_acum_proyectada"] = np.where(
-    df["partidos_actual"] > 0,
-    (df["media_actual_sin_bonus"] + df["puntos_esperados_J2"]) / 2,
-    df["puntos_esperados_J2"],
+
+def calcular_distribucion(precio, S, N, mu, seed):
+    """Simula la valoración del próximo partido y calcula estadísticas del precio nuevo."""
+    rng = np.random.default_rng(seed)
+    sd = max(config.SD_BASE + config.SD_ESCALA_MU * mu, 1.0)
+    x = rng.normal(mu, sd, config.N_SIMULACIONES)
+    objetivo = K * (S + x) / (N + 1)
+    nuevo = np.clip(objetivo, precio * (1 - config.TOPE_PRECIO),
+                    precio * (1 + config.TOPE_PRECIO))
+    reval_esperado = float(nuevo.mean() - precio)
+    p_sube = float((objetivo >= precio * (1 + config.TOPE_PRECIO)).mean())
+    p_baja = float((objetivo <= precio * (1 - config.TOPE_PRECIO)).mean())
+    return reval_esperado, p_sube, p_baja
+
+revals, ps_sube, ps_baja = [], [], []
+for _, r in df.iterrows():
+    if pd.isna(r["puntos_esperados_J2"]) or r["partidos_actual"] == 0:
+        # Sin datos: sin reval
+        revals.append(0.0)
+        ps_sube.append(0.0)
+        ps_baja.append(0.0)
+        continue
+    rev, ps, pb = calcular_distribucion(
+        precio=r["price"],
+        S=r["sum_points_actual"],
+        N=int(r["partidos_actual"]),
+        mu=r["puntos_esperados_J2"],
+        seed=int(r["idPlayer"]),
+    )
+    revals.append(rev)
+    ps_sube.append(ps)
+    ps_baja.append(pb)
+
+df["reval_euros"] = revals
+df["p_sube_15"] = ps_sube
+df["p_baja_15"] = ps_baja
+df["reval_esperada"] = df["reval_euros"] / df["price"].replace(0, np.nan)
+df["reval_euros_norm"] = df["reval_euros"] / 100_000
+
+# Umbrales de precio (para mostrar información de referencia)
+df["N_actual"] = df["partidos_actual"]
+df["media_implicita"] = df["price"] / K
+df["umbral_mantiene"] = (
+    df["media_implicita"] * (df["N_actual"] + 1) - df["sum_points_actual"]
 )
-df["precio_objetivo"] = K * df["media_acum_proyectada"]
-df["precio_proyectado_J3"] = df.apply(
-    lambda r: max(min(r["precio_objetivo"], r["price"] * (1 + config.TOPE_PRECIO)),
-                  r["price"] * (1 - config.TOPE_PRECIO)),
-    axis=1,
+df["umbral_sube_15"] = (
+    df["media_implicita"] * (1 + config.TOPE_PRECIO) * (df["N_actual"] + 1)
+    - df["sum_points_actual"]
 )
-df["reval_esperada"] = df["precio_proyectado_J3"] / df["price"] - 1
+df["umbral_baja_15"] = (
+    df["media_implicita"] * (1 - config.TOPE_PRECIO) * (df["N_actual"] + 1)
+    - df["sum_points_actual"]
+)
+
+# Pronóstico basado en probabilidades
+def pronostico(p_sube, p_baja):
+    if p_sube >= 0.5:
+        return "upup"
+    if p_sube >= 0.25:
+        return "up"
+    if p_baja >= 0.5:
+        return "downdown"
+    if p_baja >= 0.25:
+        return "down"
+    return "flat"
+
+df["pronostico"] = [
+    pronostico(ps, pb) for ps, pb in zip(df["p_sube_15"], df["p_baja_15"])
+]
 
 # === 11. Alertas ===
 df["alerta_lesion"] = (df["injuredDays"] > 0) | (df["fisicStatus"] != "fit")
 
-# === 12. Mostrar y guardar ===
-cols = ["shortName", "nameTeam", "position", "price",
-        "partidos_actual", "W", "media_actual_sin_bonus",
-        "media_2526_sin_bonus", "media_sin_bonus",
-        "p_win_J2", "puntos_esperados_J2", "reval_esperada", "alerta_lesion"]
-
-print("\n=== TOP 15 puntos esperados ===")
-print(df.sort_values("puntos_esperados_J2", ascending=False)[cols].head(15).round(2).to_string(index=False))
-
-print("\n=== TOP 15 revalorización esperada ===")
-print(df.sort_values("reval_esperada", ascending=False)[cols].head(15).round(2).to_string(index=False))
-
+# === 12. Guardar ===
 df.to_csv("data/prediccion_global.csv", index=False)
-print(f"\nGuardado en data/prediccion_global.csv ({len(df)} jugadores)")
+print(f"  Predicciones: {len(df)} jugadores | "
+      f"{df['media_2526_con_bonus'].notna().sum()} con historico | "
+      f"{df['cambio_equipo'].sum()} cambiaron de equipo | "
+      f"J{int(df['partidos_actual'].max())} jugada(s)")
