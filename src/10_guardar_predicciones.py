@@ -59,7 +59,7 @@ def main():
             "nameTeam": r["nameTeam"],
             "position": r["position"],
             "price_before": r["price"],
-            "pts_esp": r.get("puntos_esperados_J2"),
+            "pts_esp": r.get("puntos_esperados"),
             "p_up15": r.get("p_sube_15"),
             "p_down15": r.get("p_baja_15"),
             "reval_euros": r.get("reval_euros"),

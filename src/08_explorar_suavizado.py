@@ -56,7 +56,7 @@ def main():
             if df is None:
                 continue
 
-            medias_puntos[s] = float(df["puntos_esperados_J2"].mean())
+            medias_puntos[s] = float(df["puntos_esperados"].mean())
 
             cand = df[
                 (~df["idPlayer"].isin(mis_ids)) &
@@ -67,13 +67,13 @@ def main():
             n_part = 2
             w_ref = n_part / (n_part + s)
 
-            top = cand.nlargest(10, "puntos_esperados_J2")[
-                ["shortName", "nameTeam", "position", "puntos_esperados_J2"]
+            top = cand.nlargest(10, "puntos_esperados")[
+                ["shortName", "nameTeam", "position", "puntos_esperados"]
             ].reset_index(drop=True)
 
             resultados.append({
                 "suavizado": s,
-                "w_j2": round(w_ref, 3),
+                "w": round(w_ref, 3),
                 "top": top.to_dict("records"),
             })
     finally:
@@ -90,9 +90,9 @@ def main():
 
     filas = []
     for r in resultados:
-        fila = {"suavizado": r["suavizado"], "w_j2": r["w_j2"]}
+        fila = {"suavizado": r["suavizado"], "w": r["w"]}
         for i, j in enumerate(r["top"][:6], 1):
-            fila[f"top{i}"] = f"{j['shortName']} ({j['puntos_esperados_J2']:.1f})"
+            fila[f"top{i}"] = f"{j['shortName']} ({j['puntos_esperados']:.1f})"
         filas.append(fila)
 
     df_tabla = pd.DataFrame(filas)

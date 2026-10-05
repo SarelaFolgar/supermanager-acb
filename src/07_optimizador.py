@@ -53,12 +53,12 @@ pred = pred.merge(
     on="idPlayer", how="left",
 )
 pred["pts_blend"] = (
-    (1 - peso_v2) * pred["puntos_esperados_J2"]
-    + peso_v2 * pred["puntos_esperados_v2"].fillna(pred["puntos_esperados_J2"])
+    (1 - peso_v2) * pred["puntos_esperados"]
+    + peso_v2 * pred["puntos_esperados_v2"].fillna(pred["puntos_esperados"])
 )
 
 COLS_PRED = [
-    "idPlayer", "pts_blend", "puntos_esperados_J2", "puntos_esperados_v2",
+    "idPlayer", "pts_blend", "puntos_esperados", "puntos_esperados_v2",
     "reval_esperada", "reval_euros", "reval_euros_norm",
     "umbral_sube_15", "umbral_mantiene", "umbral_baja_15", "pronostico",
     "p_sube_15", "p_baja_15",
@@ -242,9 +242,9 @@ for i, r in enumerate(resultados):
         })
 
 zona = {
-    "peso_actual": PESO_REVAL,
-    "peso_min": peso_min,
-    "peso_max": peso_max,
+    "peso_actual": round(PESO_REVAL, 2),
+    "peso_min": round(peso_min, 2),
+    "peso_max": round(peso_max, 2),
     "n_valores": n_valores,
     "robustez": robustez,
     "soluciones_casi_equivalentes": casi,

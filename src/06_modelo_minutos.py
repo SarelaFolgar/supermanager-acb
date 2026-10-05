@@ -78,11 +78,11 @@ def main():
 
     pred["puntos_esperados_v2"] = (
         pred["ppm_esperado"] * pred["minutos_esperados"]
-        * (1 + 0.2 * pred["p_win_J2"])
+        * (1 + 0.2 * pred["p_win"])
     )
 
     sin_datos = pred["puntos_esperados_v2"].isna()
-    pred.loc[sin_datos, "puntos_esperados_v2"] = pred.loc[sin_datos, "puntos_esperados_J2"]
+    pred.loc[sin_datos, "puntos_esperados_v2"] = pred.loc[sin_datos, "puntos_esperados"]
     pred["metodo_v2"] = np.where(sin_datos, "v1_fallback", "v2_minutos")
 
     Path("data/procesado").mkdir(parents=True, exist_ok=True)

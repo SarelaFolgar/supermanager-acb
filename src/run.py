@@ -6,6 +6,7 @@ Uso:
 
 Flags en config.py:
   - SCRAPEAR_RINCON: si True, ejecuta el scraper de El Rincón antes.
+  - SCRAPEAR_STATS: si True, refresca el histórico detallado de la temporada.
   - EXPLORAR_SUAVIZADO_EN_RUN: si True, ejecuta la exploración de suavizado.
 """
 import os
@@ -22,11 +23,16 @@ SCRIPTS_BASE = [
     "src/02_mi_caja.py",
     "src/03_mi_equipo.py",
     "src/04_prediccion.py",
-    "src/10b_guardar_stats.py",  
+]
+
+if config.SCRAPEAR_STATS:
+    SCRIPTS_BASE.append("src/10b_guardar_stats.py")
+
+SCRIPTS_BASE.extend([
     "src/05_minutos_features.py",
     "src/06_modelo_minutos.py",
     "src/07_optimizador.py",
-]
+])
 
 if config.EXPLORAR_SUAVIZADO_EN_RUN:
     SCRIPTS_BASE.append("src/08_explorar_suavizado.py")
@@ -48,6 +54,8 @@ def main():
     extras = []
     if config.SCRAPEAR_RINCON:
         extras.append("scraper Rincón")
+    if config.SCRAPEAR_STATS:
+        extras.append("histórico stats")
     if config.EXPLORAR_SUAVIZADO_EN_RUN:
         extras.append("exploración suavizado")
     if extras:

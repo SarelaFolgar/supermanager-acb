@@ -9,6 +9,15 @@ MI_EQUIPO_ID = 246638
 SCRAPEAR_RINCON = False
 EXPLORAR_SUAVIZADO_EN_RUN = True
 
+# Si True, run.py ejecuta 10b_guardar_stats.py para refrescar el histórico
+# de stats detalladas de 2026-27. Tarda ~2 min. Ponlo a False para el día a
+# día y a True una vez por jornada, cuando quieras refrescar el histórico.
+SCRAPEAR_STATS = False
+
+# Limita cuántos jugadores procesa el scraper de stats. 0 = todos.
+# Útil para test rápido: pon 5 para probar sin esperar 2 minutos.
+MAX_JUGADORES_STATS = 0
+
 # ─── REGLAS DE LA LIGA ──────────────────────────────────────
 MAX_CAMBIOS = 4
 POSICIONES = {1: 2, 3: 4, 5: 4}

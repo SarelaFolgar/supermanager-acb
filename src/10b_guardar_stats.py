@@ -25,12 +25,16 @@ from pathlib import Path
 import pandas as pd
 import requests
 from dotenv import load_dotenv
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import config
 
 # ─── Configuración ──────────────────────────────────────────
 TEMPORADA = "2026-27"
 ARCHIVO = Path(f"data/historico/{TEMPORADA}/stats_jornada.csv")
 PAUSA = 0.4
-MAX_JUGADORES = 0    # 0 = todos. Pon 5 para probar.
+MAX_JUGADORES = config.MAX_JUGADORES_STATS
 
 COLS = [
     "idPlayer", "shortName", "nick", "license", "idTeam", "nameTeam",

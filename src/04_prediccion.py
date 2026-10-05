@@ -2,6 +2,7 @@ import glob
 import json
 import sys
 from collections import defaultdict
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -157,7 +158,7 @@ df["cambio_equipo"] = (
     & (df["nameTeam"].apply(normaliza) != df["nameTeam_2526"].apply(normaliza))
 )
 
-# === 5. Fuerza de equipo ===
+# === 5. Fuerza de equipo (win% + localía) ===
 eq_jornada = stats_raw.groupby(["nameTeam", "numberJourney"])["bonusVictory"].max().reset_index()
 eq_jornada["gano"] = eq_jornada["bonusVictory"] > 0
 win_pct_2526 = eq_jornada.groupby("nameTeam")["gano"].mean()
@@ -179,12 +180,15 @@ for eq in df["nameTeam"].unique():
         wins += r
     win_actual[eq] = wins / total if total > 0 else None
 
+
 def fuerza(equipo):
+    """Fuerza del equipo como win% combinado (histórico + actual)."""
     w_actual = win_actual.get(equipo)
     w_2526 = win_pct_2526.get(equipo, 0.5)
     if w_actual is None:
         return w_2526
     return PESO_ACTUAL * w_actual + (1 - PESO_ACTUAL) * w_2526
+
 
 df["fuerza_equipo"] = df["nameTeam"].apply(fuerza)
 
@@ -192,13 +196,13 @@ logos = pd.read_csv("data/procesado/equipos_logos.csv").set_index("logo")["equip
 df["rival"] = df["rival_logo"].map(logos).fillna(df["rival_logo"])
 df["fuerza_rival"] = df["rival"].apply(fuerza)
 
-# === 6. P(ganar) ===
+# === 6. P(win) ===
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 df["hfa"] = df["prox_local"].apply(lambda x: 0.10 if x else -0.10)
-df["p_win_J2"] = sigmoid((df["fuerza_equipo"] - df["fuerza_rival"]) * 4 + df["hfa"] * 5)
-df["p_win_J2"] = df["p_win_J2"].clip(0.05, 0.95)
+df["p_win"] = sigmoid((df["fuerza_equipo"] - df["fuerza_rival"]) * 4 + df["hfa"] * 5)
+df["p_win"] = df["p_win"].clip(0.05, 0.95)
 
 # === 7. W dinámico y factor histórico ===
 df["W"] = df["partidos_actual"] / (df["partidos_actual"] + config.SUAVIZADO_JORNADAS)
@@ -240,7 +244,7 @@ m = ~has_hist & ~jugo
 df.loc[m, "media_sin_bonus"] = media_acb_sin_bonus[m]
 
 # === 9. Puntos esperados ===
-df["puntos_esperados_J2"] = df["media_sin_bonus"] * (1 + 0.2 * df["p_win_J2"])
+df["puntos_esperados"] = df["media_sin_bonus"] * (1 + 0.2 * df["p_win"])
 
 # === 10. Modelo probabilístico de revalorización ===
 K = config.K_PRECIO
@@ -259,7 +263,7 @@ def calcular_distribucion(precio, S, N, mu, seed):
 
 revals, ps_sube, ps_baja = [], [], []
 for _, r in df.iterrows():
-    if pd.isna(r["puntos_esperados_J2"]) or r["partidos_actual"] == 0:
+    if pd.isna(r["puntos_esperados"]) or r["partidos_actual"] == 0:
         revals.append(0.0)
         ps_sube.append(0.0)
         ps_baja.append(0.0)
@@ -268,7 +272,7 @@ for _, r in df.iterrows():
         precio=r["price"],
         S=r["sum_points_actual"],
         N=int(r["partidos_actual"]),
-        mu=r["puntos_esperados_J2"],
+        mu=r["puntos_esperados"],
         seed=int(r["idPlayer"]),
     )
     revals.append(rev)
@@ -312,6 +316,7 @@ df["pronostico"] = [
 
 df["alerta_lesion"] = (df["injuredDays"] > 0) | (df["fisicStatus"] != "fit")
 
+# === 11. Guardar ===
 df.to_csv("data/procesado/prediccion_global.csv", index=False)
 print(f"  Predicciones: {len(df)} jugadores | "
       f"{df['media_2526_con_bonus'].notna().sum()} con historico | "
