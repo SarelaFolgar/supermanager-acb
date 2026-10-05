@@ -1,5 +1,71 @@
 [
   {
+    "suavizado": 0,
+    "w": 1.0,
+    "top": [
+      {
+        "shortName": "T. Maledon",
+        "nameTeam": "Real Madrid",
+        "position": 1,
+        "puntos_esperados": 36.295
+      },
+      {
+        "shortName": "T. Allen",
+        "nameTeam": "Kids&Us Manresa",
+        "position": 5,
+        "puntos_esperados": 35.35
+      },
+      {
+        "shortName": "D. Mavra",
+        "nameTeam": "Río Breogán",
+        "position": 1,
+        "puntos_esperados": 28.43588073589803
+      },
+      {
+        "shortName": "T. Hlinason",
+        "nameTeam": "Surne Bilbao",
+        "position": 5,
+        "puntos_esperados": 26.42555885664872
+      },
+      {
+        "shortName": "J. Batemon",
+        "nameTeam": "iLERNA Lleida",
+        "position": 3,
+        "puntos_esperados": 26.349949277110916
+      },
+      {
+        "shortName": "R. Rubio",
+        "nameTeam": "Asisa Joventut",
+        "position": 1,
+        "puntos_esperados": 26.26
+      },
+      {
+        "shortName": "D. Brankovic",
+        "nameTeam": "Río Breogán",
+        "position": 5,
+        "puntos_esperados": 24.2889814619129
+      },
+      {
+        "shortName": "D. Hilliard",
+        "nameTeam": "Surne Bilbao",
+        "position": 3,
+        "puntos_esperados": 22.489837324807414
+      },
+      {
+        "shortName": "N. Laprovittola",
+        "nameTeam": "Asisa Joventut",
+        "position": 1,
+        "puntos_esperados": 22.22
+      },
+      {
+        "shortName": "C. Duarte",
+        "nameTeam": "Kosner Baskonia",
+        "position": 3,
+        "puntos_esperados": 22.015000000000004
+      }
+    ]
+  },
+  {
     "suavizado": 2,
     "w": 0.5,
     "top": [
@@ -250,16 +316,16 @@
         "puntos_esperados": 16.45683171866502
       },
       {
-        "shortName": "J. Robinson",
-        "nameTeam": "Barça",
-        "position": 1,
-        "puntos_esperados": 16.28098272945524
-      },
-      {
         "shortName": "D. Mavra",
         "nameTeam": "Río Breogán",
         "position": 1,
         "puntos_esperados": 16.00458290807575
+      },
+      {
+        "shortName": "E. Happ",
+        "nameTeam": "La Laguna Tenerife",
+        "position": 5,
+        "puntos_esperados": 15.99117347584501
       }
     ]
   },
@@ -304,12 +370,6 @@
         "puntos_esperados": 17.042622242156288
       },
       {
-        "shortName": "J. Robinson",
-        "nameTeam": "Barça",
-        "position": 1,
-        "puntos_esperados": 16.61901778308456
-      },
-      {
         "shortName": "E. Happ",
         "nameTeam": "La Laguna Tenerife",
         "position": 5,
@@ -326,6 +386,12 @@
         "nameTeam": "Río Breogán",
         "position": 3,
         "puntos_esperados": 16.231805234609464
+      },
+      {
+        "shortName": "G. Shermadini",
+        "nameTeam": "La Laguna Tenerife",
+        "position": 5,
+        "puntos_esperados": 15.698578257826812
       }
     ]
   }

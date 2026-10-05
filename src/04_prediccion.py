@@ -117,7 +117,7 @@ agg = stats_2526.groupby("idPlayer").agg(
     minutos_2526=("minutos", "mean"),
 ).reset_index()
 agg = agg.merge(
-    jug_2526[["idPlayer", "nick", "birthdate", "fullName", "nameTeam"]],
+    jug_2526[["idPlayer", "nick", "birthdate", "fullName", "nameTeam", "shortName"]],
     on="idPlayer", how="left",
 )
 agg = agg.rename(columns={
@@ -126,19 +126,31 @@ agg = agg.rename(columns={
     "birthdate": "birthdate_2526",
     "fullName": "fullName_2526",
     "nameTeam": "nameTeam_2526",
+    "shortName": "shortName_2526",
 })
 
 def buscar(row):
-    m = agg[(agg["nick_2526"] == row["nick"]) & (agg["birthdate_2526"] == row["birthdate"])]
-    if len(m):
-        return m.iloc[0]["idPlayer_2526"]
-    m = agg[agg["nick_2526"] == row["nick"]]
-    if len(m):
-        return m.iloc[0]["idPlayer_2526"]
+    # 1) shortName + birthdate (estricto)
+    if pd.notna(row.get("shortName")) and pd.notna(row.get("birthdate")):
+        m = agg[(agg["shortName_2526"] == row["shortName"]) &
+                (agg["birthdate_2526"] == row["birthdate"])]
+        if len(m):
+            return m.iloc[0]["idPlayer_2526"]
+
+    # 2) fullName normalizado
     fn = str(row["fullName"]).strip().lower()
     m = agg[agg["fullName_2526"].str.strip().str.lower() == fn]
     if len(m):
         return m.iloc[0]["idPlayer_2526"]
+
+    # 3) nick + birthdate (por si acaso)
+    if pd.notna(row.get("nick")) and pd.notna(row.get("birthdate")):
+        m = agg[(agg["nick_2526"] == row["nick"]) &
+                (agg["birthdate_2526"] == row["birthdate"])]
+        if len(m):
+            return m.iloc[0]["idPlayer_2526"]
+
+    # 4) Sin match
     return None
 
 df["idPlayer_2526"] = df.apply(buscar, axis=1)
