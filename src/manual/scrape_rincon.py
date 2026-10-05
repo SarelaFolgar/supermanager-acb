@@ -118,7 +118,7 @@ def parsear_partidos(html):
 def main():
     Path("data/rincon").mkdir(parents=True, exist_ok=True)
 
-    pred = pd.read_csv("data/prediccion_global.csv")
+    pred = pd.read_csv("data/procesado/prediccion_global.csv")
     pred = pred[pred["fullName"].notna()].copy()
     pred["slug"] = pred["fullName"].apply(slug)
     pred = pred[pred["slug"].notna()].drop_duplicates(subset="slug")

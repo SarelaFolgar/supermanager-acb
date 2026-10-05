@@ -19,7 +19,7 @@ BLENDS = np.round(np.arange(0, 1.001, 0.05), 2)
 
 
 def cargar():
-    df = pd.read_csv("data/historico/stats_jornada_2526.csv")
+    df = pd.read_csv("data/historico/2025-26/stats_jornada.csv")
     df = df[df["valueTimePlayed"] > 0].copy()
     df["minutos"] = df["valueTimePlayed"] / 60.0
     df["ppm"] = df["pointsJourney"] / df["minutos"]
@@ -107,7 +107,7 @@ def main():
         todos.append(res)
 
     resumen = pd.concat(todos, ignore_index=True)
-    resumen.to_csv("data/backtest_resumen.csv", index=False)
+    resumen.to_csv("data/procesado/backtest_resumen.csv", index=False)
 
     best = resumen.loc[resumen["mae"].idxmin()]
     print("\n  === MEJOR COMBINACIÓN ===")

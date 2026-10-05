@@ -11,8 +11,8 @@ with open("data/mi_equipo/caja.json", encoding="utf-8") as f:
     info_equipo = json.load(f)
 CAJA = info_equipo["amount"]
 
-pred = pd.read_csv("data/prediccion_global.csv")
-pred_v2 = pd.read_csv("data/prediccion_v2.csv")
+pred = pd.read_csv("data/procesado/prediccion_global.csv")
+pred_v2 = pd.read_csv("data/procesado/prediccion_v2.csv")
 plantilla = pd.read_csv("data/mi_equipo/plantilla_actual.csv")
 mercado_snap = pd.read_csv(sorted(glob.glob("data/mercado/mercado_*.csv"))[-1])
 
@@ -179,13 +179,83 @@ def resolver(peso):
     }
 
 
-# === Frontera de Pareto ===
+# === Frontera de Pareto (incluye el PESO_REVAL actual) ===
 pesos_a_explorar = sorted(set(config.PESOS_EXPLORADOS + [round(PESO_REVAL, 2)]))
 print(f"  Explorando {len(pesos_a_explorar)} pesos (incluye actual {PESO_REVAL:.2f})...")
 
 resultados = [resolver(w) for w in pesos_a_explorar]
 pareto = pd.DataFrame(resultados)
 pareto.to_csv("data/mi_equipo/pareto.csv", index=False)
+
+
+# === Detección de zona estable ===
+def set_cambios(r):
+    return frozenset(r["vender"] + r["fichar"])
+
+
+def score_pareto(r, peso):
+    return r["pts_netos"] + peso * r["reval_euros_neta"] / 100_000
+
+
+sets = [set_cambios(r) for r in resultados]
+pesos_ord = [r["peso"] for r in resultados]
+
+grupos = []
+actual = [0]
+for i in range(1, len(sets)):
+    if sets[i] == sets[i - 1]:
+        actual.append(i)
+    else:
+        grupos.append(actual)
+        actual = [i]
+grupos.append(actual)
+
+idx_actual = min(range(len(pesos_ord)), key=lambda i: abs(pesos_ord[i] - PESO_REVAL))
+grupo_actual = next(g for g in grupos if idx_actual in g)
+
+peso_min = pesos_ord[grupo_actual[0]]
+peso_max = pesos_ord[grupo_actual[-1]]
+n_valores = len(grupo_actual)
+
+if n_valores >= 3:
+    robustez = "ALTA"
+elif n_valores == 2:
+    robustez = "MEDIA"
+else:
+    robustez = "BAJA"
+
+ref_score = score_pareto(resultados[idx_actual], PESO_REVAL)
+casi = []
+for i, r in enumerate(resultados):
+    if sets[i] == sets[idx_actual]:
+        continue
+    s = score_pareto(r, PESO_REVAL)
+    diff = abs(s - ref_score) / max(abs(ref_score), 1e-9)
+    if diff < 0.01:
+        casi.append({
+            "peso": r["peso"],
+            "pts_netos": r["pts_netos"],
+            "reval_euros_neta": r["reval_euros_neta"],
+            "diff_pct": round(diff * 100, 2),
+            "vender": r["vender"],
+            "fichar": r["fichar"],
+        })
+
+zona = {
+    "peso_actual": PESO_REVAL,
+    "peso_min": peso_min,
+    "peso_max": peso_max,
+    "n_valores": n_valores,
+    "robustez": robustez,
+    "soluciones_casi_equivalentes": casi,
+}
+with open("data/mi_equipo/zona_estable.json", "w", encoding="utf-8") as f:
+    json.dump(zona, f, ensure_ascii=False, indent=2)
+
+print(f"  Robustez: {robustez} (pesos {peso_min}–{peso_max}, {n_valores} valores)")
+if casi:
+    print(f"  {len(casi)} soluciones casi equivalentes (dentro del 1%)")
+
 
 # === Resolver con el PESO_REVAL actual y guardar ===
 principal = resolver(PESO_REVAL)

@@ -98,9 +98,9 @@ for j in mercado:
 
 df = pd.DataFrame(filas)
 
-# === 4. Histórico 2025-26 (rutas nuevas: data/historico/) ===
-stats_raw = pd.read_csv("data/historico/stats_jornada_2526.csv")
-jug_2526 = pd.read_csv("data/historico/jugadores_2526.csv")
+# === 4. Histórico 2025-26 ===
+stats_raw = pd.read_csv("data/historico/2025-26/stats_jornada.csv")
+jug_2526 = pd.read_csv("data/historico/2025-26/jugadores.csv")
 
 stats_2526 = stats_raw[stats_raw["valueTimePlayed"] > 0].copy()
 stats_2526["minutos"] = stats_2526["valueTimePlayed"] / 60.0
@@ -188,7 +188,7 @@ def fuerza(equipo):
 
 df["fuerza_equipo"] = df["nameTeam"].apply(fuerza)
 
-logos = pd.read_csv("data/equipos_logos.csv").set_index("logo")["equipo"].to_dict()
+logos = pd.read_csv("data/procesado/equipos_logos.csv").set_index("logo")["equipo"].to_dict()
 df["rival"] = df["rival_logo"].map(logos).fillna(df["rival_logo"])
 df["fuerza_rival"] = df["rival"].apply(fuerza)
 
@@ -281,7 +281,6 @@ df["p_baja_15"] = ps_baja
 df["reval_esperada"] = df["reval_euros"] / df["price"].replace(0, np.nan)
 df["reval_euros_norm"] = df["reval_euros"] / 100_000
 
-# Umbrales de precio
 df["N_actual"] = df["partidos_actual"]
 df["media_implicita"] = df["price"] / K
 df["umbral_mantiene"] = (
@@ -311,11 +310,9 @@ df["pronostico"] = [
     pronostico(ps, pb) for ps, pb in zip(df["p_sube_15"], df["p_baja_15"])
 ]
 
-# === 11. Alertas ===
 df["alerta_lesion"] = (df["injuredDays"] > 0) | (df["fisicStatus"] != "fit")
 
-# === 12. Guardar ===
-df.to_csv("data/prediccion_global.csv", index=False)
+df.to_csv("data/procesado/prediccion_global.csv", index=False)
 print(f"  Predicciones: {len(df)} jugadores | "
       f"{df['media_2526_con_bonus'].notna().sum()} con historico | "
       f"{df['cambio_equipo'].sum()} cambiaron de equipo | "

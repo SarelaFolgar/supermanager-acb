@@ -21,7 +21,7 @@ for j in jugadores:
 
 df = pd.DataFrame(sorted(pares.items()), columns=["logo", "equipo"])
 Path("data").mkdir(exist_ok=True)
-df.to_csv("data/equipos_logos.csv", index=False)
+df.to_csv("data/procesado/equipos_logos.csv", index=False)
 
 print(f"Guardados {len(df)} equipos en data/equipos_logos.csv")
 print(df.to_string(index=False))

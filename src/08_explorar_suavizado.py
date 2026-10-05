@@ -4,8 +4,8 @@
 Ejecuta 04_prediccion.py con varios valores de SUAVIZADO_JORNADAS
 y compara cómo cambian los 6 mejores candidatos.
 
-Guarda y restaura data/prediccion_global.csv para no dejar el pipeline
-con el último SUAVIZADO explorado.
+Guarda y restaura data/procesado/prediccion_global.csv para no dejar el
+pipeline con el último SUAVIZADO explorado.
 """
 import json
 import shutil
@@ -31,15 +31,15 @@ def ejecutar_prediccion(suavizado):
         return None
     if "SUAVIZADO override" not in r.stdout:
         print(f"  AVISO: el override no se aplicó para SUAVIZADO={suavizado}")
-    return pd.read_csv("data/prediccion_global.csv")
+    return pd.read_csv("data/procesado/prediccion_global.csv")
 
 
 def main():
-    ruta_pred = Path("data/prediccion_global.csv")
+    ruta_pred = Path("data/procesado/prediccion_global.csv")
     if not ruta_pred.exists():
-        print("  ERROR: no existe data/prediccion_global.csv")
+        print("  ERROR: no existe data/procesado/prediccion_global.csv")
         return
-    ruta_backup = Path("data/_prediccion_global_backup.csv")
+    ruta_backup = Path("data/procesado/_prediccion_global_backup.csv")
     shutil.copy(ruta_pred, ruta_backup)
 
     with open("data/mi_equipo/plantilla_actual.csv", encoding="utf-8") as f:
@@ -96,12 +96,12 @@ def main():
         filas.append(fila)
 
     df_tabla = pd.DataFrame(filas)
-    df_tabla.to_csv("data/exploracion_suavizado.csv", index=False)
+    df_tabla.to_csv("data/procesado/exploracion_suavizado.csv", index=False)
 
-    with open("data/exploracion_suavizado_full.json", "w", encoding="utf-8") as f:
+    with open("data/procesado/exploracion_suavizado_full.json", "w", encoding="utf-8") as f:
         json.dump(resultados, f, ensure_ascii=False, indent=2)
 
-    print(f"\n  Guardado: data/exploracion_suavizado.csv")
+    print(f"\n  Guardado: data/procesado/exploracion_suavizado.csv")
 
 
 if __name__ == "__main__":

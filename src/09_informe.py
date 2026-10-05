@@ -22,9 +22,16 @@ POSICION = info_equipo["position"]
 
 cambios = pd.read_csv("data/mi_equipo/cambios.csv")
 plantilla = pd.read_csv("data/mi_equipo/plantilla_actual.csv")
-pred = pd.read_csv("data/prediccion_global.csv")
-pred_v2 = pd.read_csv("data/prediccion_v2.csv")
+pred = pd.read_csv("data/procesado/prediccion_global.csv")
+pred_v2 = pd.read_csv("data/procesado/prediccion_v2.csv")
 pareto = pd.read_csv("data/mi_equipo/pareto.csv")
+
+# === NUEVO: cargar zona estable si existe ===
+ruta_zona = Path("data/mi_equipo/zona_estable.json")
+zona_estable = None
+if ruta_zona.exists():
+    with open(ruta_zona, encoding="utf-8") as f:
+        zona_estable = json.load(f)
 
 # === Jornada y pesos dinámicos ===
 n_jugadas_actuales = pred["partidos_actual"].max() if "partidos_actual" in pred.columns else 0
@@ -184,6 +191,27 @@ L.append("")
 L.append("Esta sección es la más importante del informe. Propone los 4 cambios que maximizan "
          "el score del optimizador respetando todas las reglas del juego.")
 L.append("")
+
+# === NUEVO: bloque de robustez justo después de la intro ===
+if zona_estable:
+    L.append(f"**Robustez del optimizador:** **{zona_estable['robustez']}**")
+    if zona_estable["n_valores"] >= 2:
+        L.append(f"La solución es idéntica para pesos en "
+                 f"[{zona_estable['peso_min']}, {zona_estable['peso_max']}] "
+                 f"({zona_estable['n_valores']} valores explorados). "
+                 f"El peso actual {zona_estable['peso_actual']} está dentro de esa zona.")
+    else:
+        L.append(f"El peso actual {zona_estable['peso_actual']} es el único en su zona: "
+                 f"mover el peso cambia los cambios recomendados.")
+    if zona_estable.get("soluciones_casi_equivalentes"):
+        L.append("")
+        L.append(f"**{len(zona_estable['soluciones_casi_equivalentes'])} soluciones "
+                 f"casi equivalentes** (score dentro del 1%):")
+        L.append("")
+        for c in zona_estable["soluciones_casi_equivalentes"]:
+            L.append(f"- Peso {c['peso']}: {', '.join(c['vender'])} → "
+                     f"{', '.join(c['fichar'])} (score −{c['diff_pct']}%)")
+    L.append("")
 
 if sin_cambios:
     L.append(f"**No hay cambios recomendados.** El mejor cambio no supera el umbral mínimo "
@@ -352,6 +380,22 @@ L.append("2. **¿Los fichajes son estables?** Igual con la columna Fichar. Un n�
 L.append("3. **¿Dónde está el codo?** Busca la fila donde más reval se gana sin sacrificar "
              "demasiados puntos. Normalmente es tu `PESO_REVAL` actual.")
 L.append("")
+
+# === NUEVO: sección de zona estable ===
+if zona_estable:
+    L.append("**Zona estable detectada:**")
+    L.append("")
+    L.append(f"- Misma solución para pesos en [{zona_estable['peso_min']}, "
+             f"{zona_estable['peso_max']}].")
+    L.append(f"- Robustez clasificada como **{zona_estable['robustez']}**.")
+    if zona_estable["n_valores"] >= 3:
+        L.append(f"- Esto significa que, en tu situación actual, la decisión no depende "
+                 f"de afinar el peso: cualquier valor razonable en ese rango da el mismo resultado.")
+    else:
+        L.append(f"- Solo {zona_estable['n_valores']} valores dan la misma solución. "
+                 f"La decisión es sensible al peso elegido.")
+    L.append("")
+
 L.append("**¿De dónde sale el peso?**")
 L.append("")
 L.append("No es un valor óptimo calculado. Es una fórmula lineal que decae entre J1 (peso 15) "
@@ -361,12 +405,11 @@ L.append("- **En J1-J3 tu caja es escasa.** Sin caja no puedes fichar. La única
          "conseguir caja es que tus jugadores suban de precio.")
 L.append("- **En J10+ la plantilla ya está consolidada.** Importan más los puntos que el dinero.")
 L.append("- **Equivalencia práctica:** 100.000 € de reval valen ~2 puntos de media por jornada "
-         "en el mercado. Aceptar una pérdida de 2 puntos ahora a cambio de +84.000 € es un "
-         "intercambio razonable a 5-10 jornadas vista.")
+         "en el mercado.")
 L.append("")
 
 # Sensibilidad al histórico
-ruta_suav = Path("data/exploracion_suavizado.csv")
+ruta_suav = Path("data/procesado/exploracion_suavizado.csv")
 if ruta_suav.exists():
     suav = pd.read_csv(ruta_suav)
     L.append("## Sensibilidad al peso del histórico")
@@ -518,7 +561,6 @@ L.append("Esta sección explica con detalle de dónde sale cada número del info
          "para que alguien que lo vea por primera vez entienda todo sin ayuda.")
 L.append("")
 
-# --- 1. Valoración ---
 L.append("### 1. ¿Qué es la 'valoración'?")
 L.append("")
 L.append("En el Supermanager, cuando hablamos de 'puntos' nos referimos a la **valoración ACB**, "
@@ -531,8 +573,6 @@ L.append("           − pérdidas − tapones en contra − faltas personales")
 L.append("           − T1I − T2I − T3I")
 L.append("```")
 L.append("")
-L.append("Donde `TxC` son tiros anotados y `TxI` son tiros fallados.")
-L.append("")
 L.append("Un jugador que anota 10 puntos reales (5 canastas de 2), coge 8 rebotes, pone 2 tapones, "
          "recibe 3 faltas y falla 4 tiros tendría `10 + 8 + 2 + 3 − 4 = 19` de valoración.")
 L.append("")
@@ -541,7 +581,6 @@ L.append("**Bonus por victoria:** si el equipo gana y la valoración es positiva
          "no hay bonus.")
 L.append("")
 
-# --- 2. Puntos esperados ---
 L.append("### 2. Puntos esperados (Pts esp.)")
 L.append("")
 L.append("Es la valoración ACB que **esperamos** que haga el jugador en la próxima jornada. "
@@ -553,20 +592,8 @@ L.append("```")
 L.append("W = partidos_jugados / (partidos_jugados + SUAVIZADO)")
 L.append("```")
 L.append("")
-L.append(f"Con `SUAVIZADO = {config.SUAVIZADO_JORNADAS}`:")
-L.append("")
-L.append("| Partidos jugados | W (temporada actual) | 1−W (histórico) |")
-L.append("|-----------------:|--------------------:|----------------:|")
-L.append("| 1 | 0,20 | 0,80 |")
-L.append("| 2 | 0,33 | 0,67 |")
-L.append("| 3 | 0,43 | 0,57 |")
-L.append("| 4 | 0,50 | 0,50 |")
-L.append("| 5 | 0,56 | 0,44 |")
-L.append("| 8 | 0,67 | 0,33 |")
-L.append("| 20 | 0,83 | 0,17 |")
-L.append("")
-L.append("**No hay que tocar nada.** Se ajusta solo. En J1 se fía casi todo del histórico. "
-         "En J5 lo actual ya pesa más. En J20 lo actual pesa 83%.")
+L.append(f"Con `SUAVIZADO = {config.SUAVIZADO_JORNADAS}`: J1 → 0,20; J2 → 0,33; J4 → 0,50; "
+         f"J5 → 0,56; J10 → 0,71; J20 → 0,83.")
 L.append("")
 L.append("#### Paso 2 — Peso del histórico según cambio de equipo")
 L.append("")
@@ -577,17 +604,11 @@ L.append("peso_hist = (1 − W) × factor_hist")
 L.append("peso_actual = 1 − peso_hist")
 L.append("```")
 L.append("")
-L.append("Si un jugador cambió de equipo, su histórico se pondera al 30% porque su rol "
-         "puede ser distinto. Pero solo si ya lleva 3+ partidos en el nuevo (evita el caso "
-         "T. Allen: una sola jornada espectacular inflaba la predicción).")
-L.append("")
 L.append("#### Paso 3 — Media esperada sin bonus")
 L.append("")
 L.append("```")
 L.append("media_sin_bonus = peso_actual × media_actual + peso_hist × media_2526")
 L.append("```")
-L.append("")
-L.append("Las medias son de **valoración sin bonus**. El bonus se añade en el paso 5.")
 L.append("")
 L.append("#### Paso 4 — Probabilidad de victoria")
 L.append("")
@@ -595,68 +616,22 @@ L.append("```")
 L.append("p_win = sigmoide((fuerza_equipo − fuerza_rival) × 4 + localía × 5)")
 L.append("```")
 L.append("")
-L.append("La fuerza del equipo combina win% de 2025-26 con win% de esta temporada "
-         "(ponderadas por W). Localía: +0,10 en casa, −0,10 fuera.")
-L.append("")
 L.append("#### Paso 5 — Bonus esperado por victoria")
 L.append("")
 L.append("```")
 L.append("puntos_v1 = media_sin_bonus × (1 + 0,2 × p_win)")
 L.append("```")
 L.append("")
-L.append("Si el equipo ganara seguro (p_win=1), +20%. Si perdiera seguro (p_win=0), 0%. "
-         "En el medio, proporcional.")
-L.append("")
 L.append("#### Paso 6 — Blend con el modelo de minutos (v2)")
 L.append("")
 L.append("```")
 L.append("puntos_final = (1 − peso_v2) × puntos_v1 + peso_v2 × puntos_v2")
-L.append("puntos_v2 = minutos_esperados × PPM_esperado × (1 + 0,2 × p_win)")
 L.append("```")
 L.append("")
-L.append(f"En J{jornada_num}, `peso_v2 = {peso_v2:.3f}`. v2 se pondera poco porque el "
-         f"backtest sobre 2025-26 (6.261 predicciones) demostró que predice similar a v1 "
-         f"(MAE 5,58 vs 5,61).")
-L.append("")
-L.append("#### Jugadores sin histórico 2025-26")
-L.append("")
-L.append("Si un jugador no jugó en ACB la temporada pasada, no tiene `media_2526`. "
-         "En su lugar usamos:")
-L.append("")
-L.append("```")
-L.append("media_referencia = initialPrice / 50.000")
-L.append("```")
-L.append("")
-L.append("El `initialPrice` es lo que la propia ACB esperaba de él al fijarle precio. "
-         "Se mezcla con la media actual usando la misma W:")
-L.append("")
-L.append("```")
-L.append("media_sin_bonus = W × media_actual + (1 − W) × media_referencia")
-L.append("```")
-L.append("")
-L.append("Con J1 (W=0,20): 20% su partido real, 80% la referencia inicial. "
-         "Con J10 (W=0,71): 71% sus partidos, 29% la referencia.")
-L.append("")
-L.append("#### Ejemplo real (Tavares, J3)")
-L.append("")
-L.append("| Paso | Valor |")
-L.append("|------|------:|")
-L.append("| Media 2025-26 sin bonus | 16,43 |")
-L.append("| Media actual (2 partidos) sin bonus | ~12,15 |")
-L.append("| W (2 partidos) | 0,33 |")
-L.append("| factor_hist | 1,0 (sigue en Real Madrid) |")
-L.append("| peso_hist / peso_actual | 0,67 / 0,33 |")
-L.append("| media_sin_bonus | 0,33×12,15 + 0,67×16,43 = **15,02** |")
-L.append("| p_win (contra Obradoiro, en casa) | ~0,72 |")
-L.append("| **Pts esp. v1** | 15,02 × (1 + 0,2×0,72) = **17,17** |")
-L.append("| Pts esp. v2 | 16,90 |")
-L.append("| **Pts esp. final** | 0,97 × 17,17 + 0,03 × 16,90 = **17,16** |")
+L.append(f"En J{jornada_num}, `peso_v2 = {peso_v2:.3f}`.")
 L.append("")
 
-# --- 3. Cuándo pesa más la temporada actual ---
 L.append("### 3. ¿Cuándo empieza a pesar más la temporada actual?")
-L.append("")
-L.append(f"Con `SUAVIZADO = {config.SUAVIZADO_JORNADAS}` (óptimo según el backtest):")
 L.append("")
 L.append("| Partidos jugados | Peso actual (W) | Peso histórico (1−W) | ¿Cuál manda? |")
 L.append("|-----------------:|----------------:|---------------------:|--------------|")
@@ -669,25 +644,13 @@ L.append("| J10 | 0,71 | 0,29 | Temporada actual |")
 L.append("| J20 | 0,83 | 0,17 | Temporada actual |")
 L.append("")
 L.append("Esto significa que **a partir de la J5 el modelo se fía más de lo que el jugador "
-         "está haciendo esta temporada que de lo que hizo el año pasado.** Se ajusta solo.")
+         "está haciendo esta temporada que de lo que hizo el año pasado.**")
 L.append("")
 
-# --- 4. Backtest SUAVIZADO ---
 L.append("### 4. Cómo se eligió SUAVIZADO = 4 (backtest)")
 L.append("")
 L.append("El valor óptimo de `SUAVIZADO_JORNADAS` se obtuvo con un **backtest sobre la "
          "temporada 2025-26** (34 jornadas, ~250 jugadores, 6.261 predicciones).")
-L.append("")
-L.append("El método fue:")
-L.append("")
-L.append("1. **Dividir la temporada de cada jugador** en dos partes: los **primeros 5 partidos** "
-         "(simulan el 'histórico') y los **partidos 6 a 34** (simulan la temporada en curso).")
-L.append("2. **Para cada jornada J ≥ 6**, predecir J usando solo datos hasta J−1, probando varios "
-         "valores de SUAVIZADO.")
-L.append("3. **Comparar la predicción con lo que realmente hizo** el jugador en J.")
-L.append("4. **Calcular el MAE** (error medio absoluto) para cada valor.")
-L.append("")
-L.append("Resultados:")
 L.append("")
 L.append("| SUAVIZADO | MAE | RMSE | Correlación |")
 L.append("|----------:|----:|-----:|------------:|")
@@ -698,23 +661,12 @@ L.append("| 6 | 5,584 | 7,155 | 0,454 |")
 L.append("| 8 | 5,600 | 7,174 | 0,451 |")
 L.append("")
 L.append("El valor 4 minimiza el MAE. **Las diferencias son ruido** (5,575 a 5,600), así que "
-         "cualquier valor entre 3 y 6 funcionaría igual de bien. Elegimos 4 por ser el más "
-         "redondo, no porque sea demostrablemente superior.")
-L.append("")
-L.append("**¿Por qué funciona el backtest sin datos de otra temporada?** Porque no necesita "
-         "'histórico de años anteriores'. Mide: *¿cuánto peso dar a los primeros partidos vs a "
-         "los más recientes?* Eso es exactamente el mismo problema matemático que resolverá W.")
+         "cualquier valor entre 3 y 6 funcionaría igual de bien.")
 L.append("")
 
-# --- 5. Modelo probabilístico (NUEVO) ---
 L.append("### 5. Modelo probabilístico de revalorización")
 L.append("")
-L.append("Para predecir la revalorización de precio **no basta con un solo punto**. Si un "
-         "jugador tiene 15,7 pts esperados y su umbral de subida es 15,4, no es un 'sube 15%' "
-         "seguro: es prácticamente una moneda al aire. La varianza jornada a jornada es de "
-         "±5-7 puntos.")
-L.append("")
-L.append("Para capturarlo, usamos **simulación Monte Carlo**:")
+L.append("Simulamos 4.000 valoraciones del próximo partido con:")
 L.append("")
 L.append("```")
 L.append("valoración_simulada ~ Normal(mu = pts_esperados, sd = 4.5 + 0.25 × mu)")
@@ -722,32 +674,23 @@ L.append("objetivo = 50.000 × (S + valoración_simulada) / (N + 1)")
 L.append("precio_nuevo = clip(objetivo, precio × 0.85, precio × 1.15)")
 L.append("```")
 L.append("")
-L.append(f"Con `{config.N_SIMULACIONES:,}` simulaciones por jugador. De la distribución de "
-         f"`precio_nuevo − precio` obtenemos:")
+L.append("De la distribución de `precio_nuevo − precio` obtenemos:")
 L.append("")
-L.append("- **Reval. €**: media de la variación (lo que usa el optimizador).")
-L.append("- **P(↑15%)**: fracción de simulaciones donde toca el techo del +15%.")
-L.append("- **P(↓15%)**: fracción de simulaciones donde toca el suelo del −15%.")
-L.append("")
-L.append("**Ejemplo:** un jugador con 15,7 pts esperados y umbral de subida 15,4 puede tener "
-         "P(↑15%) = 52%, es decir, una moneda al aire. En cambio, uno con 20 pts esperados y "
-         "umbral 15,4 tendría P(↑15%) = 90%.")
-L.append("")
-L.append("La desviación típica `4.5 + 0.25 × mu` está ajustada empíricamente sobre 2025-26: "
-         "los jugadores que puntúan más tienen también más varianza.")
+L.append("- **Reval. €**: media de la variación.")
+L.append("- **P(↑15%)**: fracción donde toca el techo del +15%.")
+L.append("- **P(↓15%)**: fracción donde toca el suelo del −15%.")
 L.append("")
 
-# --- 6. Umbrales de precio ---
 L.append("### 6. Umbrales de precio")
 L.append("")
 L.append("Regla oficial del Supermanager:")
 L.append("")
 L.append("```")
 L.append("precio_nuevo = 50.000 × media_acumulada")
-L.append("media_acumulada = (suma de valoraciones de la temporada) / (partidos jugados)")
+L.append("media_acumulada = (suma de valoraciones) / (partidos jugados)")
 L.append("```")
 L.append("")
-L.append("Con tope del **±15%** por jornada. Despejando la valoración `X` necesaria para cada umbral:")
+L.append("Con tope ±15%. Despejando la valoración `X` necesaria para cada umbral:")
 L.append("")
 L.append("```")
 L.append("X_mantiene = P × (N+1) / 50.000 − S")
@@ -755,32 +698,11 @@ L.append("X_sube_15 = P × 1,15 × (N+1) / 50.000 − S")
 L.append("X_baja_15 = P × 0,85 × (N+1) / 50.000 − S")
 L.append("```")
 L.append("")
-L.append("Donde `P` es el precio actual, `N` los partidos jugados esta temporada, "
-         "y `S` la suma de valoraciones esta temporada.")
-L.append("")
-L.append("**Ejemplo con Tavares (J1):**")
-L.append("- Precio: 637.500 € · Partidos: 1 · Suma de valoraciones: 10,8.")
-L.append("- `X_mantiene = 637.500 × 2 / 50.000 − 10,8 = 14,7`.")
-L.append("- `X_sube_15 = 637.500 × 1,15 × 2 / 50.000 − 10,8 = 18,5`.")
-L.append("- `X_baja_15 = 637.500 × 0,85 × 2 / 50.000 − 10,8 = 10,9`.")
+L.append("**Verificación empírica:** validada contra capturas reales. Error medio 1,05% "
+         "contando jornadas sin jugar como 0 (236/250 dentro del 1%).")
 L.append("")
 
-L.append("**Verificación empírica:** hemos validado esta fórmula contra las capturas reales "
-         "del mercado. Resultados:")
-L.append("")
-L.append("| Contar jornadas sin jugar (0 pts) | Error medio | Aciertos < 1% |")
-L.append("|:---------------------------------:|------------:|--------------:|")
-L.append("| Sí | 1,05% | 236 / 250 |")
-L.append("| No | 1,62% | 231 / 250 |")
-L.append("")
-L.append("**Conclusión:** la fórmula funciona, y una jornada sin jugar cuenta como 0 en la "
-         "media (no se salta). El error del 1% es ruido de redondeo.")
-L.append("")
-
-# --- 7. Pronóstico ---
 L.append("### 7. Pronóstico por probabilidades")
-L.append("")
-L.append("El pronóstico ya no compara un punto con un umbral: se basa en las probabilidades.")
 L.append("")
 L.append("| Pronóstico | Condición |")
 L.append("|:----------:|-----------|")
@@ -791,53 +713,36 @@ L.append("| ↓ Baja | 25% ≤ P(↓15%) < 50% |")
 L.append("| ↓↓ Baja 15% | P(↓15%) ≥ 50% |")
 L.append("")
 
-# --- 8. Score ---
 L.append("### 8. Score del optimizador")
-L.append("")
-L.append("El optimizador maximiza:")
 L.append("")
 L.append("```")
 L.append(f"score = pts_final + {PESO_REVAL:.2f} × reval_euros / 100.000")
 L.append("```")
 L.append("")
-L.append(f"En J{jornada_num}, cada 100.000 € de reval valen **{PESO_REVAL:.2f} puntos** en el score. "
-         f"El peso broker decae con las jornadas: en J1 vale {config.PESO_REVAL_INICIAL}, "
-         f"en J{config.JORNADAS_DECAIMIENTO}+ vale {config.PESO_REVAL_FINAL}.")
-L.append("")
 
-# --- 9. Restricciones ---
 L.append("### 9. Restricciones")
-L.append("")
-L.append("El solver `pulp` busca la combinación de 4 cambios (ventas + fichajes) que maximiza "
-         "el score total, sujeto a:")
 L.append("")
 L.append("- 2 bases, 4 aleros, 4 pívots.")
 L.append("- Máximo 2 extracomunitarios.")
 L.append("- Mínimo 4 formados localmente.")
-L.append("- Caja + ventas − compras ≥ 0 (nunca negativa).")
+L.append("- Caja + ventas − compras ≥ 0.")
 L.append("- Máximo 4 cambios en total.")
-L.append("- Si `FORZAR_VENTA_LESIONADOS`, todo jugador con `injuredDays > 0` o `fisicStatus != 'fit'` "
-         "se vende obligatoriamente.")
+L.append("- Venta forzosa de lesionados.")
 L.append("")
 
-# --- 10. Frontera Pareto ---
 L.append("### 10. Frontera puntos vs. broker")
 L.append("")
 L.append("El optimizador tiene un dilema: no puede maximizar puntos y broker a la vez. "
-         "Para verlo, se ejecuta con varios pesos del broker. Cada fila de la tabla muestra "
-         "qué cambios haría con ese peso. Sirve para ver si la recomendación es **robusta** "
-         "(mismos jugadores en varias filas) o sensible al peso.")
+         "Se ejecuta con varios pesos y se muestran los cambios en cada caso.")
 L.append("")
 
-# --- 11. Sensibilidad ---
 L.append("### 11. Sensibilidad al histórico")
 L.append("")
 L.append("El modelo se ejecuta también con distintos valores de `SUAVIZADO_JORNADAS`. "
-         "Si el top de candidatos es parecido en todos los valores, el modelo es robusto. "
-         "Si cambia mucho, la decisión de cuánto histórico usar importa.")
+         "Si el top de candidatos es parecido, el modelo es robusto. Si cambia mucho, "
+         "el parámetro importa.")
 L.append("")
 
-# --- 12. Pesos dinámicos ---
 L.append("### 12. Pesos dinámicos por jornada")
 L.append("")
 L.append("| Jornada | Peso broker | Peso v2 |")
@@ -848,50 +753,45 @@ L.append(f"| J5 | {config.PESO_REVAL_FINAL + (config.PESO_REVAL_INICIAL - config
 L.append(f"| J10 | {config.PESO_REVAL_FINAL:.2f} | {peso_v2_para(10):.3f} |")
 L.append("")
 
-# --- 13. Glosario ---
 L.append("### 13. Glosario")
 L.append("")
 L.append("| Término | Significado |")
 L.append("|---------|-------------|")
-L.append("| **Valoración** | Puntos Supermanager (fórmula arriba). |")
-L.append("| **Pts esp.** | Media esperada de la valoración en la próxima jornada. |")
-L.append("| **Sube 15% con** | Valoración mínima para subir el 15% (tope máximo). |")
+L.append("| **Valoración** | Puntos Supermanager. |")
+L.append("| **Pts esp.** | Media esperada de la valoración. |")
+L.append("| **Sube 15% con** | Valoración mínima para subir el 15%. |")
 L.append("| **Mantiene con** | Valoración necesaria para que el precio no cambie. |")
-L.append("| **Baja 15% con** | Valoración por debajo de la cual baja el 15% (tope mínimo). |")
-L.append("| **P(↑15%)** | Probabilidad estimada de subir el 15% (tope máximo). |")
-L.append("| **P(↓15%)** | Probabilidad estimada de bajar el 15% (tope mínimo). |")
-L.append("| **Reval. €** | Variación esperada del precio, en euros (media de la distribución). |")
+L.append("| **Baja 15% con** | Valoración por debajo de la cual baja el 15%. |")
+L.append("| **P(↑15%)** | Probabilidad de subir el 15%. |")
+L.append("| **P(↓15%)** | Probabilidad de bajar el 15%. |")
+L.append("| **Reval. €** | Variación esperada del precio, en euros. |")
 L.append("| **Score** | Valor que el optimizador maximiza. |")
 L.append("| **W** | Peso de la temporada actual vs el histórico. |")
-L.append("| **PPM** | Puntos por minuto (valoración / minutos). |")
-L.append("| **P(ganar)** | Probabilidad de que gane el equipo. |")
-L.append("| **K** | Euros por punto de media (50.000). |")
-L.append("| **EXT** | Extracomunitario (máx. 2). |")
-L.append("| **JFL** | Formado localmente (mín. 4). |")
-L.append("| **v1** | Modelo basado en puntos históricos. |")
-L.append("| **v2** | Modelo basado en minutos. |")
-L.append("| **Blend** | Mezcla ponderada de v1 y v2. |")
-L.append("| **Pareto** | Exploración del óptimo con distintos pesos de broker. |")
-L.append("| **Sensibilidad** | Exploración del óptimo con distintos pesos de histórico. |")
-L.append("| **MAE** | Error medio absoluto (métrica del backtest). |")
-L.append("| **Monte Carlo** | Simulación de la distribución de valoración del próximo partido. |")
+L.append("| **PPM** | Puntos por minuto. |")
+L.append("| **EXT** | Extracomunitario. |")
+L.append("| **JFL** | Formado localmente. |")
+L.append("| **v1** | Modelo de puntos históricos. |")
+L.append("| **v2** | Modelo de minutos. |")
+L.append("| **Pareto** | Exploración con distintos pesos de broker. |")
+L.append("| **Zona estable** | Rango de pesos donde la solución no cambia. |")
+L.append("| **Robustez** | ALTA/MEDIA/BAJA según el tamaño de la zona estable. |")
+L.append("| **MAE** | Error medio absoluto. |")
+L.append("| **Monte Carlo** | Simulación de la distribución del próximo partido. |")
 L.append("")
 
-# --- 14. Limitaciones ---
 L.append("### 14. Limitaciones conocidas")
 L.append("")
-L.append("- El modelo **no usa racha ni estado de forma a corto plazo** (solo media).")
-L.append("- La **probabilidad de victoria** se estima con win% + localía, sin tener en cuenta "
-         "bajas, enfrentamientos previos, ni el rival concreto.")
+L.append("- El modelo **no usa racha ni estado de forma a corto plazo**.")
+L.append("- La **probabilidad de victoria** se estima con win% + localía, sin bajas ni "
+         "enfrentamientos previos.")
 L.append("- Los **jugadores sin histórico** usan `initialPrice / 50.000` como estimación.")
-L.append("- **El factor de cambio de equipo** es una aproximación: no detecta jugadores que "
-         "cambian de rol sin cambiar de equipo.")
+L.append("- El **factor de cambio de equipo** no detecta cambios de rol sin cambio de equipo.")
 L.append("- La **desviación típica** de la valoración (4.5 + 0.25 × mu) está ajustada "
-         "empíricamente sobre 2025-26; no es una ley universal.")
-L.append("- El **backtest sobre 2025-26** es la mejor validación disponible, pero no garantiza "
-         "los mismos resultados en 2026-27.")
-L.append("- El **reval. € es una media de una distribución**, no una promesa. La varianza "
-         "real puede ser grande.")
+         "empíricamente sobre 2025-26.")
+L.append("- El **backtest sobre 2025-26** no garantiza los mismos resultados en 2026-27.")
+L.append("- El **reval. € es una media de una distribución**, no una promesa.")
+L.append("- La **zona estable** se calcula sobre los pesos explorados, que son finitos. "
+         "Un valor intermedio entre dos explorados podría dar otra solución.")
 
 # ═══════════════════════════════════════════════════════════
 # GUARDAR

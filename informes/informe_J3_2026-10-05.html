@@ -62,9 +62,9 @@
 </head>
 <body>
 <h1 id="informe-supermanager-acb-j3">Informe Supermanager ACB — J3</h1>
-<p><strong>Fecha:</strong> 2026-10-05 11:47<br />
+<p><strong>Fecha:</strong> 2026-10-05 14:29<br />
 <strong>Equipo:</strong> equipo pocho (<code>246638</code>)<br />
-<strong>Caja:</strong> 28,000 € · <strong>Valor:</strong> 5,438,675 € · <strong>Posición general:</strong> 68858</p>
+<strong>Caja:</strong> 28,000 € · <strong>Valor:</strong> 5,438,675 € · <strong>Posición general:</strong> 68443</p>
 <p><strong>Configuración activa:</strong> peso broker = 11.89 · peso modelo v2 (minutos) = 0.033</p>
 <blockquote>
 <p>Los puntos esperados son un ranking relativo, no una previsión exacta. Sirven para ordenar opciones y comparar jugadores entre sí.</p>
@@ -73,6 +73,8 @@
 <hr />
 <h2 id="cambios-recomendados">Cambios recomendados</h2>
 <p>Esta sección es la más importante del informe. Propone los 4 cambios que maximizan el score del optimizador respetando todas las reglas del juego.</p>
+<p><strong>Robustez del optimizador:</strong> <strong>ALTA</strong><br />
+La solución es idéntica para pesos en [8.0, 15.0] (3 valores explorados). El peso actual 11.88888888888889 está dentro de esa zona.</p>
 <h3 id="vender">Vender</h3>
 <table>
 <thead>
@@ -636,12 +638,18 @@
 <li><strong>¿Los fichajes son estables?</strong> Igual con la columna Fichar. Un núcleo fijo indica que son claramente buenos.</li>
 <li><strong>¿Dónde está el codo?</strong> Busca la fila donde más reval se gana sin sacrificar demasiados puntos. Normalmente es tu <code>PESO_REVAL</code> actual.</li>
 </ol>
+<p><strong>Zona estable detectada:</strong></p>
+<ul>
+<li>Misma solución para pesos en [8.0, 15.0].</li>
+<li>Robustez clasificada como <strong>ALTA</strong>.</li>
+<li>Esto significa que, en tu situación actual, la decisión no depende de afinar el peso: cualquier valor razonable en ese rango da el mismo resultado.</li>
+</ul>
 <p><strong>¿De dónde sale el peso?</strong></p>
 <p>No es un valor óptimo calculado. Es una fórmula lineal que decae entre J1 (peso 15) y J10 (peso 1). La justificación:</p>
 <ul>
 <li><strong>En J1-J3 tu caja es escasa.</strong> Sin caja no puedes fichar. La única forma de conseguir caja es que tus jugadores suban de precio.</li>
 <li><strong>En J10+ la plantilla ya está consolidada.</strong> Importan más los puntos que el dinero.</li>
-<li><strong>Equivalencia práctica:</strong> 100.000 € de reval valen ~2 puntos de media por jornada en el mercado. Aceptar una pérdida de 2 puntos ahora a cambio de +84.000 € es un intercambio razonable a 5-10 jornadas vista.</li>
+<li><strong>Equivalencia práctica:</strong> 100.000 € de reval valen ~2 puntos de media por jornada en el mercado.</li>
 </ul>
 <h2 id="sensibilidad-al-peso-del-historico">Sensibilidad al peso del histórico</h2>
 <p>Igual que con el broker, aquí exploramos cuánto tarda la temporada actual en pesar más que el histórico. El modelo se ejecuta con distintos valores de <code>SUAVIZADO_JORNADAS</code> y se ve qué candidatos salen en cada caso.</p>
@@ -1051,7 +1059,6 @@
            − pérdidas − tapones en contra − faltas personales
            − T1I − T2I − T3I
 </code></pre>
-<p>Donde <code>TxC</code> son tiros anotados y <code>TxI</code> son tiros fallados.</p>
 <p>Un jugador que anota 10 puntos reales (5 canastas de 2), coge 8 rebotes, pone 2 tapones, recibe 3 faltas y falla 4 tiros tendría <code>10 + 8 + 2 + 3 − 4 = 19</code> de valoración.</p>
 <p><strong>Bonus por victoria:</strong> si el equipo gana y la valoración es positiva, el Supermanager multiplica los puntos por 1,2. Si pierde, o si la valoración es ≤ 0, no hay bonus.</p>
 <h3 id="2-puntos-esperados-pts-esp">2. Puntos esperados (Pts esp.)</h3>
@@ -1059,139 +1066,27 @@
 <h4 id="paso-1-cuanto-pesa-cada-temporada">Paso 1 — ¿Cuánto pesa cada temporada?</h4>
 <pre><code>W = partidos_jugados / (partidos_jugados + SUAVIZADO)
 </code></pre>
-<p>Con <code>SUAVIZADO = 4</code>:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">Partidos jugados</th>
-<th style="text-align: right;">W (temporada actual)</th>
-<th style="text-align: right;">1−W (histórico)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0,20</td>
-<td style="text-align: right;">0,80</td>
-</tr>
-<tr>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0,33</td>
-<td style="text-align: right;">0,67</td>
-</tr>
-<tr>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0,43</td>
-<td style="text-align: right;">0,57</td>
-</tr>
-<tr>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0,50</td>
-<td style="text-align: right;">0,50</td>
-</tr>
-<tr>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0,56</td>
-<td style="text-align: right;">0,44</td>
-</tr>
-<tr>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0,67</td>
-<td style="text-align: right;">0,33</td>
-</tr>
-<tr>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">0,83</td>
-<td style="text-align: right;">0,17</td>
-</tr>
-</tbody>
-</table>
-<p><strong>No hay que tocar nada.</strong> Se ajusta solo. En J1 se fía casi todo del histórico. En J5 lo actual ya pesa más. En J20 lo actual pesa 83%.</p>
+<p>Con <code>SUAVIZADO = 4</code>: J1 → 0,20; J2 → 0,33; J4 → 0,50; J5 → 0,56; J10 → 0,71; J20 → 0,83.</p>
 <h4 id="paso-2-peso-del-historico-segun-cambio-de-equipo">Paso 2 — Peso del histórico según cambio de equipo</h4>
 <pre><code>factor_hist = 0,3  si cambió de equipo y lleva ≥ 3 partidos en el nuevo
 factor_hist = 1,0  en cualquier otro caso
 peso_hist = (1 − W) × factor_hist
 peso_actual = 1 − peso_hist
 </code></pre>
-<p>Si un jugador cambió de equipo, su histórico se pondera al 30% porque su rol puede ser distinto. Pero solo si ya lleva 3+ partidos en el nuevo (evita el caso T. Allen: una sola jornada espectacular inflaba la predicción).</p>
 <h4 id="paso-3-media-esperada-sin-bonus">Paso 3 — Media esperada sin bonus</h4>
 <pre><code>media_sin_bonus = peso_actual × media_actual + peso_hist × media_2526
 </code></pre>
-<p>Las medias son de <strong>valoración sin bonus</strong>. El bonus se añade en el paso 5.</p>
 <h4 id="paso-4-probabilidad-de-victoria">Paso 4 — Probabilidad de victoria</h4>
 <pre><code>p_win = sigmoide((fuerza_equipo − fuerza_rival) × 4 + localía × 5)
 </code></pre>
-<p>La fuerza del equipo combina win% de 2025-26 con win% de esta temporada (ponderadas por W). Localía: +0,10 en casa, −0,10 fuera.</p>
 <h4 id="paso-5-bonus-esperado-por-victoria">Paso 5 — Bonus esperado por victoria</h4>
 <pre><code>puntos_v1 = media_sin_bonus × (1 + 0,2 × p_win)
 </code></pre>
-<p>Si el equipo ganara seguro (p_win=1), +20%. Si perdiera seguro (p_win=0), 0%. En el medio, proporcional.</p>
 <h4 id="paso-6-blend-con-el-modelo-de-minutos-v2">Paso 6 — Blend con el modelo de minutos (v2)</h4>
 <pre><code>puntos_final = (1 − peso_v2) × puntos_v1 + peso_v2 × puntos_v2
-puntos_v2 = minutos_esperados × PPM_esperado × (1 + 0,2 × p_win)
 </code></pre>
-<p>En J3, <code>peso_v2 = 0.033</code>. v2 se pondera poco porque el backtest sobre 2025-26 (6.261 predicciones) demostró que predice similar a v1 (MAE 5,58 vs 5,61).</p>
-<h4 id="jugadores-sin-historico-2025-26">Jugadores sin histórico 2025-26</h4>
-<p>Si un jugador no jugó en ACB la temporada pasada, no tiene <code>media_2526</code>. En su lugar usamos:</p>
-<pre><code>media_referencia = initialPrice / 50.000
-</code></pre>
-<p>El <code>initialPrice</code> es lo que la propia ACB esperaba de él al fijarle precio. Se mezcla con la media actual usando la misma W:</p>
-<pre><code>media_sin_bonus = W × media_actual + (1 − W) × media_referencia
-</code></pre>
-<p>Con J1 (W=0,20): 20% su partido real, 80% la referencia inicial. Con J10 (W=0,71): 71% sus partidos, 29% la referencia.</p>
-<h4 id="ejemplo-real-tavares-j3">Ejemplo real (Tavares, J3)</h4>
-<table>
-<thead>
-<tr>
-<th>Paso</th>
-<th style="text-align: right;">Valor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Media 2025-26 sin bonus</td>
-<td style="text-align: right;">16,43</td>
-</tr>
-<tr>
-<td>Media actual (2 partidos) sin bonus</td>
-<td style="text-align: right;">~12,15</td>
-</tr>
-<tr>
-<td>W (2 partidos)</td>
-<td style="text-align: right;">0,33</td>
-</tr>
-<tr>
-<td>factor_hist</td>
-<td style="text-align: right;">1,0 (sigue en Real Madrid)</td>
-</tr>
-<tr>
-<td>peso_hist / peso_actual</td>
-<td style="text-align: right;">0,67 / 0,33</td>
-</tr>
-<tr>
-<td>media_sin_bonus</td>
-<td style="text-align: right;">0,33×12,15 + 0,67×16,43 = <strong>15,02</strong></td>
-</tr>
-<tr>
-<td>p_win (contra Obradoiro, en casa)</td>
-<td style="text-align: right;">~0,72</td>
-</tr>
-<tr>
-<td><strong>Pts esp. v1</strong></td>
-<td style="text-align: right;">15,02 × (1 + 0,2×0,72) = <strong>17,17</strong></td>
-</tr>
-<tr>
-<td>Pts esp. v2</td>
-<td style="text-align: right;">16,90</td>
-</tr>
-<tr>
-<td><strong>Pts esp. final</strong></td>
-<td style="text-align: right;">0,97 × 17,17 + 0,03 × 16,90 = <strong>17,16</strong></td>
-</tr>
-</tbody>
-</table>
+<p>En J3, <code>peso_v2 = 0.033</code>.</p>
 <h3 id="3-cuando-empieza-a-pesar-mas-la-temporada-actual">3. ¿Cuándo empieza a pesar más la temporada actual?</h3>
-<p>Con <code>SUAVIZADO = 4</code> (óptimo según el backtest):</p>
 <table>
 <thead>
 <tr>
@@ -1246,17 +1141,9 @@ puntos_v2 = minutos_esperados × PPM_esperado × (1 + 0,2 × p_win)
 </tr>
 </tbody>
 </table>
-<p>Esto significa que <strong>a partir de la J5 el modelo se fía más de lo que el jugador está haciendo esta temporada que de lo que hizo el año pasado.</strong> Se ajusta solo.</p>
+<p>Esto significa que <strong>a partir de la J5 el modelo se fía más de lo que el jugador está haciendo esta temporada que de lo que hizo el año pasado.</strong></p>
 <h3 id="4-como-se-eligio-suavizado-4-backtest">4. Cómo se eligió SUAVIZADO = 4 (backtest)</h3>
 <p>El valor óptimo de <code>SUAVIZADO_JORNADAS</code> se obtuvo con un <strong>backtest sobre la temporada 2025-26</strong> (34 jornadas, ~250 jugadores, 6.261 predicciones).</p>
-<p>El método fue:</p>
-<ol>
-<li><strong>Dividir la temporada de cada jugador</strong> en dos partes: los <strong>primeros 5 partidos</strong> (simulan el 'histórico') y los <strong>partidos 6 a 34</strong> (simulan la temporada en curso).</li>
-<li><strong>Para cada jornada J ≥ 6</strong>, predecir J usando solo datos hasta J−1, probando varios valores de SUAVIZADO.</li>
-<li><strong>Comparar la predicción con lo que realmente hizo</strong> el jugador en J.</li>
-<li><strong>Calcular el MAE</strong> (error medio absoluto) para cada valor.</li>
-</ol>
-<p>Resultados:</p>
 <table>
 <thead>
 <tr>
@@ -1299,64 +1186,31 @@ puntos_v2 = minutos_esperados × PPM_esperado × (1 + 0,2 × p_win)
 </tr>
 </tbody>
 </table>
-<p>El valor 4 minimiza el MAE. <strong>Las diferencias son ruido</strong> (5,575 a 5,600), así que cualquier valor entre 3 y 6 funcionaría igual de bien. Elegimos 4 por ser el más redondo, no porque sea demostrablemente superior.</p>
-<p><strong>¿Por qué funciona el backtest sin datos de otra temporada?</strong> Porque no necesita 'histórico de años anteriores'. Mide: <em>¿cuánto peso dar a los primeros partidos vs a los más recientes?</em> Eso es exactamente el mismo problema matemático que resolverá W.</p>
+<p>El valor 4 minimiza el MAE. <strong>Las diferencias son ruido</strong> (5,575 a 5,600), así que cualquier valor entre 3 y 6 funcionaría igual de bien.</p>
 <h3 id="5-modelo-probabilistico-de-revalorizacion">5. Modelo probabilístico de revalorización</h3>
-<p>Para predecir la revalorización de precio <strong>no basta con un solo punto</strong>. Si un jugador tiene 15,7 pts esperados y su umbral de subida es 15,4, no es un 'sube 15%' seguro: es prácticamente una moneda al aire. La varianza jornada a jornada es de ±5-7 puntos.</p>
-<p>Para capturarlo, usamos <strong>simulación Monte Carlo</strong>:</p>
+<p>Simulamos 4.000 valoraciones del próximo partido con:</p>
 <pre><code>valoración_simulada ~ Normal(mu = pts_esperados, sd = 4.5 + 0.25 × mu)
 objetivo = 50.000 × (S + valoración_simulada) / (N + 1)
 precio_nuevo = clip(objetivo, precio × 0.85, precio × 1.15)
 </code></pre>
-<p>Con <code>4,000</code> simulaciones por jugador. De la distribución de <code>precio_nuevo − precio</code> obtenemos:</p>
+<p>De la distribución de <code>precio_nuevo − precio</code> obtenemos:</p>
 <ul>
-<li><strong>Reval. €</strong>: media de la variación (lo que usa el optimizador).</li>
-<li><strong>P(↑15%)</strong>: fracción de simulaciones donde toca el techo del +15%.</li>
-<li><strong>P(↓15%)</strong>: fracción de simulaciones donde toca el suelo del −15%.</li>
+<li><strong>Reval. €</strong>: media de la variación.</li>
+<li><strong>P(↑15%)</strong>: fracción donde toca el techo del +15%.</li>
+<li><strong>P(↓15%)</strong>: fracción donde toca el suelo del −15%.</li>
 </ul>
-<p><strong>Ejemplo:</strong> un jugador con 15,7 pts esperados y umbral de subida 15,4 puede tener P(↑15%) = 52%, es decir, una moneda al aire. En cambio, uno con 20 pts esperados y umbral 15,4 tendría P(↑15%) = 90%.</p>
-<p>La desviación típica <code>4.5 + 0.25 × mu</code> está ajustada empíricamente sobre 2025-26: los jugadores que puntúan más tienen también más varianza.</p>
 <h3 id="6-umbrales-de-precio">6. Umbrales de precio</h3>
 <p>Regla oficial del Supermanager:</p>
 <pre><code>precio_nuevo = 50.000 × media_acumulada
-media_acumulada = (suma de valoraciones de la temporada) / (partidos jugados)
+media_acumulada = (suma de valoraciones) / (partidos jugados)
 </code></pre>
-<p>Con tope del <strong>±15%</strong> por jornada. Despejando la valoración <code>X</code> necesaria para cada umbral:</p>
+<p>Con tope ±15%. Despejando la valoración <code>X</code> necesaria para cada umbral:</p>
 <pre><code>X_mantiene = P × (N+1) / 50.000 − S
 X_sube_15 = P × 1,15 × (N+1) / 50.000 − S
 X_baja_15 = P × 0,85 × (N+1) / 50.000 − S
 </code></pre>
-<p>Donde <code>P</code> es el precio actual, <code>N</code> los partidos jugados esta temporada, y <code>S</code> la suma de valoraciones esta temporada.</p>
-<p><strong>Ejemplo con Tavares (J1):</strong><br />
-- Precio: 637.500 € · Partidos: 1 · Suma de valoraciones: 10,8.<br />
-- <code>X_mantiene = 637.500 × 2 / 50.000 − 10,8 = 14,7</code>.<br />
-- <code>X_sube_15 = 637.500 × 1,15 × 2 / 50.000 − 10,8 = 18,5</code>.<br />
-- <code>X_baja_15 = 637.500 × 0,85 × 2 / 50.000 − 10,8 = 10,9</code>.</p>
-<p><strong>Verificación empírica:</strong> hemos validado esta fórmula contra las capturas reales del mercado. Resultados:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Contar jornadas sin jugar (0 pts)</th>
-<th style="text-align: right;">Error medio</th>
-<th style="text-align: right;">Aciertos &lt; 1%</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Sí</td>
-<td style="text-align: right;">1,05%</td>
-<td style="text-align: right;">236 / 250</td>
-</tr>
-<tr>
-<td style="text-align: center;">No</td>
-<td style="text-align: right;">1,62%</td>
-<td style="text-align: right;">231 / 250</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Conclusión:</strong> la fórmula funciona, y una jornada sin jugar cuenta como 0 en la media (no se salta). El error del 1% es ruido de redondeo.</p>
+<p><strong>Verificación empírica:</strong> validada contra capturas reales. Error medio 1,05% contando jornadas sin jugar como 0 (236/250 dentro del 1%).</p>
 <h3 id="7-pronostico-por-probabilidades">7. Pronóstico por probabilidades</h3>
-<p>El pronóstico ya no compara un punto con un umbral: se basa en las probabilidades.</p>
 <table>
 <thead>
 <tr>
@@ -1388,24 +1242,21 @@ X_baja_15 = P × 0,85 × (N+1) / 50.000 − S
 </tbody>
 </table>
 <h3 id="8-score-del-optimizador">8. Score del optimizador</h3>
-<p>El optimizador maximiza:</p>
 <pre><code>score = pts_final + 11.89 × reval_euros / 100.000
 </code></pre>
-<p>En J3, cada 100.000 € de reval valen <strong>11.89 puntos</strong> en el score. El peso broker decae con las jornadas: en J1 vale 15.0, en J10+ vale 1.0.</p>
 <h3 id="9-restricciones">9. Restricciones</h3>
-<p>El solver <code>pulp</code> busca la combinación de 4 cambios (ventas + fichajes) que maximiza el score total, sujeto a:</p>
 <ul>
 <li>2 bases, 4 aleros, 4 pívots.</li>
 <li>Máximo 2 extracomunitarios.</li>
 <li>Mínimo 4 formados localmente.</li>
-<li>Caja + ventas − compras ≥ 0 (nunca negativa).</li>
+<li>Caja + ventas − compras ≥ 0.</li>
 <li>Máximo 4 cambios en total.</li>
-<li>Si <code>FORZAR_VENTA_LESIONADOS</code>, todo jugador con <code>injuredDays &gt; 0</code> o <code>fisicStatus != 'fit'</code> se vende obligatoriamente.</li>
+<li>Venta forzosa de lesionados.</li>
 </ul>
 <h3 id="10-frontera-puntos-vs-broker">10. Frontera puntos vs. broker</h3>
-<p>El optimizador tiene un dilema: no puede maximizar puntos y broker a la vez. Para verlo, se ejecuta con varios pesos del broker. Cada fila de la tabla muestra qué cambios haría con ese peso. Sirve para ver si la recomendación es <strong>robusta</strong> (mismos jugadores en varias filas) o sensible al peso.</p>
+<p>El optimizador tiene un dilema: no puede maximizar puntos y broker a la vez. Se ejecuta con varios pesos y se muestran los cambios en cada caso.</p>
 <h3 id="11-sensibilidad-al-historico">11. Sensibilidad al histórico</h3>
-<p>El modelo se ejecuta también con distintos valores de <code>SUAVIZADO_JORNADAS</code>. Si el top de candidatos es parecido en todos los valores, el modelo es robusto. Si cambia mucho, la decisión de cuánto histórico usar importa.</p>
+<p>El modelo se ejecuta también con distintos valores de <code>SUAVIZADO_JORNADAS</code>. Si el top de candidatos es parecido, el modelo es robusto. Si cambia mucho, el parámetro importa.</p>
 <h3 id="12-pesos-dinamicos-por-jornada">12. Pesos dinámicos por jornada</h3>
 <table>
 <thead>
@@ -1449,15 +1300,15 @@ X_baja_15 = P × 0,85 × (N+1) / 50.000 − S
 <tbody>
 <tr>
 <td><strong>Valoración</strong></td>
-<td>Puntos Supermanager (fórmula arriba).</td>
+<td>Puntos Supermanager.</td>
 </tr>
 <tr>
 <td><strong>Pts esp.</strong></td>
-<td>Media esperada de la valoración en la próxima jornada.</td>
+<td>Media esperada de la valoración.</td>
 </tr>
 <tr>
 <td><strong>Sube 15% con</strong></td>
-<td>Valoración mínima para subir el 15% (tope máximo).</td>
+<td>Valoración mínima para subir el 15%.</td>
 </tr>
 <tr>
 <td><strong>Mantiene con</strong></td>
@@ -1465,19 +1316,19 @@ X_baja_15 = P × 0,85 × (N+1) / 50.000 − S
 </tr>
 <tr>
 <td><strong>Baja 15% con</strong></td>
-<td>Valoración por debajo de la cual baja el 15% (tope mínimo).</td>
+<td>Valoración por debajo de la cual baja el 15%.</td>
 </tr>
 <tr>
 <td><strong>P(↑15%)</strong></td>
-<td>Probabilidad estimada de subir el 15% (tope máximo).</td>
+<td>Probabilidad de subir el 15%.</td>
 </tr>
 <tr>
 <td><strong>P(↓15%)</strong></td>
-<td>Probabilidad estimada de bajar el 15% (tope mínimo).</td>
+<td>Probabilidad de bajar el 15%.</td>
 </tr>
 <tr>
 <td><strong>Reval. €</strong></td>
-<td>Variación esperada del precio, en euros (media de la distribución).</td>
+<td>Variación esperada del precio, en euros.</td>
 </tr>
 <tr>
 <td><strong>Score</strong></td>
@@ -1489,63 +1340,56 @@ X_baja_15 = P × 0,85 × (N+1) / 50.000 − S
 </tr>
 <tr>
 <td><strong>PPM</strong></td>
-<td>Puntos por minuto (valoración / minutos).</td>
-</tr>
-<tr>
-<td><strong>P(ganar)</strong></td>
-<td>Probabilidad de que gane el equipo.</td>
-</tr>
-<tr>
-<td><strong>K</strong></td>
-<td>Euros por punto de media (50.000).</td>
+<td>Puntos por minuto.</td>
 </tr>
 <tr>
 <td><strong>EXT</strong></td>
-<td>Extracomunitario (máx. 2).</td>
+<td>Extracomunitario.</td>
 </tr>
 <tr>
 <td><strong>JFL</strong></td>
-<td>Formado localmente (mín. 4).</td>
+<td>Formado localmente.</td>
 </tr>
 <tr>
 <td><strong>v1</strong></td>
-<td>Modelo basado en puntos históricos.</td>
+<td>Modelo de puntos históricos.</td>
 </tr>
 <tr>
 <td><strong>v2</strong></td>
-<td>Modelo basado en minutos.</td>
-</tr>
-<tr>
-<td><strong>Blend</strong></td>
-<td>Mezcla ponderada de v1 y v2.</td>
+<td>Modelo de minutos.</td>
 </tr>
 <tr>
 <td><strong>Pareto</strong></td>
-<td>Exploración del óptimo con distintos pesos de broker.</td>
+<td>Exploración con distintos pesos de broker.</td>
 </tr>
 <tr>
-<td><strong>Sensibilidad</strong></td>
-<td>Exploración del óptimo con distintos pesos de histórico.</td>
+<td><strong>Zona estable</strong></td>
+<td>Rango de pesos donde la solución no cambia.</td>
+</tr>
+<tr>
+<td><strong>Robustez</strong></td>
+<td>ALTA/MEDIA/BAJA según el tamaño de la zona estable.</td>
 </tr>
 <tr>
 <td><strong>MAE</strong></td>
-<td>Error medio absoluto (métrica del backtest).</td>
+<td>Error medio absoluto.</td>
 </tr>
 <tr>
 <td><strong>Monte Carlo</strong></td>
-<td>Simulación de la distribución de valoración del próximo partido.</td>
+<td>Simulación de la distribución del próximo partido.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="14-limitaciones-conocidas">14. Limitaciones conocidas</h3>
 <ul>
-<li>El modelo <strong>no usa racha ni estado de forma a corto plazo</strong> (solo media).</li>
-<li>La <strong>probabilidad de victoria</strong> se estima con win% + localía, sin tener en cuenta bajas, enfrentamientos previos, ni el rival concreto.</li>
+<li>El modelo <strong>no usa racha ni estado de forma a corto plazo</strong>.</li>
+<li>La <strong>probabilidad de victoria</strong> se estima con win% + localía, sin bajas ni enfrentamientos previos.</li>
 <li>Los <strong>jugadores sin histórico</strong> usan <code>initialPrice / 50.000</code> como estimación.</li>
-<li><strong>El factor de cambio de equipo</strong> es una aproximación: no detecta jugadores que cambian de rol sin cambiar de equipo.</li>
-<li>La <strong>desviación típica</strong> de la valoración (4.5 + 0.25 × mu) está ajustada empíricamente sobre 2025-26; no es una ley universal.</li>
-<li>El <strong>backtest sobre 2025-26</strong> es la mejor validación disponible, pero no garantiza los mismos resultados en 2026-27.</li>
-<li>El <strong>reval. € es una media de una distribución</strong>, no una promesa. La varianza real puede ser grande.</li>
+<li>El <strong>factor de cambio de equipo</strong> no detecta cambios de rol sin cambio de equipo.</li>
+<li>La <strong>desviación típica</strong> de la valoración (4.5 + 0.25 × mu) está ajustada empíricamente sobre 2025-26.</li>
+<li>El <strong>backtest sobre 2025-26</strong> no garantiza los mismos resultados en 2026-27.</li>
+<li>El <strong>reval. € es una media de una distribución</strong>, no una promesa.</li>
+<li>La <strong>zona estable</strong> se calcula sobre los pesos explorados, que son finitos. Un valor intermedio entre dos explorados podría dar otra solución.</li>
 </ul>
 </body>
 </html>

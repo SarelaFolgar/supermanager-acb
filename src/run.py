@@ -22,6 +22,7 @@ SCRIPTS_BASE = [
     "src/02_mi_caja.py",
     "src/03_mi_equipo.py",
     "src/04_prediccion.py",
+    "src/10b_guardar_stats.py",  
     "src/05_minutos_features.py",
     "src/06_modelo_minutos.py",
     "src/07_optimizador.py",
@@ -30,7 +31,10 @@ SCRIPTS_BASE = [
 if config.EXPLORAR_SUAVIZADO_EN_RUN:
     SCRIPTS_BASE.append("src/08_explorar_suavizado.py")
 
-SCRIPTS_BASE.append("src/09_informe.py")
+SCRIPTS_BASE.extend([
+    "src/09_informe.py",
+    "src/10_guardar_predicciones.py",
+])
 
 if config.SCRAPEAR_RINCON:
     SCRIPTS = ["src/manual/scrape_rincon.py"] + SCRIPTS_BASE

@@ -1,8 +1,3 @@
-"""
-06_modelo_minutos.py — Modelo v2 basado en minutos y puntos por minuto.
-
-Puntos esperados = PPM_esperado × minutos_esperados × (1 + 0.2 × p_win)
-"""
 from pathlib import Path
 
 import numpy as np
@@ -16,8 +11,8 @@ K_SHRINK = 4
 
 
 def main():
-    pred = pd.read_csv("data/prediccion_con_minutos.csv")
-    stats = pd.read_csv("data/historico/stats_jornada_2526.csv")
+    pred = pd.read_csv("data/procesado/prediccion_con_minutos.csv")
+    stats = pd.read_csv("data/historico/2025-26/stats_jornada.csv")
 
     stats = stats[stats["valueTimePlayed"] > 0].copy()
     stats["minutos"] = stats["valueTimePlayed"] / 60.0
@@ -90,14 +85,14 @@ def main():
     pred.loc[sin_datos, "puntos_esperados_v2"] = pred.loc[sin_datos, "puntos_esperados_J2"]
     pred["metodo_v2"] = np.where(sin_datos, "v1_fallback", "v2_minutos")
 
-    Path("data").mkdir(exist_ok=True)
-    pred.to_csv("data/prediccion_v2.csv", index=False)
+    Path("data/procesado").mkdir(parents=True, exist_ok=True)
+    pred.to_csv("data/procesado/prediccion_v2.csv", index=False)
 
     n_v2 = (pred["metodo_v2"] == "v2_minutos").sum()
     n_v1 = (pred["metodo_v2"] == "v1_fallback").sum()
     print(f"  Modelo v2 (minutos): {n_v2} jugadores")
     print(f"  Fallback v1 (sin minutos): {n_v1} jugadores")
-    print(f"  Guardado: data/prediccion_v2.csv")
+    print(f"  Guardado: data/procesado/prediccion_v2.csv")
 
 
 if __name__ == "__main__":
