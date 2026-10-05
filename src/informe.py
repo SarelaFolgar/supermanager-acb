@@ -192,12 +192,14 @@ if sin_cambios:
 else:
     L.append("### Vender")
     L.append("")
-    L.append(f"| Jugador | Equipo | Pos | Precio | Pts esp. {JORNADA} | P(↑15%) | P(↓15%) | Reval. € | Pronóstico | Motivo |")
-    L.append("|---------|--------|-----|--------|--------------------|--------:|--------:|---------:|:----------:|--------|")
+    L.append(f"| Jugador | Equipo | Pos | Precio | Pts esp. {JORNADA} | Sube 15% con | Mantiene con | Baja 15% con | P(↑15%) | P(↓15%) | Reval. € | Pronóstico | Motivo |")
+    L.append("|---------|--------|-----|--------|--------------------|-------------:|-------------:|-------------:|--------:|--------:|---------:|:----------:|--------|")
     for _, r in vender.iterrows():
         L.append(
             f"| {r['shortName']} | {r['nameTeam']} | {r['position']} | "
             f"{r['precio_actual']:,.0f} € | {r['pts_esp']:.2f} | "
+            f"{r['umbral_sube_15']:.1f} | {r['umbral_mantiene']:.1f} | "
+            f"{r['umbral_baja_15']:.1f} | "
             f"{r['p_sube_15']:.0%} | {r['p_baja_15']:.0%} | "
             f"{r['reval_euros']:+,.0f} € | "
             f"{PRONO_FLECHA.get(r.get('pronostico', '—'), '—')} | {motivo_venta(r)} |"
@@ -207,12 +209,15 @@ else:
     L.append("")
     L.append("- **Precio**: lo que obtienes al venderlo ahora.")
     L.append("- **Pts esp.**: valoración que se espera que haga (media de la distribución).")
-    L.append("- **P(↑15%)**: probabilidad estimada de que su precio suba el 15% (tope máximo).")
-    L.append("- **P(↓15%)**: probabilidad estimada de que baje el 15% (tope mínimo).")
+    L.append("- **Sube 15% con / Mantiene con / Baja 15% con**: los tres umbrales de precio. "
+             "Por ejemplo, *Sube 15% con 18,5* significa que si hace 18,5 de valoración o más, "
+             "su precio sube el 15%. Si hace entre 14,7 y 18,5, sube menos del 15%. Si hace entre "
+             "10,9 y 14,7, baja menos del 15%. Por debajo de 10,9, baja el 15%.")
+    L.append("- **P(↑15%)**: probabilidad estimada de que toque el techo del +15%.")
+    L.append("- **P(↓15%)**: probabilidad estimada de que toque el suelo del −15%.")
     L.append("- **Reval. €**: media de la variación esperada del precio en euros. Es el número "
              "que usa el optimizador para valorar el broker.")
-    L.append("- **Pronóstico**: resumen visual del cruce entre P(↑15%) y P(↓15%). No es un punto, "
-             "es una distribución.")
+    L.append("- **Pronóstico**: resumen visual del cruce entre P(↑15%) y P(↓15%).")
     L.append("- **Motivo**: por qué el optimizador quiere venderlo:")
     L.append("  - **Lesionado**: `injuredDays > 0` o `fisicStatus != \"fit\"`.")
     L.append(f"  - **Bajo rendimiento**: pts esp. por debajo de la mediana ({mediana_plantilla:.2f}).")
@@ -221,12 +226,14 @@ else:
 
     L.append("### Fichar")
     L.append("")
-    L.append(f"| Jugador | Equipo | Pos | Precio | Pts esp. {JORNADA} | P(↑15%) | P(↓15%) | Reval. € | Pronóstico |")
-    L.append("|---------|--------|-----|--------|--------------------|--------:|--------:|---------:|:----------:|")
+    L.append(f"| Jugador | Equipo | Pos | Precio | Pts esp. {JORNADA} | Sube 15% con | Mantiene con | Baja 15% con | P(↑15%) | P(↓15%) | Reval. € | Pronóstico |")
+    L.append("|---------|--------|-----|--------|--------------------|-------------:|-------------:|-------------:|--------:|--------:|---------:|:----------:|")
     for _, r in fichar.iterrows():
         L.append(
             f"| {r['shortName']} | {r['nameTeam']} | {r['position']} | "
             f"{r['precio_actual']:,.0f} € | {r['pts_esp']:.2f} | "
+            f"{r['umbral_sube_15']:.1f} | {r['umbral_mantiene']:.1f} | "
+            f"{r['umbral_baja_15']:.1f} | "
             f"{r['p_sube_15']:.0%} | {r['p_baja_15']:.0%} | "
             f"{r['reval_euros']:+,.0f} € | "
             f"{PRONO_FLECHA.get(r.get('pronostico', '—'), '—')} |"
@@ -284,22 +291,26 @@ L.append("Top 15 jugadores del mercado (excluyendo tu plantilla y lesionados) po
 L.append("")
 mercado_fit = pred[(pred["injuredDays"] == 0) & (pred["fisicStatus"] == "fit")].copy()
 top_subida = mercado_fit.nlargest(15, "reval_euros")[
-    ["shortName", "nameTeam", "position", "price",
-     "pts_final", "reval_euros", "p_sube_15", "p_baja_15", "pronostico"]
+    ["shortName", "nameTeam", "position", "price", "pts_final",
+     "umbral_sube_15", "umbral_mantiene", "umbral_baja_15",
+     "reval_euros", "p_sube_15", "p_baja_15", "pronostico"]
 ]
-L.append("| Jugador | Equipo | Pos | Precio | Pts esp. | P(↑15%) | P(↓15%) | Reval. € | Pronóstico |")
-L.append("|---------|--------|-----|--------|---------:|--------:|--------:|---------:|:----------:|")
+L.append("| Jugador | Equipo | Pos | Precio | Pts esp. | Sube 15% con | Mantiene con | Baja 15% con | P(↑15%) | P(↓15%) | Reval. € | Pronóstico |")
+L.append("|---------|--------|-----|--------|---------:|-------------:|-------------:|-------------:|--------:|--------:|---------:|:----------:|")
 for _, r in top_subida.iterrows():
     L.append(
         f"| {r['shortName']} | {r['nameTeam']} | {r['position']} | "
         f"{r['price']:,.0f} € | {r['pts_final']:.1f} | "
+        f"{r['umbral_sube_15']:.1f} | {r['umbral_mantiene']:.1f} | "
+        f"{r['umbral_baja_15']:.1f} | "
         f"{r['p_sube_15']:.0%} | {r['p_baja_15']:.0%} | "
         f"{r['reval_euros']:+,.0f} € | {PRONO_FLECHA.get(r['pronostico'], '—')} |"
     )
 L.append("")
 L.append("**Cómo se lee:** los jugadores están ordenados por Reval. € (no por %). "
          "Un jugador barato con P(↑15%) alta puede generar poco dinero; uno caro con "
-         "P(↑15%) media puede generar más.")
+         "P(↑15%) media puede generar más. Los umbrales indican la valoración mínima "
+         "necesaria para tocar cada límite de precio.")
 L.append("")
 
 # Frontera Pareto
@@ -403,13 +414,15 @@ L.append("")
 L.append("Tus 10 jugadores actuales, ordenados por puntos esperados (de mayor a menor). "
          "La columna **Decisión** indica si el optimizador los vendería o los mantendría.")
 L.append("")
-L.append("| Pos | Jugador | Equipo | Precio | Pts esp. | P(↑15%) | P(↓15%) | Reval. € | Pronóstico | Decisión |")
-L.append("|-----|---------|--------|--------|---------:|--------:|--------:|---------:|:----------:|----------|")
+L.append("| Pos | Jugador | Equipo | Precio | Pts esp. | Sube 15% con | Mantiene con | Baja 15% con | P(↑15%) | P(↓15%) | Reval. € | Pronóstico | Decisión |")
+L.append("|-----|---------|--------|--------|---------:|-------------:|-------------:|-------------:|--------:|--------:|---------:|:----------:|----------|")
 for _, r in plantilla.sort_values("pts_esp", ascending=False).iterrows():
     decision = "Vender" if r["idPlayer"] in ids_vendidos else "Mantener"
     L.append(
         f"| {r['position']} | {r['shortName']} | {r['nameTeam']} | "
         f"{r['precio_actual']:,.0f} € | {r['pts_esp']:.2f} | "
+        f"{r['umbral_sube_15']:.1f} | {r['umbral_mantiene']:.1f} | "
+        f"{r['umbral_baja_15']:.1f} | "
         f"{r['p_sube_15']:.0%} | {r['p_baja_15']:.0%} | "
         f"{r['reval_euros']:+,.0f} € | "
         f"{PRONO_FLECHA.get(r['pronostico'], '—')} | {decision} |"
@@ -418,10 +431,10 @@ L.append("")
 L.append("**Cómo se lee:**")
 L.append("")
 L.append("- Los de arriba son tus mejores jugadores según el modelo. Si están en 'Mantener', "
-             "los conservas.")
+         "los conservas.")
 L.append("- Los de abajo probablemente se venden (bajo rendimiento o liberar caja).")
 L.append("- Fíjate en **Pts esp. vs P(↑15%)**: si un jugador tiene 15 pts esperados y P(↑15%) = 30%, "
-             "no es lo mismo que si tiene 15 pts y P(↑15%) = 80%.")
+         "no es lo mismo que si tiene 15 pts y P(↑15%) = 80%.")
 L.append("")
 
 # Plantilla resultante
@@ -451,7 +464,7 @@ L.append("**Cómo se lee:**")
 L.append("")
 L.append("- **Pos**: 1=base, 3=alero, 5=pívot. Deben ser 2/4/4.")
 L.append("- **Cupo**: EXT (extracomunitario, máx. 2), JFL (formado local, mín. 4), "
-             "— (ni uno ni otro).")
+         "— (ni uno ni otro).")
 L.append("")
 
 # Verificación
@@ -745,6 +758,13 @@ L.append("")
 L.append("Donde `P` es el precio actual, `N` los partidos jugados esta temporada, "
          "y `S` la suma de valoraciones esta temporada.")
 L.append("")
+L.append("**Ejemplo con Tavares (J1):**")
+L.append("- Precio: 637.500 € · Partidos: 1 · Suma de valoraciones: 10,8.")
+L.append("- `X_mantiene = 637.500 × 2 / 50.000 − 10,8 = 14,7`.")
+L.append("- `X_sube_15 = 637.500 × 1,15 × 2 / 50.000 − 10,8 = 18,5`.")
+L.append("- `X_baja_15 = 637.500 × 0,85 × 2 / 50.000 − 10,8 = 10,9`.")
+L.append("")
+
 L.append("**Verificación empírica:** hemos validado esta fórmula contra las capturas reales "
          "del mercado. Resultados:")
 L.append("")
@@ -755,12 +775,6 @@ L.append("| No | 1,62% | 231 / 250 |")
 L.append("")
 L.append("**Conclusión:** la fórmula funciona, y una jornada sin jugar cuenta como 0 en la "
          "media (no se salta). El error del 1% es ruido de redondeo.")
-L.append("")
-L.append("**Ejemplo con Tavares (J1):**")
-L.append("- Precio: 637.500 € · Partidos: 1 · Suma de valoraciones: 10,8.")
-L.append("- `X_mantiene = 637.500 × 2 / 50.000 − 10,8 = 14,7`.")
-L.append("- `X_sube_15 = 637.500 × 1,15 × 2 / 50.000 − 10,8 = 18,5`.")
-L.append("- `X_baja_15 = 637.500 × 0,85 × 2 / 50.000 − 10,8 = 10,9`.")
 L.append("")
 
 # --- 7. Pronóstico ---
@@ -841,6 +855,9 @@ L.append("| Término | Significado |")
 L.append("|---------|-------------|")
 L.append("| **Valoración** | Puntos Supermanager (fórmula arriba). |")
 L.append("| **Pts esp.** | Media esperada de la valoración en la próxima jornada. |")
+L.append("| **Sube 15% con** | Valoración mínima para subir el 15% (tope máximo). |")
+L.append("| **Mantiene con** | Valoración necesaria para que el precio no cambie. |")
+L.append("| **Baja 15% con** | Valoración por debajo de la cual baja el 15% (tope mínimo). |")
 L.append("| **P(↑15%)** | Probabilidad estimada de subir el 15% (tope máximo). |")
 L.append("| **P(↓15%)** | Probabilidad estimada de bajar el 15% (tope mínimo). |")
 L.append("| **Reval. €** | Variación esperada del precio, en euros (media de la distribución). |")

@@ -1,360 +1,299 @@
 jornada,rival,local_visitante,victoria,minutos_texto,minutos,puntos,rebotes,asistencias,triples,valoracion,sm,broker,idPlayer,shortName,fullName,nameTeam
-2,vsCAN,Casa,D,15:15,15.25,6.0,7.0,0.0,0/0,9.0,9.0,101775.0,42,W. Hernangómez,Willy Hernangómez,Unicaja
-1,@RMA,Fuera,D,22:41,22.68,20.0,6.0,0.0,0/0,23.0,23.0,88500.0,42,W. Hernangómez,Willy Hernangómez,Unicaja
+2,vsBLB,Casa,V,30:19,30.32,29.0,4.0,6.0,2/4,16.0,19.2,100050.0,18,A. Verge,Alonzo Verge Jr.,Leyma Coruña
+1,@FCB,Fuera,D,22:55,22.92,16.0,2.0,9.0,0/1,18.0,18.0,87000.0,18,A. Verge,Alonzo Verge Jr.,Leyma Coruña
+2,vsVBC,Casa,D,30:21,30.35,4.0,5.0,0.0,0/4,8.0,8.0,65550.0,81,R. Blumbergs,Roberts Blumbergs,Casademont Zaragoza
+1,@CAN,Fuera,V,25:12,25.2,16.0,10.0,1.0,2/6,21.0,25.2,57000.0,81,R. Blumbergs,Roberts Blumbergs,Casademont Zaragoza
+2,vsBLB,Casa,V,28:12,28.2,13.0,2.0,1.0,2/6,13.0,15.6,60375.0,15,C. Pacheco,Caio Pacheco,Leyma Coruña
+1,@FCB,Fuera,D,22:07,22.12,11.0,1.0,5.0,2/3,17.0,17.0,52500.0,15,C. Pacheco,Caio Pacheco,Leyma Coruña
+2,vsBLB,Casa,V,20:04,20.07,12.0,4.0,0.0,1/1,16.0,19.2,67275.0,14,D. Skapintsev,Dmytro Skapintsev,Leyma Coruña
+1,@FCB,Fuera,D,17:30,17.5,8.0,7.0,0.0,0/0,12.0,12.0,58500.0,14,D. Skapintsev,Dmytro Skapintsev,Leyma Coruña
+2,vsVBC,Casa,D,23:19,23.32,12.0,11.0,2.0,0/1,23.0,23.0,61200.0,90,A. Olaseni,Gabriel Olaseni,Casademont Zaragoza
+1,@CAN,Fuera,V,14:34,14.57,2.0,7.0,1.0,0/0,5.0,6.0,,90,A. Olaseni,Gabriel Olaseni,Casademont Zaragoza
+2,vsVBC,Casa,D,27:29,27.48,22.0,3.0,0.0,3/8,13.0,13.0,51750.0,84,J. Jaworski,Justin Jaworski,Casademont Zaragoza
+1,@CAN,Fuera,V,27:15,27.25,15.0,0.0,1.0,3/5,12.0,14.4,45000.0,84,J. Jaworski,Justin Jaworski,Casademont Zaragoza
+2,vsVBC,Casa,D,16:23,16.38,5.0,1.0,4.0,0/1,2.0,2.0,,82,T. Bell-Haynes,Trae Bell-Haynes,Casademont Zaragoza
+1,@CAN,Fuera,V,23:34,23.57,19.0,6.0,4.0,5/8,20.0,24.0,87000.0,82,T. Bell-Haynes,Trae Bell-Haynes,Casademont Zaragoza
+2,vsBLB,Casa,V,12:47,12.78,4.0,2.0,6.0,1/2,7.0,8.4,34500.0,19,D. Cuevas,Dídac Cuevas,Leyma Coruña
+1,@FCB,Fuera,D,16:28,16.47,10.0,3.0,4.0,0/4,14.0,14.0,30000.0,19,D. Cuevas,Dídac Cuevas,Leyma Coruña
+2,vsBLB,Casa,V,29:14,29.23,14.0,7.0,0.0,1/5,15.0,18.0,45900.0,17,L. Uleckas,Lukas Uleckas,Leyma Coruña
+1,@FCB,Fuera,D,22:54,22.9,6.0,1.0,1.0,2/3,4.0,4.0,,17,L. Uleckas,Lukas Uleckas,Leyma Coruña
+2,vsVBC,Casa,D,19:23,19.38,9.0,1.0,6.0,2/4,13.0,13.0,36000.0,85,G. Vives,Guillem Vives,Casademont Zaragoza
+1,@CAN,Fuera,V,17:07,17.12,8.0,2.0,3.0,2/4,4.0,4.8,20000.0,85,G. Vives,Guillem Vives,Casademont Zaragoza
+2,vsVBC,Casa,D,17:26,17.43,9.0,1.0,1.0,0/4,7.0,7.0,,91,C. Homesley,Caleb Homesley,Casademont Zaragoza
+1,@CAN,Fuera,V,24:12,24.2,13.0,2.0,1.0,3/8,7.0,8.4,,91,C. Homesley,Caleb Homesley,Casademont Zaragoza
+2,vsBLB,Casa,V,16:17,16.28,4.0,5.0,1.0,1/1,10.0,12.0,26775.0,23,J. Diaz,Jacobo Diaz,Leyma Coruña
+1,@FCB,Fuera,D,4:01,4.02,3.0,1.0,0.0,1/2,3.0,3.0,,23,J. Diaz,Jacobo Diaz,Leyma Coruña
+2,vsVBC,Casa,D,16:41,16.68,5.0,4.0,0.0,0/0,7.0,7.0,,89,L. Birutis,Laurynas Birutis,Casademont Zaragoza
+1,@CAN,Fuera,V,24:45,24.75,6.0,2.0,5.0,0/0,6.0,7.2,,89,L. Birutis,Laurynas Birutis,Casademont Zaragoza
+2,vsBLB,Casa,V,18:58,18.97,9.0,2.0,0.0,2/3,4.0,4.8,,16,P. Jorgensen,Paul Jorgensen,Leyma Coruña
+1,@FCB,Fuera,D,18:30,18.5,13.0,0.0,0.0,3/5,8.0,8.0,48000.0,16,P. Jorgensen,Paul Jorgensen,Leyma Coruña
+2,vsBLB,Casa,V,9:50,9.83,2.0,2.0,0.0,0/0,3.0,3.6,32775.0,24,G. Jou,Guillem Jou,Leyma Coruña
+1,@FCB,Fuera,D,14:09,14.15,10.0,1.0,0.0,3/3,9.0,9.0,28500.0,24,G. Jou,Guillem Jou,Leyma Coruña
+2,vsVBC,Casa,D,12:16,12.27,6.0,4.0,0.0,2/3,6.0,6.0,34500.0,86,M. González,Miguel González,Casademont Zaragoza
+1,@CAN,Fuera,V,15:02,15.03,0.0,5.0,3.0,0/2,4.0,4.8,30000.0,86,M. González,Miguel González,Casademont Zaragoza
+2,vsBLB,Casa,V,21:19,21.32,6.0,3.0,3.0,0/2,4.0,4.8,,22,D. Radoncic,Dino Radoncic,Leyma Coruña
+1,@FCB,Fuera,D,21:06,21.1,4.0,2.0,4.0,0/2,4.0,4.0,,22,D. Radoncic,Dino Radoncic,Leyma Coruña
+2,vsVBC,Casa,D,22:49,22.82,9.0,6.0,1.0,1/5,6.0,6.0,,83,N. Brussino,Nico Brussino,Casademont Zaragoza
+1,@CAN,Fuera,V,18:57,18.95,2.0,2.0,0.0,0/1,1.0,1.2,,83,N. Brussino,Nico Brussino,Casademont Zaragoza
+2,vsBLB,Casa,V,18:29,18.48,5.0,5.0,2.0,0/2,6.0,7.2,,20,K. Silins,Karlis Silins,Leyma Coruña
+1,@FCB,Fuera,D,17:50,17.83,3.0,0.0,0.0,0/3,-2.0,-2.0,,20,K. Silins,Karlis Silins,Leyma Coruña
+2,@UNI,Fuera,V,17:38,17.63,13.0,2.0,2.0,3/4,14.0,16.8,52500.0,88,J. Fernández,Jaime Fernández,Casademont Zaragoza
+1,vsZAR,Casa,D,17:07,17.12,10.0,2.0,2.0,2/3,7.0,7.0,,88,J. Fernández,Jaime Fernández,Casademont Zaragoza
+2,vsBLB,—,,—,,,,,,,,,25,T. Dimsa,Tomas Dimsa,Leyma Coruña
+1,@FCB,—,,—,,,,,,,,,25,T. Dimsa,Tomas Dimsa,Leyma Coruña
+2,vsVBC,Casa,D,4:14,4.23,0.0,0.0,0.0,0/0,0.0,0.0,,87,S. García,Sergi García,Casademont Zaragoza
+1,@CAN,Fuera,V,3:53,3.88,0.0,0.0,0.0,0/0,0.0,0.0,,87,S. García,Sergi García,Casademont Zaragoza
+2,vsVBC,—,,—,,,,,,,,,247,M. Lukic,Matija Lukic,Casademont Zaragoza
 2,vsCAN,Casa,D,22:26,22.43,13.0,6.0,1.0,2/4,16.0,16.0,72450.0,45,A. Noua,Amine Noua,Unicaja
 1,@RMA,Fuera,D,26:46,26.77,18.0,8.0,1.0,2/5,23.0,23.0,63000.0,45,A. Noua,Amine Noua,Unicaja
-2,@UNI,Fuera,V,19:32,19.53,6.0,3.0,1.0,2/5,6.0,7.2,63825.0,29,López-Arostegui,Xabi López-Arostegui,La Laguna Tenerife
-1,vsZAR,Casa,D,25:27,25.45,10.0,5.0,0.0,1/2,16.0,16.0,55500.0,29,López-Arostegui,Xabi López-Arostegui,La Laguna Tenerife
-2,@UNI,Fuera,V,25:36,25.6,18.0,4.0,1.0,2/5,14.0,16.8,94875.0,28,K. Guy,Kyle Guy,La Laguna Tenerife
-1,vsZAR,Casa,D,24:28,24.47,11.0,2.0,3.0,3/6,13.0,13.0,82500.0,28,K. Guy,Kyle Guy,La Laguna Tenerife
-2,@UNI,Fuera,V,15:01,15.02,8.0,1.0,1.0,0/0,5.0,6.0,,30,E. Happ,Ethan Happ,La Laguna Tenerife
-1,vsZAR,Casa,D,21:13,21.22,13.0,5.0,2.0,0/0,13.0,13.0,70000.0,30,E. Happ,Ethan Happ,La Laguna Tenerife
-2,@UNI,Fuera,V,18:59,18.98,7.0,6.0,0.0,1/3,8.0,9.6,51750.0,33,T. Abromaitis,Tim Abromaitis,La Laguna Tenerife
-1,vsZAR,Casa,D,21:06,21.1,7.0,10.0,0.0,1/4,13.0,13.0,45000.0,33,T. Abromaitis,Tim Abromaitis,La Laguna Tenerife
-2,@UNI,Fuera,V,23:45,23.75,17.0,1.0,7.0,3/3,21.0,25.2,90000.0,37,M. Huertas,Marcelinho Huertas,La Laguna Tenerife
-1,vsZAR,Casa,D,18:21,18.35,12.0,2.0,3.0,0/2,12.0,12.0,,37,M. Huertas,Marcelinho Huertas,La Laguna Tenerife
-2,vsCAN,Casa,D,15:32,15.53,2.0,2.0,1.0,0/2,5.0,5.0,,50,M. Pantzar,Melwin Pantzar,Unicaja
-1,@RMA,Fuera,D,21:55,21.92,7.0,6.0,3.0,0/3,11.0,11.0,70500.0,50,M. Pantzar,Melwin Pantzar,Unicaja
-2,vsCAN,Casa,D,13:48,13.8,0.0,0.0,1.0,0/1,-3.0,-3.0,,39,S. Lukosius,Simonas Lukosius,Unicaja
-1,@RMA,Fuera,D,13:15,13.25,9.0,1.0,0.0,1/1,10.0,10.0,48000.0,39,S. Lukosius,Simonas Lukosius,Unicaja
-2,vsCAN,Casa,D,18:42,18.7,4.0,2.0,2.0,0/1,8.0,8.0,,40,I. Brazdeikis,Ignas Brazdeikis,Unicaja
-1,@RMA,Fuera,D,30:29,30.48,14.0,4.0,2.0,2/5,9.0,9.0,50000.0,40,I. Brazdeikis,Ignas Brazdeikis,Unicaja
-2,@UNI,Fuera,V,17:38,17.63,13.0,2.0,2.0,3/4,14.0,16.8,52500.0,36,J. Fernández,Jaime Fernández,La Laguna Tenerife
-1,vsZAR,Casa,D,17:07,17.12,10.0,2.0,2.0,2/3,7.0,7.0,,36,J. Fernández,Jaime Fernández,La Laguna Tenerife
-2,@UNI,Fuera,V,13:44,13.73,0.0,1.0,1.0,0/0,-1.0,-1.0,,38,B. Fitipaldo,Bruno Fitipaldo,La Laguna Tenerife
-1,vsZAR,Casa,D,21:24,21.4,8.0,0.0,2.0,2/7,7.0,7.0,43500.0,38,B. Fitipaldo,Bruno Fitipaldo,La Laguna Tenerife
+2,@,—,,—,,,,,,,,,188,L. Radosevic,Leon Radosevic,MoraBanc Andorra
+1,vsOBR,Casa,D,18:18,18.3,10.0,5.0,1.0,0/1,17.0,17.0,49500.0,188,L. Radosevic,Leon Radosevic,MoraBanc Andorra
+2,vsCAN,Casa,D,15:15,15.25,6.0,7.0,0.0,0/0,9.0,9.0,101775.0,42,W. Hernangómez,Willy Hernangómez,Unicaja
+1,@RMA,Fuera,D,22:41,22.68,20.0,6.0,0.0,0/0,23.0,23.0,88500.0,42,W. Hernangómez,Willy Hernangómez,Unicaja
+2,@,—,,—,,,,,,,,,183,J. Akinjo,James Akinjo,MoraBanc Andorra
+1,vsOBR,Casa,D,28:26,28.43,9.0,7.0,12.0,1/3,16.0,16.0,70500.0,183,J. Akinjo,James Akinjo,MoraBanc Andorra
+2,@,—,,—,,,,,,,,,190,A. Pustovyi,Artem Pustovyi,MoraBanc Andorra
+1,vsOBR,Casa,D,19:27,19.45,12.0,7.0,0.0,0/0,16.0,16.0,82500.0,190,A. Pustovyi,Artem Pustovyi,MoraBanc Andorra
 2,vsCAN,Casa,D,26:58,26.97,23.0,2.0,4.0,2/6,23.0,23.0,77775.0,51,K. Perry,Kendrick Perry,Unicaja
 1,@RMA,Fuera,D,25:59,25.98,9.0,2.0,5.0,0/5,7.0,7.0,,51,K. Perry,Kendrick Perry,Unicaja
-2,@UNI,Fuera,V,5:51,5.85,0.0,0.0,1.0,0/0,1.0,1.2,,32,G. Shermadini,Giorgi Shermadini,La Laguna Tenerife
-1,vsZAR,Casa,D,18:34,18.57,5.0,4.0,0.0,0/0,4.0,4.0,,32,G. Shermadini,Giorgi Shermadini,La Laguna Tenerife
+2,@,—,,—,,,,,,,,,185,W. Iwundu,Wes Iwundu,MoraBanc Andorra
+1,vsOBR,Casa,D,23:36,23.6,12.0,5.0,0.0,1/6,13.0,13.0,80000.0,185,W. Iwundu,Wes Iwundu,MoraBanc Andorra
+2,@,—,,—,,,,,,,,,192,K. Robertson,Kassius Robertson,MoraBanc Andorra
+1,vsOBR,Casa,D,30:41,30.68,15.0,3.0,0.0,1/4,12.0,12.0,60000.0,192,K. Robertson,Kassius Robertson,MoraBanc Andorra
+2,vsCAN,Casa,D,18:42,18.7,4.0,2.0,2.0,0/1,8.0,8.0,,40,I. Brazdeikis,Ignas Brazdeikis,Unicaja
+1,@RMA,Fuera,D,30:29,30.48,14.0,4.0,2.0,2/5,9.0,9.0,50000.0,40,I. Brazdeikis,Ignas Brazdeikis,Unicaja
 2,vsCAN,Casa,D,33:58,33.97,13.0,6.0,3.0,2/5,14.0,14.0,0.0,49,C. Hunt,Cameron Hunt,Unicaja
 1,@RMA,Fuera,D,19:14,19.23,7.0,1.0,0.0,1/2,3.0,3.0,,49,C. Hunt,Cameron Hunt,Unicaja
-2,@UNI,Fuera,V,13:23,13.38,3.0,3.0,0.0,1/2,1.0,1.2,,34,A. Doornekamp,Aaron Doornekamp,La Laguna Tenerife
-1,vsZAR,Casa,D,19:07,19.12,0.0,1.0,3.0,0/2,2.0,2.0,,34,A. Doornekamp,Aaron Doornekamp,La Laguna Tenerife
-2,@,—,,—,,,,,,,,,26,TJ Bamba,TJ Bamba,La Laguna Tenerife
-1,vsZAR,Casa,D,12:29,12.48,4.0,1.0,0.0,1/3,1.0,1.0,,26,TJ Bamba,TJ Bamba,La Laguna Tenerife
+2,vsCAN,Casa,D,15:32,15.53,2.0,2.0,1.0,0/2,5.0,5.0,,50,M. Pantzar,Melwin Pantzar,Unicaja
+1,@RMA,Fuera,D,21:55,21.92,7.0,6.0,3.0,0/3,11.0,11.0,70500.0,50,M. Pantzar,Melwin Pantzar,Unicaja
+2,@,—,,—,,,,,,,,,194,A. Best,Aaron Best,MoraBanc Andorra
+1,vsOBR,Casa,D,23:05,23.08,9.0,2.0,1.0,3/7,8.0,8.0,42000.0,194,A. Best,Aaron Best,MoraBanc Andorra
 2,vsCAN,Casa,D,24:42,24.7,9.0,7.0,0.0,1/1,9.0,9.0,29325.0,43,D. Kravish,David Kravish,Unicaja
 1,@RMA,Fuera,D,16:02,16.03,3.0,2.0,2.0,0/1,1.0,1.0,,43,D. Kravish,David Kravish,Unicaja
+2,@,—,,—,,,,,,,,,193,C. Ortega,Chumi Ortega,MoraBanc Andorra
+1,vsOBR,Casa,D,9:20,9.33,6.0,2.0,0.0,2/3,5.0,5.0,22500.0,193,C. Ortega,Chumi Ortega,MoraBanc Andorra
 2,vsCAN,Casa,D,13:40,13.67,5.0,4.0,0.0,0/0,8.0,8.0,21675.0,46,J. Barreiro,Jonathan Barreiro,Unicaja
 1,@RMA,Fuera,D,10:48,10.8,0.0,0.0,2.0,0/1,1.0,1.0,,46,J. Barreiro,Jonathan Barreiro,Unicaja
+2,@,—,,—,,,,,,,,,191,K. Kuric,Kyle Kuric,MoraBanc Andorra
+1,vsOBR,Casa,D,17:01,17.02,5.0,1.0,1.0,1/3,4.0,4.0,,191,K. Kuric,Kyle Kuric,MoraBanc Andorra
+2,vsCAN,Casa,D,13:48,13.8,0.0,0.0,1.0,0/1,-3.0,-3.0,,39,S. Lukosius,Simonas Lukosius,Unicaja
+1,@RMA,Fuera,D,13:15,13.25,9.0,1.0,0.0,1/1,10.0,10.0,48000.0,39,S. Lukosius,Simonas Lukosius,Unicaja
+2,@,—,,—,,,,,,,,,189,L. Mutic,Lazar Mutic,MoraBanc Andorra
+1,vsOBR,Casa,D,16:24,16.4,5.0,2.0,1.0,1/3,2.0,2.0,,189,L. Mutic,Lazar Mutic,MoraBanc Andorra
 2,@,—,,—,,,,,,,,,52,A. Díaz,Alberto Díaz,Unicaja
 1,@RMA,Fuera,D,12:23,12.38,0.0,0.0,2.0,0/0,1.0,1.0,,52,A. Díaz,Alberto Díaz,Unicaja
-2,@UNI,Fuera,V,19:05,19.08,5.0,3.0,2.0,0/0,9.0,10.8,54000.0,27,V. Hunter,Vince Hunter,La Laguna Tenerife
-1,@,—,,—,,,,,,,,,27,V. Hunter,Vince Hunter,La Laguna Tenerife
-2,@UNI,Fuera,V,11:13,11.22,3.0,0.0,0.0,1/3,-1.0,-1.0,,31,A. Kurucs,Arturs Kurucs,La Laguna Tenerife
-1,vsZAR,Casa,D,0:44,0.73,0.0,0.0,0.0,0/0,0.0,0.0,,31,A. Kurucs,Arturs Kurucs,La Laguna Tenerife
-2,@UNI,Fuera,V,16:13,16.22,0.0,1.0,1.0,0/1,-1.0,-1.0,,35,H. Alderete,Héctor Alderete,La Laguna Tenerife
-1,vsZAR,—,,—,,,,,,,,,35,H. Alderete,Héctor Alderete,La Laguna Tenerife
+2,@,—,,—,,,,,,,,,186,O. Aquino,Owen Aquino,MoraBanc Andorra
+1,vsOBR,Casa,D,2:15,2.25,2.0,0.0,0.0,0/0,1.0,1.0,,186,O. Aquino,Owen Aquino,MoraBanc Andorra
 2,@,—,,—,,,,,,,,,41,Y. Nzosa,Yannick Nzosa,Unicaja
 1,@,—,,—,,,,,,,,,41,Y. Nzosa,Yannick Nzosa,Unicaja
 2,@,—,,—,,,,,,,,,44,T. Pérez,Tyson Pérez,Unicaja
 1,@,—,,—,,,,,,,,,44,T. Pérez,Tyson Pérez,Unicaja
 2,vsCAN,—,,—,,,,,,,,,47,T. Kalinoski,Tyler Kalinoski,Unicaja
 1,@,—,,—,,,,,,,,,47,T. Kalinoski,Tyler Kalinoski,Unicaja
+2,@,—,,—,,,,,,,,,184,C. McGriff,Cameron McGriff,MoraBanc Andorra
+1,@,—,,—,,,,,,,,,184,C. McGriff,Cameron McGriff,MoraBanc Andorra
+2,@,—,,—,,,,,,,,,187,L. Bottiroli,Luka Bottiroli,MoraBanc Andorra
+1,vsOBR,—,,—,,,,,,,,,187,L. Bottiroli,Luka Bottiroli,MoraBanc Andorra
+2,@,—,,—,,,,,,,,,195,R. Luz,Rafa Luz,MoraBanc Andorra
+1,vsOBR,Casa,D,11:27,11.45,0.0,0.0,3.0,0/1,0.0,0.0,,195,R. Luz,Rafa Luz,MoraBanc Andorra
+2,@,—,,—,,,,,,,,,256,Andronikashvili,Rati Andronikashvili,MoraBanc Andorra
 2,vsCAN,Casa,D,8:11,8.18,0.0,0.0,1.0,0/2,-2.0,-2.0,,48,N. Djedovic,Nihad Djedovic,Unicaja
 1,@RMA,Fuera,D,0:28,0.47,0.0,0.0,0.0,0/0,0.0,0.0,,48,N. Djedovic,Nihad Djedovic,Unicaja
-2,@,—,,—,,,,,,,,,245,W. Van Beck,Wesley Van Beck,La Laguna Tenerife
-1,@,—,,—,,,,,,,,,245,W. Van Beck,Wesley Van Beck,La Laguna Tenerife
 2,vsCAN,Casa,D,6:48,6.8,0.0,0.0,0.0,0/2,-3.0,-3.0,,254,M. Thomas,Matt Thomas,Unicaja
-2,@MAN,Fuera,V,16:29,16.48,9.0,6.0,0.0,0/0,12.0,14.4,100050.0,213,D. Brankovic,Danko Brankovic,Río Breogán
-1,vsJOV,Casa,V,21:36,21.6,14.0,9.0,2.0,0/0,29.0,34.8,87000.0,213,D. Brankovic,Danko Brankovic,Río Breogán
-2,@MAN,Fuera,V,20:38,20.63,13.0,1.0,4.0,1/3,8.0,9.6,65550.0,210,R. Bolton,Rasir Bolton,Río Breogán
-1,vsJOV,Casa,V,21:49,21.82,17.0,0.0,7.0,0/0,21.0,25.2,57000.0,210,R. Bolton,Rasir Bolton,Río Breogán
-2,@MAN,Fuera,V,21:53,21.88,13.0,4.0,1.0,1/4,12.0,14.4,105225.0,218,F. Alonso,Francis Alonso,Río Breogán
-1,vsJOV,Casa,V,26:43,26.72,14.0,3.0,5.0,2/3,21.0,25.2,91500.0,218,F. Alonso,Francis Alonso,Río Breogán
-2,vsBRE,Casa,D,12:58,12.97,7.0,1.0,2.0,0/0,8.0,8.0,81075.0,121,N. Ongenda,Nick Ongenda,Kids&Us Manresa
-1,@BLB,Fuera,D,22:34,22.57,17.0,2.0,0.0,0/0,17.0,17.0,70500.0,121,N. Ongenda,Nick Ongenda,Kids&Us Manresa
-2,@MAN,Fuera,V,19:01,19.02,7.0,4.0,0.0,0/1,10.0,12.0,63825.0,208,A. García,Andersson García,Río Breogán
-1,vsJOV,Casa,V,20:11,20.18,10.0,6.0,1.0,1/2,13.0,15.6,55500.0,208,A. García,Andersson García,Río Breogán
-2,@MAN,Fuera,V,26:03,26.05,17.0,5.0,5.0,2/6,21.0,25.2,89700.0,209,T. Brown,Tevin Brown,Río Breogán
-1,vsJOV,Casa,V,26:23,26.38,14.0,7.0,5.0,3/10,13.0,15.6,78000.0,209,T. Brown,Tevin Brown,Río Breogán
 2,@MAN,Fuera,V,26:16,26.27,22.0,1.0,10.0,4/5,35.0,42.0,79350.0,220,D. Mavra,Dominik Mavra,Río Breogán
 1,vsJOV,Casa,V,18:11,18.18,16.0,1.0,2.0,3/3,13.0,15.6,69000.0,220,D. Mavra,Dominik Mavra,Río Breogán
-2,vsBRE,Casa,D,18:49,18.82,7.0,4.0,2.0,1/2,10.0,10.0,55200.0,124,L. Kolenda,Lukasz Kolenda,Kids&Us Manresa
-1,@BLB,Fuera,D,25:30,25.5,16.0,1.0,3.0,2/5,15.0,15.0,48000.0,124,L. Kolenda,Lukasz Kolenda,Kids&Us Manresa
+2,@MAN,Fuera,V,16:29,16.48,9.0,6.0,0.0,0/0,12.0,14.4,100050.0,213,D. Brankovic,Danko Brankovic,Río Breogán
+1,vsJOV,Casa,V,21:36,21.6,14.0,9.0,2.0,0/0,29.0,34.8,87000.0,213,D. Brankovic,Danko Brankovic,Río Breogán
+2,@BAS,Fuera,D,19:46,19.77,15.0,5.0,2.0,1/4,13.0,13.0,69000.0,137,J. Pérez,Jassel Perez,FIATC Girona
+1,vsMUR,Casa,V,21:58,21.97,20.0,8.0,1.0,1/2,29.0,34.8,60000.0,137,J. Pérez,Jassel Perez,FIATC Girona
+2,@MAN,Fuera,V,26:03,26.05,17.0,5.0,5.0,2/6,21.0,25.2,89700.0,209,T. Brown,Tevin Brown,Río Breogán
+1,vsJOV,Casa,V,26:23,26.38,14.0,7.0,5.0,3/10,13.0,15.6,78000.0,209,T. Brown,Tevin Brown,Río Breogán
+2,@MAN,Fuera,V,21:53,21.88,13.0,4.0,1.0,1/4,12.0,14.4,105225.0,218,F. Alonso,Francis Alonso,Río Breogán
+1,vsJOV,Casa,V,26:43,26.72,14.0,3.0,5.0,2/3,21.0,25.2,91500.0,218,F. Alonso,Francis Alonso,Río Breogán
+2,@MAN,Fuera,V,20:38,20.63,13.0,1.0,4.0,1/3,8.0,9.6,65550.0,210,R. Bolton,Rasir Bolton,Río Breogán
+1,vsJOV,Casa,V,21:49,21.82,17.0,0.0,7.0,0/0,21.0,25.2,57000.0,210,R. Bolton,Rasir Bolton,Río Breogán
+2,@BAS,Fuera,D,21:49,21.82,10.0,4.0,1.0,0/3,11.0,11.0,102000.0,141,M. Geben,Martinas Geben,FIATC Girona
+1,vsMUR,Casa,V,24:25,24.42,11.0,9.0,1.0,1/1,18.0,21.6,93000.0,141,M. Geben,Martinas Geben,FIATC Girona
+2,@MAN,Fuera,V,19:01,19.02,7.0,4.0,0.0,0/1,10.0,12.0,63825.0,208,A. García,Andersson García,Río Breogán
+1,vsJOV,Casa,V,20:11,20.18,10.0,6.0,1.0,1/2,13.0,15.6,55500.0,208,A. García,Andersson García,Río Breogán
+2,@BAS,Fuera,D,20:03,20.05,8.0,1.0,4.0,2/3,4.0,4.0,82800.0,133,S. Whittaker,Stanley Whittaker,FIATC Girona
+1,vsMUR,Casa,V,25:59,25.98,19.0,3.0,4.0,2/5,18.0,21.6,72000.0,133,S. Whittaker,Stanley Whittaker,FIATC Girona
 2,@MAN,Fuera,V,13:04,13.07,4.0,2.0,0.0,0/0,-1.0,-1.0,,212,A. Ilić,Aleksa Ilić,Río Breogán
 1,vsJOV,Casa,V,18:09,18.15,11.0,3.0,0.0,0/0,11.0,13.2,60000.0,212,A. Ilić,Aleksa Ilić,Río Breogán
-2,vsBRE,Casa,D,18:53,18.88,7.0,0.0,3.0,1/4,1.0,1.0,28000.0,127,R. Villar,Rafael Villar,Kids&Us Manresa
-1,@BLB,Fuera,D,21:17,21.28,9.0,4.0,5.0,0/2,13.0,13.0,42000.0,127,R. Villar,Rafael Villar,Kids&Us Manresa
-2,vsBRE,Casa,D,19:26,19.43,1.0,6.0,4.0,0/1,4.0,4.0,,123,Y. Minchev,Yordan Minchev,Kids&Us Manresa
-1,@BLB,Fuera,D,17:26,17.43,10.0,6.0,1.0,2/4,10.0,10.0,50000.0,123,Y. Minchev,Yordan Minchev,Kids&Us Manresa
-2,vsBRE,Casa,D,20:36,20.6,0.0,3.0,4.0,0/2,-1.0,-1.0,,130,F. Bassas,Ferran Bassas,Kids&Us Manresa
-1,@BLB,Fuera,D,21:37,21.62,5.0,0.0,7.0,1/5,10.0,10.0,57000.0,130,F. Bassas,Ferran Bassas,Kids&Us Manresa
-2,vsBRE,Casa,D,20:17,20.28,20.0,1.0,2.0,0/3,14.0,14.0,57000.0,118,JD Notae,JD Notae,Kids&Us Manresa
-1,@BLB,Fuera,D,22:44,22.73,14.0,2.0,1.0,2/7,8.0,8.0,,118,JD Notae,JD Notae,Kids&Us Manresa
-2,vsBRE,Casa,D,14:00,14.0,6.0,4.0,0.0,0/1,8.0,8.0,34500.0,125,P. Tamba,Pablo Tamba,Kids&Us Manresa
-1,@BLB,Fuera,D,14:23,14.38,5.0,3.0,2.0,0/0,8.0,8.0,30000.0,125,P. Tamba,Pablo Tamba,Kids&Us Manresa
-2,@MAN,Fuera,V,21:05,21.08,2.0,3.0,1.0,0/3,0.0,0.0,,214,M. Andric,Mihajlo Andric,Río Breogán
-1,vsJOV,Casa,V,19:49,19.82,8.0,0.0,0.0,2/3,5.0,6.0,,214,M. Andric,Mihajlo Andric,Río Breogán
+2,@BAS,Fuera,D,18:52,18.87,12.0,5.0,1.0,1/5,10.0,10.0,,132,M. McClung,Mac McClung,FIATC Girona
+1,vsMUR,Casa,V,18:00,18.0,11.0,3.0,1.0,1/3,1.0,1.2,,132,M. McClung,Mac McClung,FIATC Girona
+2,@BAS,Fuera,D,19:51,19.85,11.0,3.0,1.0,3/4,9.0,9.0,,140,P. Busquets,Pep Busquets,FIATC Girona
+1,vsMUR,Casa,V,24:18,24.3,5.0,3.0,0.0,0/3,0.0,0.0,,140,P. Busquets,Pep Busquets,FIATC Girona
 2,@MAN,Fuera,V,19:35,19.58,7.0,4.0,0.0,1/3,2.0,2.4,,216,A. Aranitovic,Aleksandar Aranitovic,Río Breogán
 1,vsJOV,Casa,V,13:34,13.57,4.0,4.0,0.0,1/6,5.0,6.0,0.0,216,A. Aranitovic,Aleksandar Aranitovic,Río Breogán
-2,vsBRE,Casa,D,5:50,5.83,0.0,0.0,0.0,0/0,-1.0,-1.0,,126,E. Vila,Eric Vila,Kids&Us Manresa
-1,@BLB,Fuera,D,20:42,20.7,3.0,7.0,1.0,0/4,3.0,3.0,,126,E. Vila,Eric Vila,Kids&Us Manresa
+2,@BAS,Fuera,D,16:25,16.42,6.0,3.0,2.0,0/0,9.0,9.0,,136,N. Maric,Nikola Maric,FIATC Girona
+1,vsMUR,Casa,V,15:35,15.58,4.0,4.0,2.0,0/2,-1.0,-1.0,,136,N. Maric,Nikola Maric,FIATC Girona
+2,@MAN,Fuera,V,21:05,21.08,2.0,3.0,1.0,0/3,0.0,0.0,,214,M. Andric,Mihajlo Andric,Río Breogán
+1,vsJOV,Casa,V,19:49,19.82,8.0,0.0,0.0,2/3,5.0,6.0,,214,M. Andric,Mihajlo Andric,Río Breogán
+2,@BAS,Fuera,D,22:48,22.8,2.0,0.0,0.0,0/0,-3.0,-3.0,,138,S. Martínez,Sergi Martínez,FIATC Girona
+1,vsMUR,Casa,V,22:48,22.8,3.0,1.0,0.0,1/1,6.0,7.2,20000.0,138,S. Martínez,Sergi Martínez,FIATC Girona
+2,@BAS,Fuera,D,5:04,5.07,0.0,2.0,0.0,0/0,2.0,2.0,,250,K. Brunot,Khory Brunot,FIATC Girona
+2,@BAS,Fuera,D,15:04,15.07,4.0,0.0,4.0,0/4,1.0,1.0,,234,A. Pluta,Andrzej Pluta,FIATC Girona
+1,vsMUR,Casa,V,16:30,16.5,2.0,2.0,1.0,0/2,2.0,2.4,,234,A. Pluta,Andrzej Pluta,FIATC Girona
 2,@MAN,—,,—,,,,,,,,,219,E. Quintela,Erik Quintela,Río Breogán
 1,vsJOV,Casa,V,1:46,1.77,0.0,0.0,1.0,0/0,1.0,1.2,,219,E. Quintela,Erik Quintela,Río Breogán
-2,vsBRE,Casa,D,24:21,24.35,14.0,3.0,1.0,4/7,15.0,15.0,34425.0,120,C. Agbo,Chibuzo Agbo,Kids&Us Manresa
-1,@BLB,Fuera,D,19:58,19.97,7.0,1.0,0.0,2/3,1.0,1.0,,120,C. Agbo,Chibuzo Agbo,Kids&Us Manresa
-2,vsBRE,Casa,D,9:43,9.72,3.0,0.0,0.0,1/1,3.0,3.0,,122,L. Beaufort,Lucas Beaufort,Kids&Us Manresa
-1,@BLB,Fuera,D,8:22,8.37,4.0,0.0,0.0,0/0,1.0,1.0,,122,L. Beaufort,Lucas Beaufort,Kids&Us Manresa
-2,vsBRE,Casa,D,27:31,27.52,30.0,8.0,3.0,3/6,35.0,35.0,46500.0,119,T. Allen,Timmy Allen,Kids&Us Manresa
-1,@,—,,—,,,,,,,,,119,T. Allen,Timmy Allen,Kids&Us Manresa
-2,@,—,,—,,,,,,,,,129,P. Oriola,Pierre Oriola,Kids&Us Manresa
-1,@,—,,—,,,,,,,,,129,P. Oriola,Pierre Oriola,Kids&Us Manresa
+2,@,—,,—,,,,,,,,,135,I. Vázquez,Isaac Vazquez,FIATC Girona
+1,@,—,,—,,,,,,,,,135,I. Vázquez,Isaac Vazquez,FIATC Girona
+2,@,—,,—,,,,,,,,,139,M. Fjellerup,Maxi Fjellerup,FIATC Girona
+1,@,—,,—,,,,,,,,,139,M. Fjellerup,Maxi Fjellerup,FIATC Girona
 2,@,—,,—,,,,,,,,,215,E. Vicedo,Edgar Vicedo,Río Breogán
 1,@,—,,—,,,,,,,,,215,E. Vicedo,Edgar Vicedo,Río Breogán
+2,@,—,,—,,,,,,,,,251,E. Sanmartín,Enric Sanmartín,FIATC Girona
+2,@BAS,Fuera,D,9:10,9.17,0.0,2.0,0.0,0/1,-1.0,-1.0,,134,A. Kunc,Aljaz Kunc,FIATC Girona
+1,@,—,,—,,,,,,,,,134,A. Kunc,Aljaz Kunc,FIATC Girona
+2,@MAN,Fuera,V,5:35,5.58,3.0,0.0,0.0,1/1,0.0,0.0,,217,J. Peris,Josep Peris,Río Breogán
+1,vsJOV,Casa,V,11:49,11.82,2.0,1.0,0.0,0/1,-3.0,-3.0,,217,J. Peris,Josep Peris,Río Breogán
+2,@BAS,Fuera,D,6:15,6.25,0.0,0.0,0.0,0/2,-3.0,-3.0,,233,D. Stenionis,Dominykas Stenionis,FIATC Girona
+1,vsMUR,Casa,V,4:55,4.92,0.0,0.0,0.0,0/0,-3.0,-3.0,,233,D. Stenionis,Dominykas Stenionis,FIATC Girona
+2,@OBR,Fuera,V,27:55,27.92,25.0,3.0,7.0,2/2,38.0,45.6,101775.0,65,T. Maledon,Theo Maledon,Real Madrid
+1,vsUNI,Casa,V,24:00,24.0,17.0,2.0,7.0,1/2,23.0,27.6,88500.0,65,T. Maledon,Theo Maledon,Real Madrid
+2,vsBRE,Casa,D,27:31,27.52,30.0,8.0,3.0,3/6,35.0,35.0,46500.0,119,T. Allen,Timmy Allen,Kids&Us Manresa
+1,@,—,,—,,,,,,,,,119,T. Allen,Timmy Allen,Kids&Us Manresa
+2,@OBR,Fuera,V,31:16,31.27,25.0,4.0,1.0,5/10,20.0,24.0,108000.0,61,Luwawu-Cabarrot,Timothé Luwawu-Cabarrot,Real Madrid
+1,vsUNI,Casa,V,23:56,23.93,14.0,5.0,1.0,2/6,12.0,14.4,20000.0,61,Luwawu-Cabarrot,Timothé Luwawu-Cabarrot,Real Madrid
+2,@,—,,—,,,,,,,,,67,F. Campazzo,Facu Campazzo,Real Madrid
+1,vsUNI,Casa,V,20:48,20.8,15.0,2.0,5.0,2/5,15.0,18.0,69000.0,67,F. Campazzo,Facu Campazzo,Real Madrid
+2,@OBR,Fuera,V,26:55,26.92,6.0,5.0,5.0,1/2,14.0,16.8,55500.0,66,A. Feliz,Andrés Feliz,Real Madrid
+1,@,—,,—,,,,,,,,,66,A. Feliz,Andrés Feliz,Real Madrid
+2,@,—,,—,,,,,,,,,53,D. Jones,Damian Jones,Real Madrid
+1,vsUNI,Casa,V,15:48,15.8,8.0,2.0,1.0,0/0,11.0,13.2,51000.0,53,D. Jones,Damian Jones,Real Madrid
+2,@OBR,Fuera,V,20:13,20.22,8.0,7.0,1.0,1/1,18.0,21.6,77775.0,58,J. Pradilla,Jaime Pradilla,Real Madrid
+1,vsUNI,Casa,V,20:22,20.37,7.0,3.0,1.0,0/4,4.0,4.8,,58,J. Pradilla,Jaime Pradilla,Real Madrid
+2,vsBRE,Casa,D,12:58,12.97,7.0,1.0,2.0,0/0,8.0,8.0,81075.0,121,N. Ongenda,Nick Ongenda,Kids&Us Manresa
+1,@BLB,Fuera,D,22:34,22.57,17.0,2.0,0.0,0/0,17.0,17.0,70500.0,121,N. Ongenda,Nick Ongenda,Kids&Us Manresa
+2,vsBRE,Casa,D,18:49,18.82,7.0,4.0,2.0,1/2,10.0,10.0,55200.0,124,L. Kolenda,Lukasz Kolenda,Kids&Us Manresa
+1,@BLB,Fuera,D,25:30,25.5,16.0,1.0,3.0,2/5,15.0,15.0,48000.0,124,L. Kolenda,Lukasz Kolenda,Kids&Us Manresa
+2,@OBR,Fuera,V,23:01,23.02,8.0,8.0,0.0,0/0,11.0,13.2,,57,W. Tavares,Edy Tavares,Real Madrid
+1,vsUNI,Casa,V,19:52,19.87,4.0,11.0,0.0,0/0,9.0,10.8,,57,W. Tavares,Edy Tavares,Real Madrid
+2,vsBRE,Casa,D,20:17,20.28,20.0,1.0,2.0,0/3,14.0,14.0,57000.0,118,JD Notae,JD Notae,Kids&Us Manresa
+1,@BLB,Fuera,D,22:44,22.73,14.0,2.0,1.0,2/7,8.0,8.0,,118,JD Notae,JD Notae,Kids&Us Manresa
+2,@OBR,Fuera,V,19:22,19.37,8.0,5.0,4.0,2/6,13.0,15.6,39525.0,60,C. Okeke,Chuma Okeke,Real Madrid
+1,vsUNI,Casa,V,12:51,12.85,2.0,1.0,1.0,0/1,4.0,4.8,,60,C. Okeke,Chuma Okeke,Real Madrid
+2,@,—,,—,,,,,,,,,63,A. Abalde,Alberto Abalde,Real Madrid
+1,vsUNI,Casa,V,15:16,15.27,9.0,1.0,0.0,1/3,8.0,9.6,39000.0,63,A. Abalde,Alberto Abalde,Real Madrid
+2,vsBRE,Casa,D,24:21,24.35,14.0,3.0,1.0,4/7,15.0,15.0,34425.0,120,C. Agbo,Chibuzo Agbo,Kids&Us Manresa
+1,@BLB,Fuera,D,19:58,19.97,7.0,1.0,0.0,2/3,1.0,1.0,,120,C. Agbo,Chibuzo Agbo,Kids&Us Manresa
+2,vsBRE,Casa,D,14:00,14.0,6.0,4.0,0.0,0/1,8.0,8.0,34500.0,125,P. Tamba,Pablo Tamba,Kids&Us Manresa
+1,@BLB,Fuera,D,14:23,14.38,5.0,3.0,2.0,0/0,8.0,8.0,30000.0,125,P. Tamba,Pablo Tamba,Kids&Us Manresa
+2,vsBRE,Casa,D,19:26,19.43,1.0,6.0,4.0,0/1,4.0,4.0,,123,Y. Minchev,Yordan Minchev,Kids&Us Manresa
+1,@BLB,Fuera,D,17:26,17.43,10.0,6.0,1.0,2/4,10.0,10.0,50000.0,123,Y. Minchev,Yordan Minchev,Kids&Us Manresa
+2,vsBRE,Casa,D,18:53,18.88,7.0,0.0,3.0,1/4,1.0,1.0,28000.0,127,R. Villar,Rafael Villar,Kids&Us Manresa
+1,@BLB,Fuera,D,21:17,21.28,9.0,4.0,5.0,0/2,13.0,13.0,42000.0,127,R. Villar,Rafael Villar,Kids&Us Manresa
+2,@OBR,Fuera,V,13:34,13.57,6.0,0.0,1.0,0/3,5.0,6.0,31500.0,62,G. Procida,Gabriele Procida,Real Madrid
+1,@,—,,—,,,,,,,,,62,G. Procida,Gabriele Procida,Real Madrid
+2,vsBRE,Casa,D,20:36,20.6,0.0,3.0,4.0,0/2,-1.0,-1.0,,130,F. Bassas,Ferran Bassas,Kids&Us Manresa
+1,@BLB,Fuera,D,21:37,21.62,5.0,0.0,7.0,1/5,10.0,10.0,57000.0,130,F. Bassas,Ferran Bassas,Kids&Us Manresa
+2,@OBR,Fuera,V,4:20,4.33,3.0,1.0,0.0,0/0,1.0,1.2,,56,M. Shulga,Max Shulga,Real Madrid
+1,vsUNI,Casa,V,14:02,14.03,4.0,2.0,3.0,0/2,4.0,4.8,,56,M. Shulga,Max Shulga,Real Madrid
+2,@OBR,Fuera,V,12:27,12.45,2.0,1.0,4.0,0/2,4.0,4.8,,64,S. Llull,Sergio Llull,Real Madrid
+1,vsUNI,Casa,V,5:24,5.4,0.0,0.0,1.0,0/0,0.0,0.0,,64,S. Llull,Sergio Llull,Real Madrid
+2,@OBR,Fuera,V,18:33,18.55,10.0,2.0,1.0,1/6,2.0,2.4,,255,N. Smith,Nick Smith Jr.,Real Madrid
+2,vsBRE,Casa,D,9:43,9.72,3.0,0.0,0.0,1/1,3.0,3.0,,122,L. Beaufort,Lucas Beaufort,Kids&Us Manresa
+1,@BLB,Fuera,D,8:22,8.37,4.0,0.0,0.0,0/0,1.0,1.0,,122,L. Beaufort,Lucas Beaufort,Kids&Us Manresa
+2,vsBRE,Casa,D,5:50,5.83,0.0,0.0,0.0,0/0,-1.0,-1.0,,126,E. Vila,Eric Vila,Kids&Us Manresa
+1,@BLB,Fuera,D,20:42,20.7,3.0,7.0,1.0,0/4,3.0,3.0,,126,E. Vila,Eric Vila,Kids&Us Manresa
+2,@,—,,—,,,,,,,,,129,P. Oriola,Pierre Oriola,Kids&Us Manresa
+1,@,—,,—,,,,,,,,,129,P. Oriola,Pierre Oriola,Kids&Us Manresa
+2,@,—,,—,,,,,,,,,246,G. Deck,Gabriel Deck,Real Madrid
+1,vsUNI,Casa,V,23:55,23.92,9.0,8.0,0.0,0/3,8.0,9.6,0.0,246,G. Deck,Gabriel Deck,Real Madrid
 2,vsBRE,Casa,D,7:36,7.6,0.0,1.0,0.0,0/0,0.0,0.0,,249,M. Enabulele,Michael Enabulele,Kids&Us Manresa
 2,@,—,,—,,,,,,,,,128,H. Benitez,Hugo Benitez,Kids&Us Manresa
 1,@BLB,Fuera,D,5:27,5.45,2.0,1.0,0.0,0/1,-1.0,-1.0,,128,H. Benitez,Hugo Benitez,Kids&Us Manresa
-2,@MAN,Fuera,V,5:35,5.58,3.0,0.0,0.0,1/1,0.0,0.0,,217,J. Peris,Josep Peris,Río Breogán
-1,vsJOV,Casa,V,11:49,11.82,2.0,1.0,0.0,0/1,-3.0,-3.0,,217,J. Peris,Josep Peris,Río Breogán
-2,@COR,Fuera,D,30:46,30.77,17.0,3.0,3.0,3/9,15.0,15.0,77625.0,70,D. Hilliard,Darrun Hilliard,Surne Bilbao
-1,vsMAN,Casa,V,24:11,24.18,19.0,5.0,7.0,4/8,25.0,30.0,67500.0,70,D. Hilliard,Darrun Hilliard,Surne Bilbao
-2,@COR,Fuera,D,22:04,22.07,10.0,11.0,0.0,0/0,23.0,23.0,112125.0,76,T. Hlinason,Tryggvi Hlinason,Surne Bilbao
-1,vsMAN,Casa,V,23:53,23.88,12.0,8.0,2.0,0/0,24.0,28.8,97500.0,76,T. Hlinason,Tryggvi Hlinason,Surne Bilbao
-2,@COR,Fuera,D,28:09,28.15,13.0,1.0,5.0,3/6,16.0,16.0,69000.0,74,H. Frey,Harald Frey,Surne Bilbao
-1,vsMAN,Casa,V,23:24,23.4,14.0,0.0,6.0,3/4,19.0,22.8,60000.0,74,H. Frey,Harald Frey,Surne Bilbao
-2,vsBLB,Casa,V,30:19,30.32,29.0,4.0,6.0,2/4,16.0,19.2,100050.0,18,A. Verge,Alonzo Verge Jr.,Leyma Coruña
-1,@FCB,Fuera,D,22:55,22.92,16.0,2.0,9.0,0/1,18.0,18.0,87000.0,18,A. Verge,Alonzo Verge Jr.,Leyma Coruña
-2,@COR,Fuera,D,29:21,29.35,16.0,3.0,2.0,2/5,15.0,15.0,50025.0,80,M. Normantas,Margiris Normantas,Surne Bilbao
-1,vsMAN,Casa,V,21:02,21.03,14.0,4.0,2.0,2/3,15.0,18.0,43500.0,80,M. Normantas,Margiris Normantas,Surne Bilbao
-2,vsBLB,Casa,V,28:12,28.2,13.0,2.0,1.0,2/6,13.0,15.6,60375.0,15,C. Pacheco,Caio Pacheco,Leyma Coruña
-1,@FCB,Fuera,D,22:07,22.12,11.0,1.0,5.0,2/3,17.0,17.0,52500.0,15,C. Pacheco,Caio Pacheco,Leyma Coruña
-2,@COR,Fuera,D,20:42,20.7,3.0,5.0,1.0,0/1,0.0,0.0,,69,B. Vautier,Bastien Vautier,Surne Bilbao
-1,vsMAN,Casa,V,14:53,14.88,12.0,4.0,0.0,0/0,13.0,15.6,52500.0,69,B. Vautier,Bastien Vautier,Surne Bilbao
-2,vsBLB,Casa,V,12:47,12.78,4.0,2.0,6.0,1/2,7.0,8.4,34500.0,19,D. Cuevas,Dídac Cuevas,Leyma Coruña
-1,@FCB,Fuera,D,16:28,16.47,10.0,3.0,4.0,0/4,14.0,14.0,30000.0,19,D. Cuevas,Dídac Cuevas,Leyma Coruña
-2,@COR,Fuera,D,15:33,15.55,9.0,0.0,1.0,1/1,8.0,8.0,58650.0,77,M. Krampelj,Martin Krampelj,Surne Bilbao
-1,vsMAN,Casa,V,18:35,18.58,11.0,2.0,0.0,1/1,11.0,13.2,51000.0,77,M. Krampelj,Martin Krampelj,Surne Bilbao
-2,vsBLB,Casa,V,20:04,20.07,12.0,4.0,0.0,1/1,16.0,19.2,67275.0,14,D. Skapintsev,Dmytro Skapintsev,Leyma Coruña
-1,@FCB,Fuera,D,17:30,17.5,8.0,7.0,0.0,0/0,12.0,12.0,58500.0,14,D. Skapintsev,Dmytro Skapintsev,Leyma Coruña
-2,vsBLB,Casa,V,9:50,9.83,2.0,2.0,0.0,0/0,3.0,3.6,32775.0,24,G. Jou,Guillem Jou,Leyma Coruña
-1,@FCB,Fuera,D,14:09,14.15,10.0,1.0,0.0,3/3,9.0,9.0,28500.0,24,G. Jou,Guillem Jou,Leyma Coruña
-2,vsBLB,Casa,V,18:58,18.97,9.0,2.0,0.0,2/3,4.0,4.8,,16,P. Jorgensen,Paul Jorgensen,Leyma Coruña
-1,@FCB,Fuera,D,18:30,18.5,13.0,0.0,0.0,3/5,8.0,8.0,48000.0,16,P. Jorgensen,Paul Jorgensen,Leyma Coruña
-2,@COR,Fuera,D,16:22,16.37,8.0,2.0,0.0,0/1,4.0,4.0,,71,A. Somogyi,Adam Somogyi,Surne Bilbao
-1,vsMAN,Casa,V,16:36,16.6,7.0,1.0,5.0,1/2,6.0,7.2,42000.0,71,A. Somogyi,Adam Somogyi,Surne Bilbao
-2,@COR,Fuera,D,31:41,31.68,11.0,8.0,2.0,1/8,13.0,13.0,43125.0,78,L. Petrasek,Luke Petrasek,Surne Bilbao
-1,vsMAN,Casa,V,19:18,19.3,8.0,2.0,0.0,0/3,6.0,7.2,37500.0,78,L. Petrasek,Luke Petrasek,Surne Bilbao
-2,@COR,Fuera,D,6:31,6.52,2.0,2.0,0.0,0/0,3.0,3.0,11000.0,79,A. Font,Aleix Font,Surne Bilbao
-1,vsMAN,Casa,V,13:58,13.97,8.0,1.0,0.0,2/2,4.0,4.8,24000.0,79,A. Font,Aleix Font,Surne Bilbao
-2,vsBLB,Casa,V,29:14,29.23,14.0,7.0,0.0,1/5,15.0,18.0,45900.0,17,L. Uleckas,Lukas Uleckas,Leyma Coruña
-1,@FCB,Fuera,D,22:54,22.9,6.0,1.0,1.0,2/3,4.0,4.0,,17,L. Uleckas,Lukas Uleckas,Leyma Coruña
-2,vsBLB,Casa,V,21:19,21.32,6.0,3.0,3.0,0/2,4.0,4.8,,22,D. Radoncic,Dino Radoncic,Leyma Coruña
-1,@FCB,Fuera,D,21:06,21.1,4.0,2.0,4.0,0/2,4.0,4.0,,22,D. Radoncic,Dino Radoncic,Leyma Coruña
-2,vsBLB,Casa,V,16:17,16.28,4.0,5.0,1.0,1/1,10.0,12.0,26775.0,23,J. Diaz,Jacobo Diaz,Leyma Coruña
-1,@FCB,Fuera,D,4:01,4.02,3.0,1.0,0.0,1/2,3.0,3.0,,23,J. Diaz,Jacobo Diaz,Leyma Coruña
-2,@COR,Fuera,D,23:51,23.85,12.0,3.0,2.0,2/4,9.0,9.0,,68,N. Darling,Nate Darling,Surne Bilbao
-1,vsMAN,Casa,V,20:49,20.82,2.0,2.0,3.0,0/4,1.0,1.2,,68,N. Darling,Nate Darling,Surne Bilbao
-2,vsBLB,—,,—,,,,,,,,,25,T. Dimsa,Tomas Dimsa,Leyma Coruña
-1,@FCB,—,,—,,,,,,,,,25,T. Dimsa,Tomas Dimsa,Leyma Coruña
-2,@COR,—,,—,,,,,,,,,72,D. Duscak,Dan Duscak,Surne Bilbao
-1,vsMAN,—,,—,,,,,,,,,72,D. Duscak,Dan Duscak,Surne Bilbao
-2,@,—,,—,,,,,,,,,75,O. Hustak,Ondrej Hustak,Surne Bilbao
-1,@,—,,—,,,,,,,,,75,O. Hustak,Ondrej Hustak,Surne Bilbao
-2,@COR,—,,—,,,,,,,,,73,M. Ansorregi,Manex Ansorregi,Surne Bilbao
-1,vsMAN,Casa,V,3:21,3.35,0.0,0.0,0.0,0/0,-1.0,-1.0,,73,M. Ansorregi,Manex Ansorregi,Surne Bilbao
-2,vsBLB,Casa,V,18:29,18.48,5.0,5.0,2.0,0/2,6.0,7.2,,20,K. Silins,Karlis Silins,Leyma Coruña
-1,@FCB,Fuera,D,17:50,17.83,3.0,0.0,0.0,0/3,-2.0,-2.0,,20,K. Silins,Karlis Silins,Leyma Coruña
+2,@OBR,Fuera,V,8:06,8.1,0.0,0.0,0.0,0/0,-3.0,-3.0,,54,O. Sarr,Olivier Sarr,Real Madrid
+1,vsUNI,Casa,V,3:46,3.77,0.0,1.0,0.0,0/0,-2.0,-2.0,,54,O. Sarr,Olivier Sarr,Real Madrid
 2,vsBUR,Casa,D,26:04,26.07,16.0,3.0,4.0,1/4,19.0,19.0,113850.0,205,J. Batemon,James Batemon,iLERNA Lleida
 1,@VBC,Fuera,V,21:55,21.92,23.0,3.0,5.0,1/6,30.0,36.0,99000.0,205,J. Batemon,James Batemon,iLERNA Lleida
+2,vsRMA,Casa,D,23:11,23.18,13.0,6.0,1.0,0/0,19.0,19.0,60375.0,7,J. Soriano,Joel Soriano,Monbus Obradoiro
+1,@AND,Fuera,V,27:03,27.05,15.0,6.0,1.0,0/0,18.0,21.6,52500.0,7,J. Soriano,Joel Soriano,Monbus Obradoiro
 2,vsBUR,Casa,D,25:51,25.85,3.0,5.0,7.0,0/9,4.0,4.0,65550.0,237,D. McGhee,Darius McGhee,iLERNA Lleida
 1,@VBC,Fuera,V,23:55,23.92,21.0,6.0,4.0,4/9,28.0,33.6,57000.0,237,D. McGhee,Darius McGhee,iLERNA Lleida
+2,vsRMA,Casa,D,27:10,27.17,23.0,2.0,3.0,3/9,13.0,13.0,110400.0,4,B. Childress,Brandon Childress,Monbus Obradoiro
+1,@AND,Fuera,V,22:20,22.33,18.0,1.0,4.0,2/4,20.0,24.0,96000.0,4,B. Childress,Brandon Childress,Monbus Obradoiro
 2,vsBUR,Casa,D,21:33,21.55,8.0,5.0,2.0,0/2,13.0,13.0,96600.0,202,O. Paulí,Oriol Paulí,iLERNA Lleida
 1,@VBC,Fuera,V,22:32,22.53,10.0,7.0,3.0,1/2,18.0,21.6,84000.0,202,O. Paulí,Oriol Paulí,iLERNA Lleida
-2,@ILE,Fuera,V,22:07,22.12,14.0,2.0,5.0,2/2,20.0,24.0,34500.0,153,Z. Samar,Ziga Samar,Recoletas Salud San Pablo Burgos
-1,vsBAS,Casa,D,21:50,21.83,17.0,6.0,3.0,0/1,19.0,19.0,30000.0,153,Z. Samar,Ziga Samar,Recoletas Salud San Pablo Burgos
-2,@ILE,Fuera,V,24:00,24.0,11.0,6.0,1.0,1/4,13.0,15.6,91425.0,143,C. Sengfelder,Christian Sengfelder,Recoletas Salud San Pablo Burgos
-1,vsBAS,Casa,D,24:11,24.18,13.0,5.0,1.0,0/1,16.0,16.0,79500.0,143,C. Sengfelder,Christian Sengfelder,Recoletas Salud San Pablo Burgos
-2,@ILE,Fuera,V,16:00,16.0,3.0,3.0,0.0,1/2,2.0,2.4,42000.0,149,D. Díez,Dani Díez,Recoletas Salud San Pablo Burgos
-1,vsBAS,Casa,D,19:05,19.08,4.0,9.0,2.0,0/0,14.0,14.0,48000.0,149,D. Díez,Dani Díez,Recoletas Salud San Pablo Burgos
-2,@ILE,Fuera,V,18:26,18.43,13.0,6.0,0.0,0/0,12.0,14.4,75900.0,145,B. Koprivica,Balsa Koprivica,Recoletas Salud San Pablo Burgos
-1,vsBAS,Casa,D,13:01,13.02,10.0,5.0,1.0,0/0,11.0,11.0,66000.0,145,B. Koprivica,Balsa Koprivica,Recoletas Salud San Pablo Burgos
-2,@ILE,Fuera,V,9:23,9.38,0.0,2.0,1.0,0/2,0.0,0.0,,147,R. Lobaco,Raúl Lobaco,Recoletas Salud San Pablo Burgos
-1,vsBAS,Casa,D,25:15,25.25,6.0,5.0,1.0,0/2,11.0,11.0,45000.0,147,R. Lobaco,Raúl Lobaco,Recoletas Salud San Pablo Burgos
+2,vsRMA,Casa,D,21:49,21.82,9.0,5.0,2.0,0/0,10.0,10.0,77625.0,6,F. Dos Anjos,Felipe Dos Anjos,Monbus Obradoiro
+1,@AND,Fuera,V,12:57,12.95,12.0,9.0,0.0,0/0,18.0,21.6,67500.0,6,F. Dos Anjos,Felipe Dos Anjos,Monbus Obradoiro
+2,vsRMA,Casa,D,20:09,20.15,16.0,3.0,5.0,2/5,16.0,16.0,41400.0,11,C. Agada,Caleb Agada,Monbus Obradoiro
+1,@AND,Fuera,V,15:31,15.52,7.0,5.0,7.0,1/3,12.0,14.4,36000.0,11,C. Agada,Caleb Agada,Monbus Obradoiro
+2,vsRMA,Casa,D,23:32,23.53,13.0,1.0,2.0,2/6,11.0,11.0,56925.0,9,Y. Barrueta,Yunio Barrueta,Monbus Obradoiro
+1,@AND,Fuera,V,24:04,24.07,11.0,3.0,3.0,3/6,13.0,15.6,49500.0,9,Y. Barrueta,Yunio Barrueta,Monbus Obradoiro
+2,vsBUR,Casa,D,24:59,24.98,15.0,2.0,3.0,2/3,15.0,15.0,68850.0,200,M. Ejim,Melvin Ejim,iLERNA Lleida
+1,@VBC,Fuera,V,19:10,19.17,9.0,3.0,2.0,0/4,6.0,7.2,,200,M. Ejim,Melvin Ejim,iLERNA Lleida
 2,vsBUR,Casa,D,13:07,13.12,8.0,4.0,0.0,0/0,11.0,11.0,5000.0,198,K. Kuath,Kur Kuath,iLERNA Lleida
 1,@VBC,Fuera,V,13:25,13.42,7.0,6.0,0.0,0/0,9.0,10.8,40000.0,198,K. Kuath,Kur Kuath,iLERNA Lleida
+2,vsRMA,Casa,D,25:49,25.82,9.0,7.0,2.0,2/3,9.0,9.0,14000.0,10,L. Meindl,Leo Meindl,Monbus Obradoiro
+1,@AND,Fuera,V,23:43,23.72,12.0,4.0,0.0,2/5,6.0,7.2,,10,L. Meindl,Leo Meindl,Monbus Obradoiro
+2,vsRMA,Casa,D,16:01,16.02,13.0,1.0,0.0,1/3,4.0,4.0,,1,A. Barcello,Alex Barcello,Monbus Obradoiro
+1,@AND,Fuera,V,20:56,20.93,6.0,0.0,4.0,0/1,10.0,12.0,61500.0,1,A. Barcello,Alex Barcello,Monbus Obradoiro
+2,vsBUR,Casa,D,10:10,10.17,3.0,3.0,1.0,0/0,7.0,7.0,34500.0,203,M. Sanz,Mikel Sanz,iLERNA Lleida
+1,@VBC,Fuera,V,10:46,10.77,9.0,0.0,1.0,1/2,4.0,4.8,30000.0,203,M. Sanz,Mikel Sanz,iLERNA Lleida
+2,vsRMA,Casa,D,10:02,10.03,0.0,2.0,0.0,0/0,3.0,3.0,,2,E. Abogidi,Efe Abogidi,Monbus Obradoiro
+1,@AND,Fuera,V,19:06,19.1,5.0,6.0,1.0,1/3,7.0,8.4,50000.0,2,E. Abogidi,Efe Abogidi,Monbus Obradoiro
 2,vsBUR,Casa,D,15:01,15.02,2.0,1.0,0.0,0/4,0.0,0.0,,201,J. Shurna,John Shurna,iLERNA Lleida
 1,@VBC,Fuera,V,20:50,20.83,3.0,10.0,1.0,1/3,9.0,10.8,45000.0,201,J. Shurna,John Shurna,iLERNA Lleida
 2,vsBUR,Casa,D,14:28,14.47,6.0,2.0,1.0,2/4,1.0,1.0,,206,D. García,Dani García,iLERNA Lleida
 1,@VBC,Fuera,V,16:48,16.8,4.0,3.0,3.0,0/1,7.0,8.4,42000.0,206,D. García,Dani García,iLERNA Lleida
-2,vsBUR,Casa,D,24:59,24.98,15.0,2.0,3.0,2/3,15.0,15.0,68850.0,200,M. Ejim,Melvin Ejim,iLERNA Lleida
-1,@VBC,Fuera,V,19:10,19.17,9.0,3.0,2.0,0/4,6.0,7.2,,200,M. Ejim,Melvin Ejim,iLERNA Lleida
-2,@ILE,Fuera,V,22:54,22.9,20.0,4.0,1.0,2/4,20.0,24.0,37950.0,151,C. Audige,Chase Audige,Recoletas Salud San Pablo Burgos
-1,vsBAS,Casa,D,17:01,17.02,12.0,1.0,2.0,3/6,7.0,7.0,33000.0,151,C. Audige,Chase Audige,Recoletas Salud San Pablo Burgos
-2,@ILE,Fuera,V,23:13,23.22,20.0,6.0,3.0,2/3,22.0,26.4,76500.0,142,DJ Steward,DJ Steward,Recoletas Salud San Pablo Burgos
-1,vsBAS,Casa,D,22:57,22.95,15.0,1.0,1.0,1/6,6.0,6.0,,142,DJ Steward,DJ Steward,Recoletas Salud San Pablo Burgos
-2,vsBUR,Casa,D,18:24,18.4,3.0,2.0,0.0,1/6,-3.0,-3.0,,204,M. Hughes,Mark Hughes,iLERNA Lleida
-1,@VBC,Fuera,V,22:24,22.4,8.0,2.0,0.0,2/6,5.0,6.0,,204,M. Hughes,Mark Hughes,iLERNA Lleida
-2,@ILE,—,,—,,,,,,,,,148,R. Guerrero,Rubén Guerrero,Recoletas Salud San Pablo Burgos
-1,vsBAS,Casa,D,7:22,7.37,4.0,2.0,0.0,0/0,5.0,5.0,27000.0,148,R. Guerrero,Rubén Guerrero,Recoletas Salud San Pablo Burgos
-2,vsBUR,Casa,D,10:10,10.17,3.0,3.0,1.0,0/0,7.0,7.0,34500.0,203,M. Sanz,Mikel Sanz,iLERNA Lleida
-1,@VBC,Fuera,V,10:46,10.77,9.0,0.0,1.0,1/2,4.0,4.8,30000.0,203,M. Sanz,Mikel Sanz,iLERNA Lleida
-2,@ILE,Fuera,V,21:33,21.55,11.0,3.0,1.0,1/5,10.0,12.0,,243,S. Doumbouya,Sekou Doumbouya,Recoletas Salud San Pablo Burgos
-1,vsBAS,Casa,D,16:21,16.35,10.0,2.0,1.0,0/3,2.0,2.0,,243,S. Doumbouya,Sekou Doumbouya,Recoletas Salud San Pablo Burgos
-2,@ILE,Fuera,V,20:20,20.33,2.0,4.0,2.0,0/1,4.0,4.8,,144,D.Radosavljevic,Dusan Radosavljevic,Recoletas Salud San Pablo Burgos
-1,vsBAS,Casa,D,19:54,19.9,2.0,3.0,1.0,0/1,0.0,0.0,,144,D.Radosavljevic,Dusan Radosavljevic,Recoletas Salud San Pablo Burgos
-2,@,—,,—,,,,,,,,,146,V. Cancar,Vlatko Cancar,Recoletas Salud San Pablo Burgos
-1,@,—,,—,,,,,,,,,146,V. Cancar,Vlatko Cancar,Recoletas Salud San Pablo Burgos
-2,@ILE,Fuera,V,6:22,6.37,0.0,1.0,0.0,0/0,-1.0,-1.0,,150,P. Almazán,Pablo Almazán,Recoletas Salud San Pablo Burgos
-1,vsBAS,Casa,D,1:20,1.33,0.0,0.0,0.0,0/0,0.0,0.0,,150,P. Almazán,Pablo Almazán,Recoletas Salud San Pablo Burgos
-2,@,—,,—,,,,,,,,,152,R. Obasohan,Retin Obasohan,Recoletas Salud San Pablo Burgos
-1,@,—,,—,,,,,,,,,152,R. Obasohan,Retin Obasohan,Recoletas Salud San Pablo Burgos
-2,@,—,,—,,,,,,,,,199,A. Diagne,Atoumane Diagne,iLERNA Lleida
-1,@,—,,—,,,,,,,,,199,A. Diagne,Atoumane Diagne,iLERNA Lleida
-2,vsBUR,Casa,D,3:31,3.52,0.0,0.0,0.0,0/0,0.0,0.0,,207,A. Rodriguez,Adria Rodriguez,iLERNA Lleida
-1,@VBC,Fuera,V,1:40,1.67,0.0,0.0,0.0,0/0,0.0,0.0,,207,A. Rodriguez,Adria Rodriguez,iLERNA Lleida
-2,@ILE,Fuera,V,15:42,15.7,0.0,1.0,0.0,0/0,-12.0,-12.0,,252,J. Taboada,Joaquín Taboada,Recoletas Salud San Pablo Burgos
-1,vsBAS,Casa,D,11:43,11.72,4.0,3.0,2.0,0/1,6.0,6.0,0.0,252,J. Taboada,Joaquín Taboada,Recoletas Salud San Pablo Burgos
-2,@OBR,Fuera,V,27:55,27.92,25.0,3.0,7.0,2/2,38.0,45.6,101775.0,65,T. Maledon,Theo Maledon,Real Madrid
-1,vsUNI,Casa,V,24:00,24.0,17.0,2.0,7.0,1/2,23.0,27.6,88500.0,65,T. Maledon,Theo Maledon,Real Madrid
-2,vsRMA,Casa,D,27:10,27.17,23.0,2.0,3.0,3/9,13.0,13.0,110400.0,4,B. Childress,Brandon Childress,Monbus Obradoiro
-1,@AND,Fuera,V,22:20,22.33,18.0,1.0,4.0,2/4,20.0,24.0,96000.0,4,B. Childress,Brandon Childress,Monbus Obradoiro
-2,vsRMA,Casa,D,21:49,21.82,9.0,5.0,2.0,0/0,10.0,10.0,77625.0,6,F. Dos Anjos,Felipe Dos Anjos,Monbus Obradoiro
-1,@AND,Fuera,V,12:57,12.95,12.0,9.0,0.0,0/0,18.0,21.6,67500.0,6,F. Dos Anjos,Felipe Dos Anjos,Monbus Obradoiro
-2,vsRMA,Casa,D,23:11,23.18,13.0,6.0,1.0,0/0,19.0,19.0,60375.0,7,J. Soriano,Joel Soriano,Monbus Obradoiro
-1,@AND,Fuera,V,27:03,27.05,15.0,6.0,1.0,0/0,18.0,21.6,52500.0,7,J. Soriano,Joel Soriano,Monbus Obradoiro
-2,@,—,,—,,,,,,,,,67,F. Campazzo,Facu Campazzo,Real Madrid
-1,vsUNI,Casa,V,20:48,20.8,15.0,2.0,5.0,2/5,15.0,18.0,69000.0,67,F. Campazzo,Facu Campazzo,Real Madrid
-2,vsRMA,Casa,D,23:32,23.53,13.0,1.0,2.0,2/6,11.0,11.0,56925.0,9,Y. Barrueta,Yunio Barrueta,Monbus Obradoiro
-1,@AND,Fuera,V,24:04,24.07,11.0,3.0,3.0,3/6,13.0,15.6,49500.0,9,Y. Barrueta,Yunio Barrueta,Monbus Obradoiro
-2,vsRMA,Casa,D,20:09,20.15,16.0,3.0,5.0,2/5,16.0,16.0,41400.0,11,C. Agada,Caleb Agada,Monbus Obradoiro
-1,@AND,Fuera,V,15:31,15.52,7.0,5.0,7.0,1/3,12.0,14.4,36000.0,11,C. Agada,Caleb Agada,Monbus Obradoiro
-2,@OBR,Fuera,V,31:16,31.27,25.0,4.0,1.0,5/10,20.0,24.0,108000.0,61,Luwawu-Cabarrot,Timothé Luwawu-Cabarrot,Real Madrid
-1,vsUNI,Casa,V,23:56,23.93,14.0,5.0,1.0,2/6,12.0,14.4,20000.0,61,Luwawu-Cabarrot,Timothé Luwawu-Cabarrot,Real Madrid
-2,@,—,,—,,,,,,,,,53,D. Jones,Damian Jones,Real Madrid
-1,vsUNI,Casa,V,15:48,15.8,8.0,2.0,1.0,0/0,11.0,13.2,51000.0,53,D. Jones,Damian Jones,Real Madrid
-2,vsRMA,Casa,D,16:01,16.02,13.0,1.0,0.0,1/3,4.0,4.0,,1,A. Barcello,Alex Barcello,Monbus Obradoiro
-1,@AND,Fuera,V,20:56,20.93,6.0,0.0,4.0,0/1,10.0,12.0,61500.0,1,A. Barcello,Alex Barcello,Monbus Obradoiro
-2,@OBR,Fuera,V,23:01,23.02,8.0,8.0,0.0,0/0,11.0,13.2,,57,W. Tavares,Edy Tavares,Real Madrid
-1,vsUNI,Casa,V,19:52,19.87,4.0,11.0,0.0,0/0,9.0,10.8,,57,W. Tavares,Edy Tavares,Real Madrid
-2,@,—,,—,,,,,,,,,63,A. Abalde,Alberto Abalde,Real Madrid
-1,vsUNI,Casa,V,15:16,15.27,9.0,1.0,0.0,1/3,8.0,9.6,39000.0,63,A. Abalde,Alberto Abalde,Real Madrid
-2,vsRMA,Casa,D,10:02,10.03,0.0,2.0,0.0,0/0,3.0,3.0,,2,E. Abogidi,Efe Abogidi,Monbus Obradoiro
-1,@AND,Fuera,V,19:06,19.1,5.0,6.0,1.0,1/3,7.0,8.4,50000.0,2,E. Abogidi,Efe Abogidi,Monbus Obradoiro
-2,vsRMA,Casa,D,25:49,25.82,9.0,7.0,2.0,2/3,9.0,9.0,14000.0,10,L. Meindl,Leo Meindl,Monbus Obradoiro
-1,@AND,Fuera,V,23:43,23.72,12.0,4.0,0.0,2/5,6.0,7.2,,10,L. Meindl,Leo Meindl,Monbus Obradoiro
-2,@OBR,Fuera,V,4:20,4.33,3.0,1.0,0.0,0/0,1.0,1.2,,56,M. Shulga,Max Shulga,Real Madrid
-1,vsUNI,Casa,V,14:02,14.03,4.0,2.0,3.0,0/2,4.0,4.8,,56,M. Shulga,Max Shulga,Real Madrid
-2,@OBR,Fuera,V,20:13,20.22,8.0,7.0,1.0,1/1,18.0,21.6,77775.0,58,J. Pradilla,Jaime Pradilla,Real Madrid
-1,vsUNI,Casa,V,20:22,20.37,7.0,3.0,1.0,0/4,4.0,4.8,,58,J. Pradilla,Jaime Pradilla,Real Madrid
-2,@OBR,Fuera,V,19:22,19.37,8.0,5.0,4.0,2/6,13.0,15.6,39525.0,60,C. Okeke,Chuma Okeke,Real Madrid
-1,vsUNI,Casa,V,12:51,12.85,2.0,1.0,1.0,0/1,4.0,4.8,,60,C. Okeke,Chuma Okeke,Real Madrid
 2,vsRMA,Casa,D,18:05,18.08,4.0,4.0,1.0,0/2,2.0,2.0,,3,D. Brito,Diogo Brito,Monbus Obradoiro
 1,@AND,Fuera,V,12:40,12.67,0.0,1.0,2.0,0/1,1.0,1.2,,3,D. Brito,Diogo Brito,Monbus Obradoiro
+2,vsBUR,Casa,D,18:24,18.4,3.0,2.0,0.0,1/6,-3.0,-3.0,,204,M. Hughes,Mark Hughes,iLERNA Lleida
+1,@VBC,Fuera,V,22:24,22.4,8.0,2.0,0.0,2/6,5.0,6.0,,204,M. Hughes,Mark Hughes,iLERNA Lleida
+2,vsRMA,Casa,D,15:44,15.73,5.0,1.0,1.0,1/2,4.0,4.0,,12,S. Quintela,Sergi Quintela,Monbus Obradoiro
+1,@AND,Fuera,V,9:32,9.53,2.0,1.0,1.0,0/0,-3.0,-3.0,,12,S. Quintela,Sergi Quintela,Monbus Obradoiro
 2,vsRMA,—,,—,,,,,,,,,5,A. Faure,Alonso Faure,Monbus Obradoiro
 1,@AND,—,,—,,,,,,,,,5,A. Faure,Alonso Faure,Monbus Obradoiro
 2,@,—,,—,,,,,,,,,13,O. Lundqvist,Olle Lundqvist,Monbus Obradoiro
 1,@,—,,—,,,,,,,,,13,O. Lundqvist,Olle Lundqvist,Monbus Obradoiro
-2,@OBR,Fuera,V,13:34,13.57,6.0,0.0,1.0,0/3,5.0,6.0,31500.0,62,G. Procida,Gabriele Procida,Real Madrid
-1,@,—,,—,,,,,,,,,62,G. Procida,Gabriele Procida,Real Madrid
-2,@OBR,Fuera,V,12:27,12.45,2.0,1.0,4.0,0/2,4.0,4.8,,64,S. Llull,Sergio Llull,Real Madrid
-1,vsUNI,Casa,V,5:24,5.4,0.0,0.0,1.0,0/0,0.0,0.0,,64,S. Llull,Sergio Llull,Real Madrid
-2,@OBR,Fuera,V,26:55,26.92,6.0,5.0,5.0,1/2,14.0,16.8,55500.0,66,A. Feliz,Andrés Feliz,Real Madrid
-1,@,—,,—,,,,,,,,,66,A. Feliz,Andrés Feliz,Real Madrid
+2,@,—,,—,,,,,,,,,199,A. Diagne,Atoumane Diagne,iLERNA Lleida
+1,@,—,,—,,,,,,,,,199,A. Diagne,Atoumane Diagne,iLERNA Lleida
+2,vsBUR,Casa,D,3:31,3.52,0.0,0.0,0.0,0/0,0.0,0.0,,207,A. Rodriguez,Adria Rodriguez,iLERNA Lleida
+1,@VBC,Fuera,V,1:40,1.67,0.0,0.0,0.0,0/0,0.0,0.0,,207,A. Rodriguez,Adria Rodriguez,iLERNA Lleida
 2,@,—,,—,,,,,,,,,244,M. Caicedo,Michael Caicedo,Monbus Obradoiro
 1,@,—,,—,,,,,,,,,244,M. Caicedo,Michael Caicedo,Monbus Obradoiro
-2,@,—,,—,,,,,,,,,246,G. Deck,Gabriel Deck,Real Madrid
-1,vsUNI,Casa,V,23:55,23.92,9.0,8.0,0.0,0/3,8.0,9.6,0.0,246,G. Deck,Gabriel Deck,Real Madrid
-2,@OBR,Fuera,V,18:33,18.55,10.0,2.0,1.0,1/6,2.0,2.4,,255,N. Smith,Nick Smith Jr.,Real Madrid
-2,@OBR,Fuera,V,8:06,8.1,0.0,0.0,0.0,0/0,-3.0,-3.0,,54,O. Sarr,Olivier Sarr,Real Madrid
-1,vsUNI,Casa,V,3:46,3.77,0.0,1.0,0.0,0/0,-2.0,-2.0,,54,O. Sarr,Olivier Sarr,Real Madrid
-2,vsRMA,Casa,D,15:44,15.73,5.0,1.0,1.0,1/2,4.0,4.0,,12,S. Quintela,Sergi Quintela,Monbus Obradoiro
-1,@AND,Fuera,V,9:32,9.53,2.0,1.0,1.0,0/0,-3.0,-3.0,,12,S. Quintela,Sergi Quintela,Monbus Obradoiro
-2,vsVBC,Casa,D,30:21,30.35,4.0,5.0,0.0,0/4,8.0,8.0,65550.0,81,R. Blumbergs,Roberts Blumbergs,Casademont Zaragoza
-1,@CAN,Fuera,V,25:12,25.2,16.0,10.0,1.0,2/6,21.0,25.2,57000.0,81,R. Blumbergs,Roberts Blumbergs,Casademont Zaragoza
-2,vsVBC,Casa,D,16:23,16.38,5.0,1.0,4.0,0/1,2.0,2.0,,82,T. Bell-Haynes,Trae Bell-Haynes,Casademont Zaragoza
-1,@CAN,Fuera,V,23:34,23.57,19.0,6.0,4.0,5/8,20.0,24.0,87000.0,82,T. Bell-Haynes,Trae Bell-Haynes,Casademont Zaragoza
-2,@ZAR,Fuera,V,19:51,19.85,9.0,3.0,2.0,2/2,11.0,13.2,55500.0,111,K. Taylor,Kameron Taylor,Valencia Basket
-1,vsILE,Casa,D,25:48,25.8,13.0,5.0,6.0,2/4,18.0,18.0,94500.0,111,K. Taylor,Kameron Taylor,Valencia Basket
-2,vsVBC,Casa,D,27:29,27.48,22.0,3.0,0.0,3/8,13.0,13.0,51750.0,84,J. Jaworski,Justin Jaworski,Casademont Zaragoza
-1,@CAN,Fuera,V,27:15,27.25,15.0,0.0,1.0,3/5,12.0,14.4,45000.0,84,J. Jaworski,Justin Jaworski,Casademont Zaragoza
-2,@ZAR,Fuera,V,18:19,18.32,4.0,5.0,0.0,0/0,8.0,9.6,56925.0,108,N. Sako,Neal Sako,Valencia Basket
-1,vsILE,Casa,D,16:10,16.17,7.0,5.0,1.0,0/0,14.0,14.0,49500.0,108,N. Sako,Neal Sako,Valencia Basket
-2,@ZAR,Fuera,V,21:03,21.05,17.0,5.0,1.0,2/7,17.0,20.4,103500.0,242,N. Mirotic,Nikola Mirotic,Valencia Basket
-1,vsILE,Casa,D,13:38,13.63,14.0,5.0,0.0,1/3,14.0,14.0,90000.0,242,N. Mirotic,Nikola Mirotic,Valencia Basket
-2,@ZAR,Fuera,V,20:47,20.78,21.0,2.0,5.0,3/5,26.0,31.2,94350.0,104,TJ Shorts,TJ Shorts,Valencia Basket
-1,vsILE,Casa,D,21:35,21.58,13.0,4.0,6.0,0/1,12.0,12.0,,104,TJ Shorts,TJ Shorts,Valencia Basket
-2,@ZAR,Fuera,V,14:07,14.12,5.0,1.0,0.0,1/2,3.0,3.6,,115,G. Corbalán,Gonzalo Corbalán,Valencia Basket
-1,vsILE,Casa,D,15:30,15.5,7.0,4.0,0.0,1/1,10.0,10.0,63000.0,115,G. Corbalán,Gonzalo Corbalán,Valencia Basket
-2,vsVBC,Casa,D,17:26,17.43,9.0,1.0,1.0,0/4,7.0,7.0,,91,C. Homesley,Caleb Homesley,Casademont Zaragoza
-1,@CAN,Fuera,V,24:12,24.2,13.0,2.0,1.0,3/8,7.0,8.4,,91,C. Homesley,Caleb Homesley,Casademont Zaragoza
-2,vsVBC,Casa,D,16:41,16.68,5.0,4.0,0.0,0/0,7.0,7.0,,89,L. Birutis,Laurynas Birutis,Casademont Zaragoza
-1,@CAN,Fuera,V,24:45,24.75,6.0,2.0,5.0,0/0,6.0,7.2,,89,L. Birutis,Laurynas Birutis,Casademont Zaragoza
-2,vsVBC,Casa,D,23:19,23.32,12.0,11.0,2.0,0/1,23.0,23.0,61200.0,90,A. Olaseni,Gabriel Olaseni,Casademont Zaragoza
-1,@CAN,Fuera,V,14:34,14.57,2.0,7.0,1.0,0/0,5.0,6.0,,90,A. Olaseni,Gabriel Olaseni,Casademont Zaragoza
-2,@ZAR,Fuera,V,13:11,13.18,16.0,2.0,0.0,4/4,20.0,24.0,34500.0,113,J. Puerto,Josep Puerto,Valencia Basket
-1,vsILE,Casa,D,11:56,11.93,9.0,1.0,0.0,2/4,6.0,6.0,30000.0,113,J. Puerto,Josep Puerto,Valencia Basket
-2,@ZAR,Fuera,V,14:00,14.0,6.0,0.0,2.0,2/5,1.0,1.2,,117,M. Saint-Supery,Mario Saint-Supery,Valencia Basket
-1,vsILE,Casa,D,18:55,18.92,5.0,5.0,2.0,0/6,5.0,5.0,,117,M. Saint-Supery,Mario Saint-Supery,Valencia Basket
-2,@ZAR,Fuera,V,11:57,11.95,1.0,2.0,1.0,0/0,1.0,1.2,,238,J. Rivero,Jasiel Rivero,Valencia Basket
-1,vsILE,Casa,D,16:56,16.93,6.0,6.0,0.0,0/1,5.0,5.0,,238,J. Rivero,Jasiel Rivero,Valencia Basket
-2,vsVBC,Casa,D,19:23,19.38,9.0,1.0,6.0,2/4,13.0,13.0,36000.0,85,G. Vives,Guillem Vives,Casademont Zaragoza
-1,@CAN,Fuera,V,17:07,17.12,8.0,2.0,3.0,2/4,4.0,4.8,20000.0,85,G. Vives,Guillem Vives,Casademont Zaragoza
-2,vsVBC,Casa,D,12:16,12.27,6.0,4.0,0.0,2/3,6.0,6.0,34500.0,86,M. González,Miguel González,Casademont Zaragoza
-1,@CAN,Fuera,V,15:02,15.03,0.0,5.0,3.0,0/2,4.0,4.8,30000.0,86,M. González,Miguel González,Casademont Zaragoza
-2,@ZAR,Fuera,V,19:13,19.22,9.0,0.0,5.0,3/3,14.0,16.8,30000.0,116,A. Cárdenas,Álvaro Cárdenas,Valencia Basket
-1,vsILE,Casa,D,15:46,15.77,7.0,0.0,5.0,0/2,4.0,4.0,20000.0,116,A. Cárdenas,Álvaro Cárdenas,Valencia Basket
-2,@ZAR,Fuera,V,16:30,16.5,5.0,5.0,0.0,0/4,1.0,1.2,,110,N. Reuvers,Nate Reuvers,Valencia Basket
-1,vsILE,Casa,D,20:33,20.55,8.0,3.0,0.0,1/5,3.0,3.0,,110,N. Reuvers,Nate Reuvers,Valencia Basket
-2,vsVBC,Casa,D,22:49,22.82,9.0,6.0,1.0,1/5,6.0,6.0,,83,N. Brussino,Nico Brussino,Casademont Zaragoza
-1,@CAN,Fuera,V,18:57,18.95,2.0,2.0,0.0,0/1,1.0,1.2,,83,N. Brussino,Nico Brussino,Casademont Zaragoza
-2,@ZAR,Fuera,V,22:55,22.92,4.0,4.0,4.0,0/3,3.0,3.6,,105,A. Brooks,Armoni Brooks,Valencia Basket
-1,vsILE,Casa,D,17:13,17.22,11.0,2.0,0.0,3/9,1.0,1.0,,105,A. Brooks,Armoni Brooks,Valencia Basket
-2,vsVBC,Casa,D,4:14,4.23,0.0,0.0,0.0,0/0,0.0,0.0,,87,S. García,Sergi García,Casademont Zaragoza
-1,@CAN,Fuera,V,3:53,3.88,0.0,0.0,0.0,0/0,0.0,0.0,,87,S. García,Sergi García,Casademont Zaragoza
-2,@ZAR,Fuera,V,8:07,8.12,0.0,0.0,0.0,0/1,-5.0,-5.0,,106,M. Gueye,Mo Gueye,Valencia Basket
-1,vsILE,Casa,D,6:00,6.0,0.0,1.0,1.0,0/0,0.0,0.0,,106,M. Gueye,Mo Gueye,Valencia Basket
-2,@,—,,—,,,,,,,,,107,Y. Sima,Yankuba Sima,Valencia Basket
-1,@,—,,—,,,,,,,,,107,Y. Sima,Yankuba Sima,Valencia Basket
-2,@,—,,—,,,,,,,,,109,D. Osetkowski,Dylan Osetkowski,Valencia Basket
-1,@,—,,—,,,,,,,,,109,D. Osetkowski,Dylan Osetkowski,Valencia Basket
-2,@,—,,—,,,,,,,,,112,L. Marí,Lucas Marí,Valencia Basket
-1,@,—,,—,,,,,,,,,112,L. Marí,Lucas Marí,Valencia Basket
-2,@,—,,—,,,,,,,,,114,O. Moore,Omari Moore,Valencia Basket
-1,@,—,,—,,,,,,,,,114,O. Moore,Omari Moore,Valencia Basket
-2,vsVBC,—,,—,,,,,,,,,247,M. Lukic,Matija Lukic,Casademont Zaragoza
-2,@MUR,Fuera,D,17:32,17.53,12.0,6.0,1.0,0/0,16.0,16.0,60375.0,170,O. Balcerowski,Olek Balcerowski,Barça
-1,vsCOR,Casa,V,21:08,21.13,21.0,6.0,1.0,0/0,30.0,36.0,52500.0,170,O. Balcerowski,Olek Balcerowski,Barça
-2,@MUR,Fuera,D,24:28,24.47,8.0,5.0,0.0,0/1,6.0,6.0,82800.0,169,J. Parra,Joel Parra,Barça
-1,vsCOR,Casa,V,21:25,21.42,12.0,2.0,3.0,1/1,18.0,21.6,72000.0,169,J. Parra,Joel Parra,Barça
-2,@MUR,Fuera,D,21:17,21.28,6.0,5.0,0.0,0/1,7.0,7.0,,176,T. Martin,Tyrese Martin,Barça
-1,vsCOR,Casa,V,21:46,21.77,16.0,4.0,2.0,4/7,17.0,20.4,108000.0,176,T. Martin,Tyrese Martin,Barça
-2,@MUR,Fuera,D,20:12,20.2,7.0,2.0,2.0,1/5,4.0,4.0,55200.0,180,D. Brizuela,Darío Brizuela,Barça
-1,vsCOR,Casa,V,17:44,17.73,15.0,1.0,1.0,1/3,15.0,18.0,48000.0,180,D. Brizuela,Darío Brizuela,Barça
-2,vsFCB,Casa,V,21:25,21.42,9.0,5.0,0.0,1/3,11.0,13.2,37950.0,157,T. Nakic,Toni Nakic,UCAM Murcia
-1,@GIR,Fuera,D,20:47,20.78,8.0,3.0,2.0,2/2,16.0,16.0,33000.0,157,T. Nakic,Toni Nakic,UCAM Murcia
+2,@UNI,Fuera,V,23:45,23.75,17.0,1.0,7.0,3/3,21.0,25.2,90000.0,37,M. Huertas,Marcelinho Huertas,La Laguna Tenerife
+1,vsZAR,Casa,D,18:21,18.35,12.0,2.0,3.0,0/2,12.0,12.0,,37,M. Huertas,Marcelinho Huertas,La Laguna Tenerife
 2,vsFCB,Casa,V,14:04,14.07,9.0,1.0,2.0,0/0,13.0,15.6,75900.0,159,E. Cate,Emanuel Cate,UCAM Murcia
 1,@GIR,Fuera,D,20:22,20.37,10.0,6.0,0.0,0/0,16.0,16.0,66000.0,159,E. Cate,Emanuel Cate,UCAM Murcia
-2,@MUR,—,,—,,,,,,,,,182,J. Núñez,Juan Núñez,Barça
-1,vsCOR,Casa,V,13:49,13.82,3.0,0.0,6.0,0/1,13.0,15.6,30000.0,182,J. Núñez,Juan Núñez,Barça
-2,@MUR,Fuera,D,22:58,22.97,18.0,3.0,2.0,3/3,18.0,18.0,93150.0,181,K. Punter,Kevin Punter,Barça
-1,vsCOR,Casa,V,18:55,18.92,10.0,2.0,3.0,2/6,11.0,13.2,81000.0,181,K. Punter,Kevin Punter,Barça
 2,vsFCB,Casa,V,19:59,19.98,15.0,1.0,3.0,2/5,15.0,18.0,82800.0,154,S. Boum,Souley Boum,UCAM Murcia
 1,@GIR,Fuera,D,23:03,23.05,18.0,2.0,2.0,3/11,12.0,12.0,72000.0,154,S. Boum,Souley Boum,UCAM Murcia
-2,@MUR,Fuera,D,22:28,22.47,14.0,3.0,1.0,1/2,19.0,19.0,58650.0,174,O. Nkamhoua,Olivier Nkamhoua,Barça
-1,vsCOR,Casa,V,18:52,18.87,10.0,2.0,2.0,0/0,10.0,12.0,51000.0,174,O. Nkamhoua,Olivier Nkamhoua,Barça
+2,@UNI,Fuera,V,25:36,25.6,18.0,4.0,1.0,2/5,14.0,16.8,94875.0,28,K. Guy,Kyle Guy,La Laguna Tenerife
+1,vsZAR,Casa,D,24:28,24.47,11.0,2.0,3.0,3/6,13.0,13.0,82500.0,28,K. Guy,Kyle Guy,La Laguna Tenerife
+2,vsFCB,Casa,V,21:25,21.42,9.0,5.0,0.0,1/3,11.0,13.2,37950.0,157,T. Nakic,Toni Nakic,UCAM Murcia
+1,@GIR,Fuera,D,20:47,20.78,8.0,3.0,2.0,2/2,16.0,16.0,33000.0,157,T. Nakic,Toni Nakic,UCAM Murcia
 2,vsFCB,Casa,V,25:39,25.65,11.0,11.0,1.0,0/0,15.0,18.0,74175.0,155,J. Pansa,Jean-Marc Pansa,UCAM Murcia
 1,@GIR,Fuera,D,16:50,16.83,6.0,8.0,0.0,0/1,10.0,10.0,64500.0,155,J. Pansa,Jean-Marc Pansa,UCAM Murcia
-2,@MUR,Fuera,D,15:32,15.53,2.0,2.0,0.0,0/1,0.0,0.0,,173,S. Umude,Stanley Umude,Barça
-1,vsCOR,Casa,V,18:35,18.58,8.0,4.0,2.0,0/1,8.0,9.6,46500.0,173,S. Umude,Stanley Umude,Barça
-2,@MUR,Fuera,D,23:50,23.83,17.0,1.0,3.0,3/8,14.0,14.0,,179,J. Robinson,Justin Robinson,Barça
-1,vsCOR,Casa,V,13:16,13.27,10.0,0.0,2.0,2/3,6.0,7.2,,179,J. Robinson,Justin Robinson,Barça
-2,vsFCB,Casa,V,9:26,9.43,11.0,2.0,1.0,1/1,11.0,13.2,45000.0,166,M. Forrest,Michael Forrest,UCAM Murcia
-1,@GIR,Fuera,D,17:19,17.32,15.0,2.0,3.0,3/9,6.0,6.0,30000.0,166,M. Forrest,Michael Forrest,UCAM Murcia
-2,vsFCB,Casa,V,19:23,19.38,8.0,3.0,5.0,1/2,14.0,16.8,40800.0,167,J. Marcos,Juani Marcos,UCAM Murcia
-1,@GIR,Fuera,D,21:52,21.87,4.0,4.0,4.0,0/4,5.0,5.0,,167,J. Marcos,Juani Marcos,UCAM Murcia
 2,vsFCB,Casa,V,22:24,22.4,16.0,2.0,1.0,4/6,16.0,19.2,48450.0,168,J. Radebaugh,Jonah Radebaugh,UCAM Murcia
 1,@GIR,Fuera,D,21:04,21.07,6.0,4.0,1.0,2/7,5.0,5.0,,168,J. Radebaugh,Jonah Radebaugh,UCAM Murcia
-2,@MUR,—,,—,,,,,,,,,171,A. Ubal,Agustín Ubal,Barça
-1,vsCOR,Casa,V,7:43,7.72,4.0,1.0,0.0,0/0,4.0,4.8,,171,A. Ubal,Agustín Ubal,Barça
-2,@MUR,Fuera,D,17:15,17.25,10.0,1.0,2.0,2/2,0.0,0.0,,240,U. Gibson,Umoja Gibson,Barça
-1,vsCOR,Casa,V,12:31,12.52,8.0,2.0,1.0,2/3,4.0,4.8,,240,U. Gibson,Umoja Gibson,Barça
+2,@UNI,Fuera,V,19:32,19.53,6.0,3.0,1.0,2/5,6.0,7.2,63825.0,29,López-Arostegui,Xabi López-Arostegui,La Laguna Tenerife
+1,vsZAR,Casa,D,25:27,25.45,10.0,5.0,0.0,1/2,16.0,16.0,55500.0,29,López-Arostegui,Xabi López-Arostegui,La Laguna Tenerife
+2,@UNI,Fuera,V,18:59,18.98,7.0,6.0,0.0,1/3,8.0,9.6,51750.0,33,T. Abromaitis,Tim Abromaitis,La Laguna Tenerife
+1,vsZAR,Casa,D,21:06,21.1,7.0,10.0,0.0,1/4,13.0,13.0,45000.0,33,T. Abromaitis,Tim Abromaitis,La Laguna Tenerife
+2,vsFCB,Casa,V,19:23,19.38,8.0,3.0,5.0,1/2,14.0,16.8,40800.0,167,J. Marcos,Juani Marcos,UCAM Murcia
+1,@GIR,Fuera,D,21:52,21.87,4.0,4.0,4.0,0/4,5.0,5.0,,167,J. Marcos,Juani Marcos,UCAM Murcia
+2,@UNI,Fuera,V,19:05,19.08,5.0,3.0,2.0,0/0,9.0,10.8,54000.0,27,V. Hunter,Vince Hunter,La Laguna Tenerife
+1,@,—,,—,,,,,,,,,27,V. Hunter,Vince Hunter,La Laguna Tenerife
+2,vsFCB,Casa,V,9:26,9.43,11.0,2.0,1.0,1/1,11.0,13.2,45000.0,166,M. Forrest,Michael Forrest,UCAM Murcia
+1,@GIR,Fuera,D,17:19,17.32,15.0,2.0,3.0,3/9,6.0,6.0,30000.0,166,M. Forrest,Michael Forrest,UCAM Murcia
+2,@UNI,Fuera,V,15:01,15.02,8.0,1.0,1.0,0/0,5.0,6.0,,30,E. Happ,Ethan Happ,La Laguna Tenerife
+1,vsZAR,Casa,D,21:13,21.22,13.0,5.0,2.0,0/0,13.0,13.0,70000.0,30,E. Happ,Ethan Happ,La Laguna Tenerife
 2,vsFCB,Casa,V,14:13,14.22,9.0,0.0,1.0,1/3,7.0,8.4,,165,D. Ennis,Dylan Ennis,UCAM Murcia
 1,@GIR,Fuera,D,15:31,15.52,7.0,2.0,0.0,1/4,4.0,4.0,,165,D. Ennis,Dylan Ennis,UCAM Murcia
-2,@MUR,Fuera,D,14:28,14.47,0.0,1.0,0.0,0/2,1.0,1.0,,172,J. Minaya,Justin Minaya,Barça
-1,vsCOR,Casa,V,14:16,14.27,2.0,3.0,1.0,0/1,3.0,3.6,,172,J. Minaya,Justin Minaya,Barça
 2,vsFCB,Casa,V,12:16,12.27,3.0,3.0,0.0,0/1,5.0,6.0,5000.0,162,M. Steinbergs,Marcis Steinbergs,UCAM Murcia
 1,@GIR,Fuera,D,19:38,19.63,3.0,4.0,0.0,1/4,1.0,1.0,,162,M. Steinbergs,Marcis Steinbergs,UCAM Murcia
+2,vsFCB,Casa,V,22:34,22.57,7.0,3.0,0.0,1/3,6.0,7.2,,158,S. Raieste,Sander Raieste,UCAM Murcia
+1,@GIR,Fuera,D,16:23,16.38,0.0,4.0,1.0,0/3,-1.0,-1.0,,158,S. Raieste,Sander Raieste,UCAM Murcia
+2,@UNI,Fuera,V,13:44,13.73,0.0,1.0,1.0,0/0,-1.0,-1.0,,38,B. Fitipaldo,Bruno Fitipaldo,La Laguna Tenerife
+1,vsZAR,Casa,D,21:24,21.4,8.0,0.0,2.0,2/7,7.0,7.0,43500.0,38,B. Fitipaldo,Bruno Fitipaldo,La Laguna Tenerife
+2,@UNI,Fuera,V,5:51,5.85,0.0,0.0,1.0,0/0,1.0,1.2,,32,G. Shermadini,Giorgi Shermadini,La Laguna Tenerife
+1,vsZAR,Casa,D,18:34,18.57,5.0,4.0,0.0,0/0,4.0,4.0,,32,G. Shermadini,Giorgi Shermadini,La Laguna Tenerife
+2,@UNI,Fuera,V,13:23,13.38,3.0,3.0,0.0,1/2,1.0,1.2,,34,A. Doornekamp,Aaron Doornekamp,La Laguna Tenerife
+1,vsZAR,Casa,D,19:07,19.12,0.0,1.0,3.0,0/2,2.0,2.0,,34,A. Doornekamp,Aaron Doornekamp,La Laguna Tenerife
+2,@,—,,—,,,,,,,,,26,TJ Bamba,TJ Bamba,La Laguna Tenerife
+1,vsZAR,Casa,D,12:29,12.48,4.0,1.0,0.0,1/3,1.0,1.0,,26,TJ Bamba,TJ Bamba,La Laguna Tenerife
 2,@,—,,—,,,,,,,,,156,H. Sant-Roos,Howard Sant-Roos,UCAM Murcia
 1,@,—,,—,,,,,,,,,156,H. Sant-Roos,Howard Sant-Roos,UCAM Murcia
 2,vsFCB,—,,—,,,,,,,,,160,M. Diagné,Moussa Diagne,UCAM Murcia
@@ -363,113 +302,174 @@ jornada,rival,local_visitante,victoria,minutos_texto,minutos,puntos,rebotes,asis
 1,@,—,,—,,,,,,,,,161,R. López,Rubén López De La Torre,UCAM Murcia
 2,@,—,,—,,,,,,,,,163,K. Gates,Kaiser Gates,UCAM Murcia
 1,@,—,,—,,,,,,,,,163,K. Gates,Kaiser Gates,UCAM Murcia
+2,@,—,,—,,,,,,,,,245,W. Van Beck,Wesley Van Beck,La Laguna Tenerife
+1,@,—,,—,,,,,,,,,245,W. Van Beck,Wesley Van Beck,La Laguna Tenerife
+2,@UNI,Fuera,V,11:13,11.22,3.0,0.0,0.0,1/3,-1.0,-1.0,,31,A. Kurucs,Arturs Kurucs,La Laguna Tenerife
+1,vsZAR,Casa,D,0:44,0.73,0.0,0.0,0.0,0/0,0.0,0.0,,31,A. Kurucs,Arturs Kurucs,La Laguna Tenerife
+2,@UNI,Fuera,V,16:13,16.22,0.0,1.0,1.0,0/1,-1.0,-1.0,,35,H. Alderete,Héctor Alderete,La Laguna Tenerife
+1,vsZAR,—,,—,,,,,,,,,35,H. Alderete,Héctor Alderete,La Laguna Tenerife
 2,vsFCB,Casa,V,18:37,18.62,2.0,4.0,1.0,0/2,-3.0,-3.0,,164,W. Falk,Wilhelm Falk,UCAM Murcia
 1,@GIR,Fuera,D,7:11,7.18,0.0,1.0,0.0,0/0,0.0,0.0,,164,W. Falk,Wilhelm Falk,UCAM Murcia
-2,@,—,,—,,,,,,,,,175,J. Nebo,Josh Nebo,Barça
-1,@,—,,—,,,,,,,,,175,J. Nebo,Josh Nebo,Barça
-2,@,—,,—,,,,,,,,,177,Y. Makoundou,Yoan Makoundou,Barça
-1,@,—,,—,,,,,,,,,177,Y. Makoundou,Yoan Makoundou,Barça
-2,@,—,,—,,,,,,,,,178,T. Evbuomwan,Tosan Evbuomwan,Barça
-1,@,—,,—,,,,,,,,,178,T. Evbuomwan,Tosan Evbuomwan,Barça
-2,vsFCB,Casa,V,22:34,22.57,7.0,3.0,0.0,1/3,6.0,7.2,,158,S. Raieste,Sander Raieste,UCAM Murcia
-1,@GIR,Fuera,D,16:23,16.38,0.0,4.0,1.0,0/3,-1.0,-1.0,,158,S. Raieste,Sander Raieste,UCAM Murcia
-2,@BAS,Fuera,D,19:46,19.77,15.0,5.0,2.0,1/4,13.0,13.0,69000.0,137,J. Pérez,Jassel Perez,FIATC Girona
-1,vsMUR,Casa,V,21:58,21.97,20.0,8.0,1.0,1/2,29.0,34.8,60000.0,137,J. Pérez,Jassel Perez,FIATC Girona
-2,@BAS,Fuera,D,20:03,20.05,8.0,1.0,4.0,2/3,4.0,4.0,82800.0,133,S. Whittaker,Stanley Whittaker,FIATC Girona
-1,vsMUR,Casa,V,25:59,25.98,19.0,3.0,4.0,2/5,18.0,21.6,72000.0,133,S. Whittaker,Stanley Whittaker,FIATC Girona
-2,@BAS,Fuera,D,21:49,21.82,10.0,4.0,1.0,0/3,11.0,11.0,102000.0,141,M. Geben,Martinas Geben,FIATC Girona
-1,vsMUR,Casa,V,24:25,24.42,11.0,9.0,1.0,1/1,18.0,21.6,93000.0,141,M. Geben,Martinas Geben,FIATC Girona
-2,vsGIR,Casa,V,18:22,18.37,6.0,0.0,3.0,0/3,6.0,7.2,82800.0,241,D. Baugh,Damion Baugh,Kosner Baskonia
-1,@BUR,Fuera,V,20:11,20.18,9.0,3.0,7.0,0/4,17.0,20.4,72000.0,241,D. Baugh,Damion Baugh,Kosner Baskonia
-2,vsGIR,Casa,V,19:58,19.97,11.0,9.0,4.0,1/2,21.0,25.2,55200.0,225,T. Sedekerskis,Tadas Sedekerskis,Kosner Baskonia
-1,@BUR,Fuera,V,16:36,16.6,8.0,3.0,2.0,1/1,16.0,19.2,48000.0,225,T. Sedekerskis,Tadas Sedekerskis,Kosner Baskonia
-2,vsGIR,Casa,V,7:07,7.12,4.0,1.0,0.0,0/1,7.0,8.4,34500.0,224,C. Frisch,Clement Frisch,Kosner Baskonia
-1,@BUR,Fuera,V,14:27,14.45,11.0,2.0,1.0,2/2,15.0,18.0,30000.0,224,C. Frisch,Clement Frisch,Kosner Baskonia
-2,vsGIR,Casa,V,20:35,20.58,11.0,8.0,2.0,1/1,21.0,25.2,77625.0,232,K. Faried,Kenneth Faried,Kosner Baskonia
-1,@BUR,Fuera,V,22:04,22.07,13.0,5.0,0.0,0/0,15.0,18.0,67500.0,232,K. Faried,Kenneth Faried,Kosner Baskonia
-2,vsGIR,Casa,V,13:15,13.25,19.0,3.0,2.0,4/5,23.0,27.6,72450.0,222,C. Duarte,Chris Duarte,Kosner Baskonia
-1,@BUR,Fuera,V,23:56,23.93,13.0,1.0,2.0,2/5,14.0,16.8,63000.0,222,C. Duarte,Chris Duarte,Kosner Baskonia
-2,vsGIR,Casa,V,17:56,17.93,9.0,2.0,3.0,1/5,10.0,12.0,27500.0,235,AJ Lawson,AJ Lawson,Kosner Baskonia
-1,@BUR,Fuera,V,22:57,22.95,13.0,1.0,2.0,2/7,12.0,14.4,82500.0,235,AJ Lawson,AJ Lawson,Kosner Baskonia
-2,@,—,,—,,,,,,,,,228,M. Howard,Markus Howard,Kosner Baskonia
-1,@BUR,Fuera,V,13:25,13.42,8.0,1.0,0.0,1/3,7.0,8.4,,228,M. Howard,Markus Howard,Kosner Baskonia
-2,vsGIR,Casa,V,18:00,18.0,9.0,1.0,4.0,2/3,12.0,14.4,43000.0,229,K. Simmons,Kobi Simmons,Kosner Baskonia
-1,@BUR,Fuera,V,17:13,17.22,10.0,2.0,2.0,0/1,7.0,8.4,,229,K. Simmons,Kobi Simmons,Kosner Baskonia
-2,@BAS,Fuera,D,22:48,22.8,2.0,0.0,0.0,0/0,-3.0,-3.0,,138,S. Martínez,Sergi Martínez,FIATC Girona
-1,vsMUR,Casa,V,22:48,22.8,3.0,1.0,0.0,1/1,6.0,7.2,20000.0,138,S. Martínez,Sergi Martínez,FIATC Girona
-2,vsGIR,Casa,V,17:23,17.38,11.0,2.0,4.0,3/4,9.0,10.8,7000.0,227,M. Spagnolo,Matteo Spagnolo,Kosner Baskonia
-1,@BUR,Fuera,V,7:26,7.43,2.0,0.0,1.0,0/0,2.0,2.4,,227,M. Spagnolo,Matteo Spagnolo,Kosner Baskonia
-2,@BAS,Fuera,D,15:04,15.07,4.0,0.0,4.0,0/4,1.0,1.0,,234,A. Pluta,Andrzej Pluta,FIATC Girona
-1,vsMUR,Casa,V,16:30,16.5,2.0,2.0,1.0,0/2,2.0,2.4,,234,A. Pluta,Andrzej Pluta,FIATC Girona
-2,@BAS,Fuera,D,18:52,18.87,12.0,5.0,1.0,1/5,10.0,10.0,,132,M. McClung,Mac McClung,FIATC Girona
-1,vsMUR,Casa,V,18:00,18.0,11.0,3.0,1.0,1/3,1.0,1.2,,132,M. McClung,Mac McClung,FIATC Girona
-2,@BAS,Fuera,D,9:10,9.17,0.0,2.0,0.0,0/1,-1.0,-1.0,,134,A. Kunc,Aljaz Kunc,FIATC Girona
-1,@,—,,—,,,,,,,,,134,A. Kunc,Aljaz Kunc,FIATC Girona
-2,@,—,,—,,,,,,,,,135,I. Vázquez,Isaac Vazquez,FIATC Girona
-1,@,—,,—,,,,,,,,,135,I. Vázquez,Isaac Vazquez,FIATC Girona
-2,@,—,,—,,,,,,,,,139,M. Fjellerup,Maxi Fjellerup,FIATC Girona
-1,@,—,,—,,,,,,,,,139,M. Fjellerup,Maxi Fjellerup,FIATC Girona
-2,@BAS,Fuera,D,19:51,19.85,11.0,3.0,1.0,3/4,9.0,9.0,,140,P. Busquets,Pep Busquets,FIATC Girona
-1,vsMUR,Casa,V,24:18,24.3,5.0,3.0,0.0,0/3,0.0,0.0,,140,P. Busquets,Pep Busquets,FIATC Girona
-2,@BAS,Fuera,D,5:04,5.07,0.0,2.0,0.0,0/0,2.0,2.0,,250,K. Brunot,Khory Brunot,FIATC Girona
-2,@,—,,—,,,,,,,,,251,E. Sanmartín,Enric Sanmartín,FIATC Girona
-2,vsGIR,Casa,V,16:13,16.22,11.0,4.0,2.0,2/4,13.0,15.6,57000.0,257,M. Santos,Marcio Santos,Kosner Baskonia
-2,@BAS,Fuera,D,16:25,16.42,6.0,3.0,2.0,0/0,9.0,9.0,,136,N. Maric,Nikola Maric,FIATC Girona
-1,vsMUR,Casa,V,15:35,15.58,4.0,4.0,2.0,0/2,-1.0,-1.0,,136,N. Maric,Nikola Maric,FIATC Girona
-2,vsGIR,Casa,V,16:07,16.12,13.0,1.0,0.0,1/2,14.0,16.8,51000.0,226,R. Kurucs,Rodions Kurucs,Kosner Baskonia
-1,@BUR,Fuera,V,20:00,20.0,4.0,2.0,2.0,0/0,-1.0,-1.0,,226,R. Kurucs,Rodions Kurucs,Kosner Baskonia
-2,vsGIR,Casa,V,18:38,18.63,11.0,2.0,2.0,1/2,9.0,10.8,21675.0,223,S. Joksimovic,Stefan Joksimovic,Kosner Baskonia
-1,@BUR,Fuera,V,1:46,1.77,0.0,0.0,0.0,0/1,-2.0,-2.0,,223,S. Joksimovic,Stefan Joksimovic,Kosner Baskonia
-2,@BAS,Fuera,D,6:15,6.25,0.0,0.0,0.0,0/2,-3.0,-3.0,,233,D. Stenionis,Dominykas Stenionis,FIATC Girona
-1,vsMUR,Casa,V,4:55,4.92,0.0,0.0,0.0,0/0,-3.0,-3.0,,233,D. Stenionis,Dominykas Stenionis,FIATC Girona
 2,@,—,,—,,,,,,,,,96,R. Rubio,Ricky Rubio,Asisa Joventut
 1,@BRE,Fuera,D,26:49,26.82,18.0,2.0,10.0,1/3,26.0,26.0,127500.0,96,R. Rubio,Ricky Rubio,Asisa Joventut
+2,vsGIR,Casa,V,13:15,13.25,19.0,3.0,2.0,4/5,23.0,27.6,72450.0,222,C. Duarte,Chris Duarte,Kosner Baskonia
+1,@BUR,Fuera,V,23:56,23.93,13.0,1.0,2.0,2/5,14.0,16.8,63000.0,222,C. Duarte,Chris Duarte,Kosner Baskonia
+2,vsGIR,Casa,V,19:58,19.97,11.0,9.0,4.0,1/2,21.0,25.2,55200.0,225,T. Sedekerskis,Tadas Sedekerskis,Kosner Baskonia
+1,@BUR,Fuera,V,16:36,16.6,8.0,3.0,2.0,1/1,16.0,19.2,48000.0,225,T. Sedekerskis,Tadas Sedekerskis,Kosner Baskonia
 2,@,—,,—,,,,,,,,,93,N. Laprovittola,Nico Laprovittola,Asisa Joventut
 1,@BRE,Fuera,D,23:35,23.58,22.0,6.0,4.0,2/9,22.0,22.0,78000.0,93,N. Laprovittola,Nico Laprovittola,Asisa Joventut
-2,@,—,,—,,,,,,,,,188,L. Radosevic,Leon Radosevic,MoraBanc Andorra
-1,vsOBR,Casa,D,18:18,18.3,10.0,5.0,1.0,0/1,17.0,17.0,49500.0,188,L. Radosevic,Leon Radosevic,MoraBanc Andorra
-2,@,—,,—,,,,,,,,,183,J. Akinjo,James Akinjo,MoraBanc Andorra
-1,vsOBR,Casa,D,28:26,28.43,9.0,7.0,12.0,1/3,16.0,16.0,70500.0,183,J. Akinjo,James Akinjo,MoraBanc Andorra
-2,@,—,,—,,,,,,,,,190,A. Pustovyi,Artem Pustovyi,MoraBanc Andorra
-1,vsOBR,Casa,D,19:27,19.45,12.0,7.0,0.0,0/0,16.0,16.0,82500.0,190,A. Pustovyi,Artem Pustovyi,MoraBanc Andorra
-2,@,—,,—,,,,,,,,,185,W. Iwundu,Wes Iwundu,MoraBanc Andorra
-1,vsOBR,Casa,D,23:36,23.6,12.0,5.0,0.0,1/6,13.0,13.0,80000.0,185,W. Iwundu,Wes Iwundu,MoraBanc Andorra
-2,@,—,,—,,,,,,,,,192,K. Robertson,Kassius Robertson,MoraBanc Andorra
-1,vsOBR,Casa,D,30:41,30.68,15.0,3.0,0.0,1/4,12.0,12.0,60000.0,192,K. Robertson,Kassius Robertson,MoraBanc Andorra
+2,vsGIR,Casa,V,20:35,20.58,11.0,8.0,2.0,1/1,21.0,25.2,77625.0,232,K. Faried,Kenneth Faried,Kosner Baskonia
+1,@BUR,Fuera,V,22:04,22.07,13.0,5.0,0.0,0/0,15.0,18.0,67500.0,232,K. Faried,Kenneth Faried,Kosner Baskonia
+2,vsGIR,Casa,V,16:13,16.22,11.0,4.0,2.0,2/4,13.0,15.6,57000.0,257,M. Santos,Marcio Santos,Kosner Baskonia
+2,vsGIR,Casa,V,18:22,18.37,6.0,0.0,3.0,0/3,6.0,7.2,82800.0,241,D. Baugh,Damion Baugh,Kosner Baskonia
+1,@BUR,Fuera,V,20:11,20.18,9.0,3.0,7.0,0/4,17.0,20.4,72000.0,241,D. Baugh,Damion Baugh,Kosner Baskonia
+2,vsGIR,Casa,V,7:07,7.12,4.0,1.0,0.0,0/1,7.0,8.4,34500.0,224,C. Frisch,Clement Frisch,Kosner Baskonia
+1,@BUR,Fuera,V,14:27,14.45,11.0,2.0,1.0,2/2,15.0,18.0,30000.0,224,C. Frisch,Clement Frisch,Kosner Baskonia
+2,vsGIR,Casa,V,17:56,17.93,9.0,2.0,3.0,1/5,10.0,12.0,27500.0,235,AJ Lawson,AJ Lawson,Kosner Baskonia
+1,@BUR,Fuera,V,22:57,22.95,13.0,1.0,2.0,2/7,12.0,14.4,82500.0,235,AJ Lawson,AJ Lawson,Kosner Baskonia
+2,vsGIR,Casa,V,18:00,18.0,9.0,1.0,4.0,2/3,12.0,14.4,43000.0,229,K. Simmons,Kobi Simmons,Kosner Baskonia
+1,@BUR,Fuera,V,17:13,17.22,10.0,2.0,2.0,0/1,7.0,8.4,,229,K. Simmons,Kobi Simmons,Kosner Baskonia
 2,@,—,,—,,,,,,,,,94,K. Cheatham,Kwan Cheatham,Asisa Joventut
 1,@BRE,Fuera,D,26:50,26.83,9.0,7.0,1.0,2/4,11.0,11.0,52500.0,94,K. Cheatham,Kwan Cheatham,Asisa Joventut
 2,@,—,,—,,,,,,,,,100,L. Hakanson,Ludde Hakanson,Asisa Joventut
 1,@BRE,Fuera,D,14:51,14.85,9.0,3.0,1.0,3/5,9.0,9.0,42000.0,100,L. Hakanson,Ludde Hakanson,Asisa Joventut
+2,@,—,,—,,,,,,,,,228,M. Howard,Markus Howard,Kosner Baskonia
+1,@BUR,Fuera,V,13:25,13.42,8.0,1.0,0.0,1/3,7.0,8.4,,228,M. Howard,Markus Howard,Kosner Baskonia
 2,@,—,,—,,,,,,,,,97,A. Reyes,Álex Reyes,Asisa Joventut
 1,@BRE,Fuera,D,23:20,23.33,13.0,2.0,2.0,3/8,8.0,8.0,,97,A. Reyes,Álex Reyes,Asisa Joventut
-2,@,—,,—,,,,,,,,,194,A. Best,Aaron Best,MoraBanc Andorra
-1,vsOBR,Casa,D,23:05,23.08,9.0,2.0,1.0,3/7,8.0,8.0,42000.0,194,A. Best,Aaron Best,MoraBanc Andorra
+2,vsGIR,Casa,V,16:07,16.12,13.0,1.0,0.0,1/2,14.0,16.8,51000.0,226,R. Kurucs,Rodions Kurucs,Kosner Baskonia
+1,@BUR,Fuera,V,20:00,20.0,4.0,2.0,2.0,0/0,-1.0,-1.0,,226,R. Kurucs,Rodions Kurucs,Kosner Baskonia
+2,vsGIR,Casa,V,17:23,17.38,11.0,2.0,4.0,3/4,9.0,10.8,7000.0,227,M. Spagnolo,Matteo Spagnolo,Kosner Baskonia
+1,@BUR,Fuera,V,7:26,7.43,2.0,0.0,1.0,0/0,2.0,2.4,,227,M. Spagnolo,Matteo Spagnolo,Kosner Baskonia
 2,@,—,,—,,,,,,,,,92,B. Ellis,Boogie Ellis,Asisa Joventut
 1,@BRE,Fuera,D,20:15,20.25,11.0,3.0,0.0,1/5,6.0,6.0,,92,B. Ellis,Boogie Ellis,Asisa Joventut
 2,@,—,,—,,,,,,,,,95,S. Birgander,Simon Birgander,Asisa Joventut
 1,@BRE,Fuera,D,21:11,21.18,8.0,3.0,1.0,0/0,6.0,6.0,,95,S. Birgander,Simon Birgander,Asisa Joventut
 2,@,—,,—,,,,,,,,,98,I. Nogués,Isaac Nogués,Asisa Joventut
 1,@BRE,Fuera,D,9:08,9.13,0.0,2.0,0.0,0/0,5.0,5.0,30000.0,98,I. Nogués,Isaac Nogués,Asisa Joventut
-2,@,—,,—,,,,,,,,,193,C. Ortega,Chumi Ortega,MoraBanc Andorra
-1,vsOBR,Casa,D,9:20,9.33,6.0,2.0,0.0,2/3,5.0,5.0,22500.0,193,C. Ortega,Chumi Ortega,MoraBanc Andorra
-2,@,—,,—,,,,,,,,,191,K. Kuric,Kyle Kuric,MoraBanc Andorra
-1,vsOBR,Casa,D,17:01,17.02,5.0,1.0,1.0,1/3,4.0,4.0,,191,K. Kuric,Kyle Kuric,MoraBanc Andorra
+2,vsGIR,Casa,V,18:38,18.63,11.0,2.0,2.0,1/2,9.0,10.8,21675.0,223,S. Joksimovic,Stefan Joksimovic,Kosner Baskonia
+1,@BUR,Fuera,V,1:46,1.77,0.0,0.0,0.0,0/1,-2.0,-2.0,,223,S. Joksimovic,Stefan Joksimovic,Kosner Baskonia
 2,@,—,,—,,,,,,,,,239,A. Torres,Adrián Torres,Asisa Joventut
 1,@BRE,Fuera,D,12:09,12.15,4.0,0.0,0.0,0/0,3.0,3.0,18000.0,239,A. Torres,Adrián Torres,Asisa Joventut
-2,@,—,,—,,,,,,,,,189,L. Mutic,Lazar Mutic,MoraBanc Andorra
-1,vsOBR,Casa,D,16:24,16.4,5.0,2.0,1.0,1/3,2.0,2.0,,189,L. Mutic,Lazar Mutic,MoraBanc Andorra
-2,@,—,,—,,,,,,,,,186,O. Aquino,Owen Aquino,MoraBanc Andorra
-1,vsOBR,Casa,D,2:15,2.25,2.0,0.0,0.0,0/0,1.0,1.0,,186,O. Aquino,Owen Aquino,MoraBanc Andorra
 2,@,—,,—,,,,,,,,,99,Y. Kraag,Yannick Kraag,Asisa Joventut
 1,@,—,,—,,,,,,,,,99,Y. Kraag,Yannick Kraag,Asisa Joventut
 2,@,—,,—,,,,,,,,,101,A. Tomic,Ante Tomic,Asisa Joventut
 1,@,—,,—,,,,,,,,,101,A. Tomic,Ante Tomic,Asisa Joventut
 2,@,—,,—,,,,,,,,,102,E. Sulejmanovic,Emir Sulejmanovic,Asisa Joventut
 1,@,—,,—,,,,,,,,,102,E. Sulejmanovic,Emir Sulejmanovic,Asisa Joventut
-2,@,—,,—,,,,,,,,,184,C. McGriff,Cameron McGriff,MoraBanc Andorra
-1,@,—,,—,,,,,,,,,184,C. McGriff,Cameron McGriff,MoraBanc Andorra
-2,@,—,,—,,,,,,,,,187,L. Bottiroli,Luka Bottiroli,MoraBanc Andorra
-1,vsOBR,—,,—,,,,,,,,,187,L. Bottiroli,Luka Bottiroli,MoraBanc Andorra
-2,@,—,,—,,,,,,,,,195,R. Luz,Rafa Luz,MoraBanc Andorra
-1,vsOBR,Casa,D,11:27,11.45,0.0,0.0,3.0,0/1,0.0,0.0,,195,R. Luz,Rafa Luz,MoraBanc Andorra
-2,@,—,,—,,,,,,,,,256,Andronikashvili,Rati Andronikashvili,MoraBanc Andorra
+2,@COR,Fuera,D,22:04,22.07,10.0,11.0,0.0,0/0,23.0,23.0,112125.0,76,T. Hlinason,Tryggvi Hlinason,Surne Bilbao
+1,vsMAN,Casa,V,23:53,23.88,12.0,8.0,2.0,0/0,24.0,28.8,97500.0,76,T. Hlinason,Tryggvi Hlinason,Surne Bilbao
+2,@COR,Fuera,D,30:46,30.77,17.0,3.0,3.0,3/9,15.0,15.0,77625.0,70,D. Hilliard,Darrun Hilliard,Surne Bilbao
+1,vsMAN,Casa,V,24:11,24.18,19.0,5.0,7.0,4/8,25.0,30.0,67500.0,70,D. Hilliard,Darrun Hilliard,Surne Bilbao
+2,@ILE,Fuera,V,22:07,22.12,14.0,2.0,5.0,2/2,20.0,24.0,34500.0,153,Z. Samar,Ziga Samar,Recoletas Salud San Pablo Burgos
+1,vsBAS,Casa,D,21:50,21.83,17.0,6.0,3.0,0/1,19.0,19.0,30000.0,153,Z. Samar,Ziga Samar,Recoletas Salud San Pablo Burgos
+2,@COR,Fuera,D,28:09,28.15,13.0,1.0,5.0,3/6,16.0,16.0,69000.0,74,H. Frey,Harald Frey,Surne Bilbao
+1,vsMAN,Casa,V,23:24,23.4,14.0,0.0,6.0,3/4,19.0,22.8,60000.0,74,H. Frey,Harald Frey,Surne Bilbao
+2,@COR,Fuera,D,29:21,29.35,16.0,3.0,2.0,2/5,15.0,15.0,50025.0,80,M. Normantas,Margiris Normantas,Surne Bilbao
+1,vsMAN,Casa,V,21:02,21.03,14.0,4.0,2.0,2/3,15.0,18.0,43500.0,80,M. Normantas,Margiris Normantas,Surne Bilbao
+2,@ILE,Fuera,V,23:13,23.22,20.0,6.0,3.0,2/3,22.0,26.4,76500.0,142,DJ Steward,DJ Steward,Recoletas Salud San Pablo Burgos
+1,vsBAS,Casa,D,22:57,22.95,15.0,1.0,1.0,1/6,6.0,6.0,,142,DJ Steward,DJ Steward,Recoletas Salud San Pablo Burgos
+2,@ILE,Fuera,V,24:00,24.0,11.0,6.0,1.0,1/4,13.0,15.6,91425.0,143,C. Sengfelder,Christian Sengfelder,Recoletas Salud San Pablo Burgos
+1,vsBAS,Casa,D,24:11,24.18,13.0,5.0,1.0,0/1,16.0,16.0,79500.0,143,C. Sengfelder,Christian Sengfelder,Recoletas Salud San Pablo Burgos
+2,@ILE,Fuera,V,22:54,22.9,20.0,4.0,1.0,2/4,20.0,24.0,37950.0,151,C. Audige,Chase Audige,Recoletas Salud San Pablo Burgos
+1,vsBAS,Casa,D,17:01,17.02,12.0,1.0,2.0,3/6,7.0,7.0,33000.0,151,C. Audige,Chase Audige,Recoletas Salud San Pablo Burgos
+2,@ILE,Fuera,V,18:26,18.43,13.0,6.0,0.0,0/0,12.0,14.4,75900.0,145,B. Koprivica,Balsa Koprivica,Recoletas Salud San Pablo Burgos
+1,vsBAS,Casa,D,13:01,13.02,10.0,5.0,1.0,0/0,11.0,11.0,66000.0,145,B. Koprivica,Balsa Koprivica,Recoletas Salud San Pablo Burgos
+2,@COR,Fuera,D,15:33,15.55,9.0,0.0,1.0,1/1,8.0,8.0,58650.0,77,M. Krampelj,Martin Krampelj,Surne Bilbao
+1,vsMAN,Casa,V,18:35,18.58,11.0,2.0,0.0,1/1,11.0,13.2,51000.0,77,M. Krampelj,Martin Krampelj,Surne Bilbao
+2,@COR,Fuera,D,31:41,31.68,11.0,8.0,2.0,1/8,13.0,13.0,43125.0,78,L. Petrasek,Luke Petrasek,Surne Bilbao
+1,vsMAN,Casa,V,19:18,19.3,8.0,2.0,0.0,0/3,6.0,7.2,37500.0,78,L. Petrasek,Luke Petrasek,Surne Bilbao
+2,@ILE,Fuera,V,16:00,16.0,3.0,3.0,0.0,1/2,2.0,2.4,42000.0,149,D. Díez,Dani Díez,Recoletas Salud San Pablo Burgos
+1,vsBAS,Casa,D,19:05,19.08,4.0,9.0,2.0,0/0,14.0,14.0,48000.0,149,D. Díez,Dani Díez,Recoletas Salud San Pablo Burgos
+2,@COR,Fuera,D,20:42,20.7,3.0,5.0,1.0,0/1,0.0,0.0,,69,B. Vautier,Bastien Vautier,Surne Bilbao
+1,vsMAN,Casa,V,14:53,14.88,12.0,4.0,0.0,0/0,13.0,15.6,52500.0,69,B. Vautier,Bastien Vautier,Surne Bilbao
+2,@ILE,Fuera,V,21:33,21.55,11.0,3.0,1.0,1/5,10.0,12.0,,243,S. Doumbouya,Sekou Doumbouya,Recoletas Salud San Pablo Burgos
+1,vsBAS,Casa,D,16:21,16.35,10.0,2.0,1.0,0/3,2.0,2.0,,243,S. Doumbouya,Sekou Doumbouya,Recoletas Salud San Pablo Burgos
+2,@COR,Fuera,D,16:22,16.37,8.0,2.0,0.0,0/1,4.0,4.0,,71,A. Somogyi,Adam Somogyi,Surne Bilbao
+1,vsMAN,Casa,V,16:36,16.6,7.0,1.0,5.0,1/2,6.0,7.2,42000.0,71,A. Somogyi,Adam Somogyi,Surne Bilbao
+2,@ILE,Fuera,V,9:23,9.38,0.0,2.0,1.0,0/2,0.0,0.0,,147,R. Lobaco,Raúl Lobaco,Recoletas Salud San Pablo Burgos
+1,vsBAS,Casa,D,25:15,25.25,6.0,5.0,1.0,0/2,11.0,11.0,45000.0,147,R. Lobaco,Raúl Lobaco,Recoletas Salud San Pablo Burgos
+2,@COR,Fuera,D,23:51,23.85,12.0,3.0,2.0,2/4,9.0,9.0,,68,N. Darling,Nate Darling,Surne Bilbao
+1,vsMAN,Casa,V,20:49,20.82,2.0,2.0,3.0,0/4,1.0,1.2,,68,N. Darling,Nate Darling,Surne Bilbao
+2,@ILE,—,,—,,,,,,,,,148,R. Guerrero,Rubén Guerrero,Recoletas Salud San Pablo Burgos
+1,vsBAS,Casa,D,7:22,7.37,4.0,2.0,0.0,0/0,5.0,5.0,27000.0,148,R. Guerrero,Rubén Guerrero,Recoletas Salud San Pablo Burgos
+2,@COR,Fuera,D,6:31,6.52,2.0,2.0,0.0,0/0,3.0,3.0,11000.0,79,A. Font,Aleix Font,Surne Bilbao
+1,vsMAN,Casa,V,13:58,13.97,8.0,1.0,0.0,2/2,4.0,4.8,24000.0,79,A. Font,Aleix Font,Surne Bilbao
+2,@ILE,Fuera,V,20:20,20.33,2.0,4.0,2.0,0/1,4.0,4.8,,144,D.Radosavljevic,Dusan Radosavljevic,Recoletas Salud San Pablo Burgos
+1,vsBAS,Casa,D,19:54,19.9,2.0,3.0,1.0,0/1,0.0,0.0,,144,D.Radosavljevic,Dusan Radosavljevic,Recoletas Salud San Pablo Burgos
+2,@COR,—,,—,,,,,,,,,72,D. Duscak,Dan Duscak,Surne Bilbao
+1,vsMAN,—,,—,,,,,,,,,72,D. Duscak,Dan Duscak,Surne Bilbao
+2,@,—,,—,,,,,,,,,75,O. Hustak,Ondrej Hustak,Surne Bilbao
+1,@,—,,—,,,,,,,,,75,O. Hustak,Ondrej Hustak,Surne Bilbao
+2,@,—,,—,,,,,,,,,146,V. Cancar,Vlatko Cancar,Recoletas Salud San Pablo Burgos
+1,@,—,,—,,,,,,,,,146,V. Cancar,Vlatko Cancar,Recoletas Salud San Pablo Burgos
+2,@,—,,—,,,,,,,,,152,R. Obasohan,Retin Obasohan,Recoletas Salud San Pablo Burgos
+1,@,—,,—,,,,,,,,,152,R. Obasohan,Retin Obasohan,Recoletas Salud San Pablo Burgos
+2,@ILE,Fuera,V,6:22,6.37,0.0,1.0,0.0,0/0,-1.0,-1.0,,150,P. Almazán,Pablo Almazán,Recoletas Salud San Pablo Burgos
+1,vsBAS,Casa,D,1:20,1.33,0.0,0.0,0.0,0/0,0.0,0.0,,150,P. Almazán,Pablo Almazán,Recoletas Salud San Pablo Burgos
+2,@COR,—,,—,,,,,,,,,73,M. Ansorregi,Manex Ansorregi,Surne Bilbao
+1,vsMAN,Casa,V,3:21,3.35,0.0,0.0,0.0,0/0,-1.0,-1.0,,73,M. Ansorregi,Manex Ansorregi,Surne Bilbao
+2,@ILE,Fuera,V,15:42,15.7,0.0,1.0,0.0,0/0,-12.0,-12.0,,252,J. Taboada,Joaquín Taboada,Recoletas Salud San Pablo Burgos
+1,vsBAS,Casa,D,11:43,11.72,4.0,3.0,2.0,0/1,6.0,6.0,0.0,252,J. Taboada,Joaquín Taboada,Recoletas Salud San Pablo Burgos
+2,@MUR,Fuera,D,17:32,17.53,12.0,6.0,1.0,0/0,16.0,16.0,60375.0,170,O. Balcerowski,Olek Balcerowski,Barça
+1,vsCOR,Casa,V,21:08,21.13,21.0,6.0,1.0,0/0,30.0,36.0,52500.0,170,O. Balcerowski,Olek Balcerowski,Barça
+2,@ZAR,Fuera,V,20:47,20.78,21.0,2.0,5.0,3/5,26.0,31.2,94350.0,104,TJ Shorts,TJ Shorts,Valencia Basket
+1,vsILE,Casa,D,21:35,21.58,13.0,4.0,6.0,0/1,12.0,12.0,,104,TJ Shorts,TJ Shorts,Valencia Basket
+2,@ZAR,Fuera,V,21:03,21.05,17.0,5.0,1.0,2/7,17.0,20.4,103500.0,242,N. Mirotic,Nikola Mirotic,Valencia Basket
+1,vsILE,Casa,D,13:38,13.63,14.0,5.0,0.0,1/3,14.0,14.0,90000.0,242,N. Mirotic,Nikola Mirotic,Valencia Basket
+2,@ZAR,Fuera,V,19:51,19.85,9.0,3.0,2.0,2/2,11.0,13.2,55500.0,111,K. Taylor,Kameron Taylor,Valencia Basket
+1,vsILE,Casa,D,25:48,25.8,13.0,5.0,6.0,2/4,18.0,18.0,94500.0,111,K. Taylor,Kameron Taylor,Valencia Basket
+2,@MUR,Fuera,D,22:58,22.97,18.0,3.0,2.0,3/3,18.0,18.0,93150.0,181,K. Punter,Kevin Punter,Barça
+1,vsCOR,Casa,V,18:55,18.92,10.0,2.0,3.0,2/6,11.0,13.2,81000.0,181,K. Punter,Kevin Punter,Barça
+2,@MUR,—,,—,,,,,,,,,182,J. Núñez,Juan Núñez,Barça
+1,vsCOR,Casa,V,13:49,13.82,3.0,0.0,6.0,0/1,13.0,15.6,30000.0,182,J. Núñez,Juan Núñez,Barça
+2,@MUR,Fuera,D,22:28,22.47,14.0,3.0,1.0,1/2,19.0,19.0,58650.0,174,O. Nkamhoua,Olivier Nkamhoua,Barça
+1,vsCOR,Casa,V,18:52,18.87,10.0,2.0,2.0,0/0,10.0,12.0,51000.0,174,O. Nkamhoua,Olivier Nkamhoua,Barça
+2,@ZAR,Fuera,V,13:11,13.18,16.0,2.0,0.0,4/4,20.0,24.0,34500.0,113,J. Puerto,Josep Puerto,Valencia Basket
+1,vsILE,Casa,D,11:56,11.93,9.0,1.0,0.0,2/4,6.0,6.0,30000.0,113,J. Puerto,Josep Puerto,Valencia Basket
+2,@MUR,Fuera,D,24:28,24.47,8.0,5.0,0.0,0/1,6.0,6.0,82800.0,169,J. Parra,Joel Parra,Barça
+1,vsCOR,Casa,V,21:25,21.42,12.0,2.0,3.0,1/1,18.0,21.6,72000.0,169,J. Parra,Joel Parra,Barça
+2,@MUR,Fuera,D,21:17,21.28,6.0,5.0,0.0,0/1,7.0,7.0,,176,T. Martin,Tyrese Martin,Barça
+1,vsCOR,Casa,V,21:46,21.77,16.0,4.0,2.0,4/7,17.0,20.4,108000.0,176,T. Martin,Tyrese Martin,Barça
+2,@ZAR,Fuera,V,18:19,18.32,4.0,5.0,0.0,0/0,8.0,9.6,56925.0,108,N. Sako,Neal Sako,Valencia Basket
+1,vsILE,Casa,D,16:10,16.17,7.0,5.0,1.0,0/0,14.0,14.0,49500.0,108,N. Sako,Neal Sako,Valencia Basket
+2,@MUR,Fuera,D,20:12,20.2,7.0,2.0,2.0,1/5,4.0,4.0,55200.0,180,D. Brizuela,Darío Brizuela,Barça
+1,vsCOR,Casa,V,17:44,17.73,15.0,1.0,1.0,1/3,15.0,18.0,48000.0,180,D. Brizuela,Darío Brizuela,Barça
+2,@MUR,Fuera,D,23:50,23.83,17.0,1.0,3.0,3/8,14.0,14.0,,179,J. Robinson,Justin Robinson,Barça
+1,vsCOR,Casa,V,13:16,13.27,10.0,0.0,2.0,2/3,6.0,7.2,,179,J. Robinson,Justin Robinson,Barça
+2,@ZAR,Fuera,V,19:13,19.22,9.0,0.0,5.0,3/3,14.0,16.8,30000.0,116,A. Cárdenas,Álvaro Cárdenas,Valencia Basket
+1,vsILE,Casa,D,15:46,15.77,7.0,0.0,5.0,0/2,4.0,4.0,20000.0,116,A. Cárdenas,Álvaro Cárdenas,Valencia Basket
+2,@ZAR,Fuera,V,14:07,14.12,5.0,1.0,0.0,1/2,3.0,3.6,,115,G. Corbalán,Gonzalo Corbalán,Valencia Basket
+1,vsILE,Casa,D,15:30,15.5,7.0,4.0,0.0,1/1,10.0,10.0,63000.0,115,G. Corbalán,Gonzalo Corbalán,Valencia Basket
+2,@MUR,—,,—,,,,,,,,,171,A. Ubal,Agustín Ubal,Barça
+1,vsCOR,Casa,V,7:43,7.72,4.0,1.0,0.0,0/0,4.0,4.8,,171,A. Ubal,Agustín Ubal,Barça
+2,@MUR,Fuera,D,15:32,15.53,2.0,2.0,0.0,0/1,0.0,0.0,,173,S. Umude,Stanley Umude,Barça
+1,vsCOR,Casa,V,18:35,18.58,8.0,4.0,2.0,0/1,8.0,9.6,46500.0,173,S. Umude,Stanley Umude,Barça
+2,@ZAR,Fuera,V,14:00,14.0,6.0,0.0,2.0,2/5,1.0,1.2,,117,M. Saint-Supery,Mario Saint-Supery,Valencia Basket
+1,vsILE,Casa,D,18:55,18.92,5.0,5.0,2.0,0/6,5.0,5.0,,117,M. Saint-Supery,Mario Saint-Supery,Valencia Basket
+2,@ZAR,Fuera,V,11:57,11.95,1.0,2.0,1.0,0/0,1.0,1.2,,238,J. Rivero,Jasiel Rivero,Valencia Basket
+1,vsILE,Casa,D,16:56,16.93,6.0,6.0,0.0,0/1,5.0,5.0,,238,J. Rivero,Jasiel Rivero,Valencia Basket
+2,@MUR,Fuera,D,17:15,17.25,10.0,1.0,2.0,2/2,0.0,0.0,,240,U. Gibson,Umoja Gibson,Barça
+1,vsCOR,Casa,V,12:31,12.52,8.0,2.0,1.0,2/3,4.0,4.8,,240,U. Gibson,Umoja Gibson,Barça
+2,@ZAR,Fuera,V,22:55,22.92,4.0,4.0,4.0,0/3,3.0,3.6,,105,A. Brooks,Armoni Brooks,Valencia Basket
+1,vsILE,Casa,D,17:13,17.22,11.0,2.0,0.0,3/9,1.0,1.0,,105,A. Brooks,Armoni Brooks,Valencia Basket
+2,@MUR,Fuera,D,14:28,14.47,0.0,1.0,0.0,0/2,1.0,1.0,,172,J. Minaya,Justin Minaya,Barça
+1,vsCOR,Casa,V,14:16,14.27,2.0,3.0,1.0,0/1,3.0,3.6,,172,J. Minaya,Justin Minaya,Barça
+2,@ZAR,Fuera,V,16:30,16.5,5.0,5.0,0.0,0/4,1.0,1.2,,110,N. Reuvers,Nate Reuvers,Valencia Basket
+1,vsILE,Casa,D,20:33,20.55,8.0,3.0,0.0,1/5,3.0,3.0,,110,N. Reuvers,Nate Reuvers,Valencia Basket
+2,@,—,,—,,,,,,,,,107,Y. Sima,Yankuba Sima,Valencia Basket
+1,@,—,,—,,,,,,,,,107,Y. Sima,Yankuba Sima,Valencia Basket
+2,@,—,,—,,,,,,,,,109,D. Osetkowski,Dylan Osetkowski,Valencia Basket
+1,@,—,,—,,,,,,,,,109,D. Osetkowski,Dylan Osetkowski,Valencia Basket
+2,@,—,,—,,,,,,,,,112,L. Marí,Lucas Marí,Valencia Basket
+1,@,—,,—,,,,,,,,,112,L. Marí,Lucas Marí,Valencia Basket
+2,@,—,,—,,,,,,,,,114,O. Moore,Omari Moore,Valencia Basket
+1,@,—,,—,,,,,,,,,114,O. Moore,Omari Moore,Valencia Basket
+2,@,—,,—,,,,,,,,,175,J. Nebo,Josh Nebo,Barça
+1,@,—,,—,,,,,,,,,175,J. Nebo,Josh Nebo,Barça
+2,@,—,,—,,,,,,,,,177,Y. Makoundou,Yoan Makoundou,Barça
+1,@,—,,—,,,,,,,,,177,Y. Makoundou,Yoan Makoundou,Barça
+2,@,—,,—,,,,,,,,,178,T. Evbuomwan,Tosan Evbuomwan,Barça
+1,@,—,,—,,,,,,,,,178,T. Evbuomwan,Tosan Evbuomwan,Barça
+2,@ZAR,Fuera,V,8:07,8.12,0.0,0.0,0.0,0/1,-5.0,-5.0,,106,M. Gueye,Mo Gueye,Valencia Basket
+1,vsILE,Casa,D,6:00,6.0,0.0,1.0,1.0,0/0,0.0,0.0,,106,M. Gueye,Mo Gueye,Valencia Basket

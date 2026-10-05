@@ -6,7 +6,7 @@ MI_EQUIPO_ID = 246638
 # 246638 SARELA
 
 # ─── SCRAPER DE EL RINCÓN ───────────────────────────────────
-SCRAPEAR_RINCON = True
+SCRAPEAR_RINCON = False
 EXPLORAR_SUAVIZADO_EN_RUN = True
 
 # ─── REGLAS DE LA LIGA ──────────────────────────────────────
