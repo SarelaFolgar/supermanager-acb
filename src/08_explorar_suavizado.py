@@ -1,11 +1,11 @@
 """
-20_explorar_suavizado.py
+08_explorar_suavizado.py
 
-Ejecuta 13_prediccion_global.py con varios valores de SUAVIZADO_JORNADAS
+Ejecuta 04_prediccion.py con varios valores de SUAVIZADO_JORNADAS
 y compara cómo cambian los 6 mejores candidatos.
 
-IMPORTANTE: guarda y restaura data/prediccion_global.csv para no dejar
-el pipeline con el último SUAVIZADO explorado.
+Guarda y restaura data/prediccion_global.csv para no dejar el pipeline
+con el último SUAVIZADO explorado.
 """
 import json
 import shutil
@@ -19,9 +19,9 @@ sys.path.insert(0, "src")
 import config
 
 
-def ejecutar_13(suavizado):
+def ejecutar_prediccion(suavizado):
     r = subprocess.run(
-        [sys.executable, "src/13_prediccion_global.py", str(suavizado)],
+        [sys.executable, "src/04_prediccion.py", str(suavizado)],
         capture_output=True, text=True,
         encoding="utf-8", errors="replace",
     )
@@ -52,7 +52,7 @@ def main():
     try:
         for s in config.SUAVIZADOS_EXPLORADOS:
             print(f"    -> SUAVIZADO = {s}")
-            df = ejecutar_13(s)
+            df = ejecutar_prediccion(s)
             if df is None:
                 continue
 
@@ -80,11 +80,9 @@ def main():
         shutil.copy(ruta_backup, ruta_pred)
         ruta_backup.unlink()
 
-    # Comprobación: ¿los resultados difieren entre SUAVIZADOS?
     valores_unicos = set(round(m, 4) for m in medias_puntos.values())
     if len(valores_unicos) <= 1:
-        print(f"\n  ERROR: todos los SUAVIZADOS dan la misma media de puntos "
-              f"({list(medias_puntos.values())[0]:.4f}). El override NO funciona.")
+        print(f"\n  ERROR: todos los SUAVIZADOS dan la misma media de puntos. El override NO funciona.")
     else:
         print(f"\n  Medias de puntos_esperados por SUAVIZADO (deben ser distintas):")
         for s, m in medias_puntos.items():

@@ -1,13 +1,9 @@
 """
-21_validar_precios.py
+validar_precios.py — Verifica la regla de precios del Supermanager.
 
-Verifica la regla de precios del Supermanager reproduciendo el precio
-actual desde initialPrice, jornada a jornada, y comparándolo con el
-precio observado en la última captura.
-
-Prueba con y sin contar las jornadas sin jugar (pointsJourney == 0).
-
-Salida: (solo por consola)
+Reproduce el precio actual desde initialPrice, jornada a jornada, y lo
+compara con el precio observado en la última captura. Prueba con y sin
+contar las jornadas sin jugar.
 """
 import glob
 import json
@@ -23,7 +19,6 @@ with open(archivo, encoding="utf-8") as f:
 
 
 def simular(j, contar_ceros):
-    """Reproduce el precio desde initialPrice jornada a jornada."""
     p = j["initialPrice"]
     pts = []
     stats_ordenadas = sorted(

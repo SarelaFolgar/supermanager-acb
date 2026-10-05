@@ -5,9 +5,8 @@ Uso:
     python src/run.py
 
 Flags en config.py:
-  - SCRAPEAR_RINCON: si True, ejecuta el scraper de El Rincón (16) antes.
-  - EXPLORAR_SUAVIZADO_EN_RUN: si True, ejecuta la exploración (20) y
-    el informe mostrará una sección de sensibilidad al histórico.
+  - SCRAPEAR_RINCON: si True, ejecuta el scraper de El Rincón antes.
+  - EXPLORAR_SUAVIZADO_EN_RUN: si True, ejecuta la exploración de suavizado.
 """
 import os
 import subprocess
@@ -19,22 +18,22 @@ sys.path.insert(0, "src")
 import config
 
 SCRIPTS_BASE = [
-    "src/06_snapshot.py",
-    "src/15_mi_caja.py",
-    "src/10_mi_equipo.py",
-    "src/13_prediccion_global.py",
-    "src/17_minutos_features.py",
-    "src/18_modelo_minutos.py",
-    "src/14_optimizador.py",
+    "src/01_snapshot.py",
+    "src/02_mi_caja.py",
+    "src/03_mi_equipo.py",
+    "src/04_prediccion.py",
+    "src/05_minutos_features.py",
+    "src/06_modelo_minutos.py",
+    "src/07_optimizador.py",
 ]
 
 if config.EXPLORAR_SUAVIZADO_EN_RUN:
-    SCRIPTS_BASE.append("src/20_explorar_suavizado.py")
+    SCRIPTS_BASE.append("src/08_explorar_suavizado.py")
 
-SCRIPTS_BASE.append("src/informe.py")
+SCRIPTS_BASE.append("src/09_informe.py")
 
 if config.SCRAPEAR_RINCON:
-    SCRIPTS = ["src/16_rincon_scraper.py"] + SCRIPTS_BASE
+    SCRIPTS = ["src/manual/scrape_rincon.py"] + SCRIPTS_BASE
 else:
     SCRIPTS = SCRIPTS_BASE
 

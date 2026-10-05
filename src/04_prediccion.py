@@ -8,7 +8,7 @@ import pandas as pd
 
 import config
 
-# Override por línea de comandos (usado por 20_explorar_suavizado.py)
+# Override por línea de comandos (usado por 08_explorar_suavizado.py)
 if len(sys.argv) > 1:
     try:
         config.SUAVIZADO_JORNADAS = int(sys.argv[1])
@@ -98,9 +98,9 @@ for j in mercado:
 
 df = pd.DataFrame(filas)
 
-# === 4. Histórico 2025-26 ===
-stats_raw = pd.read_csv("data/stats_jornada_2526.csv")
-jug_2526 = pd.read_csv("data/jugadores_2526.csv")
+# === 4. Histórico 2025-26 (rutas nuevas: data/historico/) ===
+stats_raw = pd.read_csv("data/historico/stats_jornada_2526.csv")
+jug_2526 = pd.read_csv("data/historico/jugadores_2526.csv")
 
 stats_2526 = stats_raw[stats_raw["valueTimePlayed"] > 0].copy()
 stats_2526["minutos"] = stats_2526["valueTimePlayed"] / 60.0
@@ -246,7 +246,6 @@ df["puntos_esperados_J2"] = df["media_sin_bonus"] * (1 + 0.2 * df["p_win_J2"])
 K = config.K_PRECIO
 
 def calcular_distribucion(precio, S, N, mu, seed):
-    """Simula la valoración del próximo partido y calcula estadísticas del precio nuevo."""
     rng = np.random.default_rng(seed)
     sd = max(config.SD_BASE + config.SD_ESCALA_MU * mu, 1.0)
     x = rng.normal(mu, sd, config.N_SIMULACIONES)
@@ -261,7 +260,6 @@ def calcular_distribucion(precio, S, N, mu, seed):
 revals, ps_sube, ps_baja = [], [], []
 for _, r in df.iterrows():
     if pd.isna(r["puntos_esperados_J2"]) or r["partidos_actual"] == 0:
-        # Sin datos: sin reval
         revals.append(0.0)
         ps_sube.append(0.0)
         ps_baja.append(0.0)
@@ -283,7 +281,7 @@ df["p_baja_15"] = ps_baja
 df["reval_esperada"] = df["reval_euros"] / df["price"].replace(0, np.nan)
 df["reval_euros_norm"] = df["reval_euros"] / 100_000
 
-# Umbrales de precio (para mostrar información de referencia)
+# Umbrales de precio
 df["N_actual"] = df["partidos_actual"]
 df["media_implicita"] = df["price"] / K
 df["umbral_mantiene"] = (
@@ -298,7 +296,6 @@ df["umbral_baja_15"] = (
     - df["sum_points_actual"]
 )
 
-# Pronóstico basado en probabilidades
 def pronostico(p_sube, p_baja):
     if p_sube >= 0.5:
         return "upup"

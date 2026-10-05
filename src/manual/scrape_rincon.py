@@ -1,11 +1,12 @@
 """
-16_rincon_scraper.py — Descarga minutos y estadísticas por partido desde
+scrape_rincon.py — Descarga minutos y estadísticas por partido desde
 El Rincón del Supermanager.
 
 Fuente: https://www.rincondelmanager.com/smgr/jugador/<slug>
 Salida: data/rincon/minutos_actual.csv
 """
 import re
+import sys
 import time
 import unicodedata
 from pathlib import Path
@@ -14,17 +15,20 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
+# Permitir import de config desde src/
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import config
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                   "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
 }
 BASE_URL = "https://www.rincondelmanager.com/smgr/jugador/"
-PAUSA = 1.0        # segundos entre peticiones
-LIMITE = 0         # 0 = todos. Pon 5 para probar.
+PAUSA = 1.0
+LIMITE = 0
 
 
 def slug(nombre):
-    """Convierte 'Edy Tavares' -> 'edy-tavares'."""
     if not nombre or pd.isna(nombre):
         return None
     s = str(nombre).strip().lower()
@@ -37,13 +41,11 @@ def slug(nombre):
 
 
 def numero_decimal(s):
-    """Para valores con decimales (comas): '10,8' -> 10.8 ; '23' -> 23.0."""
     if s is None:
         return None
     s = str(s).replace(" ", "").strip()
     if not s:
         return None
-    # Formato español: quitar puntos de miles, coma decimal a punto
     if "," in s:
         s = s.replace(".", "").replace(",", ".")
     try:
@@ -53,7 +55,6 @@ def numero_decimal(s):
 
 
 def numero_entero(s):
-    """Para valores enteros en euros: '-112.500' -> -112500 ; '88.500' -> 88500."""
     if s is None:
         return None
     s = str(s).replace(" ", "").replace(".", "").replace(",", "").strip()
@@ -66,7 +67,6 @@ def numero_entero(s):
 
 
 def parsear_partidos(html):
-    """Extrae las filas de partidos individuales de la tabla 'Partidos'."""
     soup = BeautifulSoup(html, "lxml")
     partidos = []
     for tr in soup.find_all("tr"):

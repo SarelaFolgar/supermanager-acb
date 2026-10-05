@@ -1,41 +1,30 @@
 """
-19_backtest.py
-
-Backtest del modelo sobre la temporada 2025-26 usando stats_jornada_2526.csv.
-
-Para cada jugador y cada jornada J (desde MIN_PRIOR+1):
-  - "prior"   = primeros MIN_PRIOR partidos (simula el histórico)
-  - "current" = partidos MIN_PRIOR..J-1
-  - v1 = W * media_pts_current + (1-W) * media_pts_prior
-  - v2 = W * (media_ppm_current * media_min_current)
-       + (1-W) * (media_ppm_prior * media_min_prior)
-  - Compara con lo que hizo en J.
-
-Prueba distintos pesos de blend y distintos SUAVIZADO.
-Recomienda el blend con menor MAE.
+backtest.py — Backtest del modelo sobre la temporada 2025-26.
 
 Salidas:
-  data/backtest_resumen.csv         (métricas por blend)
-  data/backtest_resumen_suav.csv    (métricas por blend y suavizado)
+  data/backtest_resumen.csv
 """
+import sys
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import config
 
-# ─── Parámetros ─────────────────────────────────────────────
-MIN_PRIOR = 5                          # partidos iniciales = "histórico"
-SUAVIZADOS = [2, 3, 4, 6, 8]           # valores a probar
+MIN_PRIOR = 5
+SUAVIZADOS = [2, 3, 4, 6, 8]
 BLENDS = np.round(np.arange(0, 1.001, 0.05), 2)
 
 
 def cargar():
-    df = pd.read_csv("data/stats_jornada_2526.csv")
+    df = pd.read_csv("data/historico/stats_jornada_2526.csv")
     df = df[df["valueTimePlayed"] > 0].copy()
     df["minutos"] = df["valueTimePlayed"] / 60.0
     df["ppm"] = df["pointsJourney"] / df["minutos"]
     df = df.sort_values(["idPlayer", "numberJourney"]).reset_index(drop=True)
 
-    # Solo jugadores con al menos MIN_PRIOR+1 partidos
     counts = df.groupby("idPlayer").size()
     validos = counts[counts >= MIN_PRIOR + 1].index
     df = df[df["idPlayer"].isin(validos)].copy()
@@ -43,7 +32,6 @@ def cargar():
 
 
 def backtest(df, suavizado):
-    """Devuelve un DataFrame con idPlayer, jornada, actual, v1, v2."""
     filas = []
     for id_p, grupo in df.groupby("idPlayer"):
         grupo = grupo.sort_values("numberJourney").reset_index(drop=True)
@@ -90,7 +78,6 @@ def backtest(df, suavizado):
 
 
 def evaluar(df_pred, blends):
-    """Devuelve un DataFrame con métricas por peso de blend."""
     filas = []
     for w in blends:
         pred = (1 - w) * df_pred["v1"] + w * df_pred["v2"]
@@ -122,7 +109,6 @@ def main():
     resumen = pd.concat(todos, ignore_index=True)
     resumen.to_csv("data/backtest_resumen.csv", index=False)
 
-    # Mejor combinación global
     best = resumen.loc[resumen["mae"].idxmin()]
     print("\n  === MEJOR COMBINACIÓN ===")
     print(f"  peso_v2 = {best['peso_v2']:.2f}")
@@ -132,28 +118,7 @@ def main():
     print(f"  Correlación = {best['corr']:.3f}")
     print(f"  Sesgo = {best['sesgo']:+.3f}")
 
-    # Comparativa resumida con el mejor SUAVIZADO
-    mejor_suav = int(best["suavizado"])
-    print(f"\n  === Comparativa con SUAVIZADO = {mejor_suav} ===")
-    sub = resumen[resumen["suavizado"] == mejor_suav].sort_values("peso_v2")
-    print(f"  {'peso_v2':>8} {'MAE':>8} {'RMSE':>8} {'Corr':>8} {'Sesgo':>8}")
-    for _, r in sub.iterrows():
-        marca = " <-" if abs(r["peso_v2"] - best["peso_v2"]) < 1e-6 else ""
-        print(f"  {r['peso_v2']:>8.2f} {r['mae']:>8.3f} {r['rmse']:>8.3f} "
-              f"{r['corr']:>8.3f} {r['sesgo']:>+8.3f}{marca}")
-
-    # Comparativa de SUAVIZADO con el mejor blend
-    mejor_peso = best["peso_v2"]
-    print(f"\n  === Comparativa con peso_v2 = {mejor_peso:.2f} ===")
-    sub2 = resumen[np.isclose(resumen["peso_v2"], mejor_peso)].sort_values("suavizado")
-    print(f"  {'SUAVIZADO':>10} {'MAE':>8} {'RMSE':>8} {'Corr':>8}")
-    for _, r in sub2.iterrows():
-        print(f"  {int(r['suavizado']):>10d} {r['mae']:>8.3f} {r['rmse']:>8.3f} {r['corr']:>8.3f}")
-
     print(f"\n  Guardado: data/backtest_resumen.csv")
-    print(f"\n  SUGERENCIA para config.py:")
-    print(f"    SUAVIZADO_JORNADAS = {mejor_suav}")
-    print(f"    PESO_V2_INICIAL = {mejor_peso:.2f}")
 
 
 if __name__ == "__main__":

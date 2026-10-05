@@ -1,10 +1,13 @@
+"""
+mapeo_equipos.py — Genera data/equipos_logos.csv desde la última
+captura del mercado. Se ejecuta a mano cuando cambien los equipos.
+"""
 import glob
 import json
 from pathlib import Path
 
 import pandas as pd
 
-# Coge la captura más reciente del mercado
 archivo = sorted(glob.glob("data/raw/mercado_*.json"))[-1]
 with open(archivo, encoding="utf-8") as f:
     jugadores = json.load(f)
