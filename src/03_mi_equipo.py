@@ -19,11 +19,14 @@ resp = requests.get(URL, headers={"Authorization": token, "Accept": "application
 resp.raise_for_status()
 data = resp.json()
 
-j1 = next(j for j in data if j["number"] == 1)
-j2 = next(j for j in data if j["number"] == 2)
+# Ordenar por número de jornada y coger la última (la plantilla actual)
+jornadas = sorted(data, key=lambda j: j["number"])
+actual = jornadas[-1]
+primera = jornadas[0]
 
+# Plantilla actual
 filas = []
-for p in j2["playerList"]:
+for p in actual["playerList"]:
     filas.append({
         "idPlayer": p["idPlayer"],
         "shortName": p["shortName"],
@@ -41,14 +44,29 @@ for p in j2["playerList"]:
     })
 df_plantilla = pd.DataFrame(filas)
 
+# Mapear rival a nombre de equipo
 logos = pd.read_csv("data/procesado/equipos_logos.csv").set_index("logo")["equipo"].to_dict()
 df_plantilla["rival"] = (
     df_plantilla["prox_rival_logo"].map(logos).fillna(df_plantilla["prox_rival_logo"])
 )
 
+# Puntos de la primera jornada del histórico
+filas_j1 = []
+for p in primera["playerList"]:
+    filas_j1.append({
+        "idPlayer": p["idPlayer"],
+        "shortName": p["shortName"],
+        "nameTeam": p["nameTeam"],
+        "position": p["position"],
+        "journeyPoints": p.get("journeyPoints"),
+    })
+df_j1 = pd.DataFrame(filas_j1)
+
 Path("data/mi_equipo").mkdir(parents=True, exist_ok=True)
 df_plantilla.to_csv("data/mi_equipo/plantilla_actual.csv", index=False)
+df_j1.to_csv("data/mi_equipo/jornada_1_puntos.csv", index=False)
 
-print(f"  Plantilla: {len(df_plantilla)} jugadores | "
+print(f"  Plantilla leída de la jornada {actual['number']}: "
+      f"{len(df_plantilla)} jugadores | "
       f"{df_plantilla['isExtraCommunity'].sum()} EXT | "
       f"{df_plantilla['isNational'].sum()} locales")

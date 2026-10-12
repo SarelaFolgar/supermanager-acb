@@ -1,11 +1,11 @@
 idPlayer,shortName,fullName,nameTeam,position,initialPrice,fisicStatus,injuredDays,isExtraCommunity,license,isNational,prox_rival_logo,prox_local,rival
-241,D. Baugh,Damion Baugh,Kosner Baskonia,1,480000.0,fit,0,False,COT,False,,,
-180,D. Brizuela,Darío Brizuela,Barça,3,320000.0,fit,0,False,JFL,True,,,
-170,O. Balcerowski,Olek Balcerowski,Barça,5,350000.0,fit,0,False,JFL,True,,,
-141,M. Geben,Martinas Geben,FIATC Girona,5,620000.0,fit,0,False,EUR,False,,,
-137,J. Pérez,Jassel Perez,FIATC Girona,3,400000.0,fit,0,False,COT,False,,,
-58,J. Pradilla,Jaime Pradilla,Real Madrid,5,610000.0,fit,0,False,JFL,True,,,
-57,W. Tavares,Edy Tavares,Real Madrid,5,750000.0,fit,0,False,JFL,True,,,
-50,M. Pantzar,Melwin Pantzar,Unicaja,1,470000.0,fit,0,False,JFL,True,,,
-29,López-Arostegui,Xabi López-Arostegui,La Laguna Tenerife,3,370000.0,fit,0,False,JFL,True,,,
-1,A. Barcello,Alex Barcello,Monbus Obradoiro,3,410000.0,fit,0,True,EXT,False,,,
+50,M. Pantzar,Melwin Pantzar,Unicaja,1,470000.0,fit,0,False,JFL,True,202526KidsUsManresa.png,False,Kids&Us Manresa
+57,W. Tavares,Edy Tavares,Real Madrid,5,750000.0,fit,0,False,JFL,True,logo_surnebb_pos.png,True,Surne Bilbao
+58,J. Pradilla,Jaime Pradilla,Real Madrid,5,610000.0,fit,0,False,JFL,True,logo_surnebb_pos.png,True,Surne Bilbao
+65,T. Maledon,Theo Maledon,Real Madrid,1,590000.0,fit,0,False,EUR,False,logo_surnebb_pos.png,True,Surne Bilbao
+76,T. Hlinason,Tryggvi Hlinason,Surne Bilbao,5,650000.0,fit,0,False,EUR,False,2324RealMadrid_Logoweb.png,False,Real Madrid
+113,J. Puerto,Josep Puerto,Valencia Basket,3,200000.0,fit,0,False,JFL,True,202627ucamcblogoverticalcolor.png,True,UCAM Murcia
+137,J. Pérez,Jassel Perez,FIATC Girona,3,400000.0,fit,0,False,COT,False,202627LeymaCorunaLogoPositivoOK.png,True,Leyma Coruña
+157,T. Nakic,Toni Nakic,UCAM Murcia,3,220000.0,fit,0,False,EUR,False,202627ValenciaBasket40Anys.png,False,Valencia Basket
+170,O. Balcerowski,Olek Balcerowski,Barça,5,350000.0,fit,0,False,JFL,True,202526AsisaJoventutLogoPosisitvo.png,False,Asisa Joventut
+222,C. Duarte,Chris Duarte,Kosner Baskonia,3,420000.0,fit,0,False,COT,False,2425LaLagunaTenerifeLogo.png,False,La Laguna Tenerife
