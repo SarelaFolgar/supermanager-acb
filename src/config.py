@@ -1,9 +1,16 @@
 """Configuración del proyecto. Edita SOLO este archivo."""
 
 # ─── MI EQUIPO ──────────────────────────────────────────────
-MI_EQUIPO_ID = 246638
+MI_EQUIPO_ID = 258312
 # 249063 SERGIO
 # 246638 SARELA
+# 258312 MANUEL
+
+# Jugadores que NUNCA quieres vender, aunque el modelo diga lo contrario.
+# Usa el nombre corto tal como aparece en el informe (shortName).
+# Ejemplo: ["W. Tavares", "F. Campazzo"]
+# Deja la lista vacía para permitir vender a cualquiera.
+JUGADORES_MANTENER = ["T. Hlinason"]
 
 # ─── SCRAPER DE EL RINCÓN ───────────────────────────────────
 SCRAPEAR_RINCON = False
@@ -41,7 +48,7 @@ JORNADA_V2_TECHO = 5
 PESO_V2_FINAL = 0.10
 
 # ─── MODELO ─────────────────────────────────────────────────
-SUAVIZADO_JORNADAS = 4
+SUAVIZADO_JORNADAS = 4 # 4 optimo segun backtest
 SUAVIZADOS_EXPLORADOS = [0, 2, 3, 4, 6, 8]
 MIN_PARTIDOS_FACTOR_HIST = 3
 FACTOR_HIST_CAMBIO_EQUIPO = 0.3

@@ -23,6 +23,7 @@ POSICIONES = config.POSICIONES
 MIN_LOCALES = config.MIN_LOCALES
 MAX_EXTRA = config.MAX_EXTRA
 UMBRAL = config.UMBRAL_MINIMO_CAMBIO
+JUGADORES_MANTENER = set(config.JUGADORES_MANTENER)
 
 # === Jornada y pesos dinámicos ===
 jornada = int(pred["partidos_actual"].max()) + 1 if "partidos_actual" in pred.columns else 1
@@ -85,6 +86,12 @@ plantilla["p_sube_15"] = plantilla["p_sube_15"].fillna(0)
 plantilla["p_baja_15"] = plantilla["p_baja_15"].fillna(0)
 mis_ids = set(plantilla["idPlayer"].astype(int))
 
+# === Aviso si algún nombre de JUGADORES_MANTENER no coincide ===
+if JUGADORES_MANTENER:
+    no_esta = [n for n in JUGADORES_MANTENER if n not in plantilla["shortName"].values]
+    if no_esta:
+        print(f"  AVISO: estos nombres en JUGADORES_MANTENER no están en tu plantilla: {no_esta}")
+
 # === Candidatos ===
 cand = pred[~pred["idPlayer"].isin(mis_ids)].copy()
 cand = cand.merge(
@@ -102,6 +109,14 @@ cand = pd.concat([
     cand[cand["position"] == p].nlargest(TOP_POR_POSICION, "pts_esp")
     for p in POSICIONES
 ]).reset_index(drop=True)
+
+
+# === Función auxiliar: añade la restricción de JUGADORES_MANTENER ===
+def aplicar_blindados(prob, vender):
+    for i in plantilla.index:
+        r = plantilla.loc[i]
+        if r["shortName"] in JUGADORES_MANTENER:
+            prob += vender[i] == 0
 
 
 # === Función: resolver con un peso de broker dado ===
@@ -154,6 +169,8 @@ def resolver(peso):
             if lesionado:
                 prob += vender[i] == 1
 
+    aplicar_blindados(prob, vender)
+
     prob.solve(pulp.PULP_CBC_CMD(msg=0))
 
     hace = hacer.varValue and hacer.varValue > 0.5
@@ -179,7 +196,7 @@ def resolver(peso):
     }
 
 
-# === Frontera de Pareto (incluye el PESO_REVAL actual) ===
+# === Frontera de Pareto ===
 pesos_a_explorar = sorted(set(config.PESOS_EXPLORADOS + [round(PESO_REVAL, 2)]))
 print(f"  Explorando {len(pesos_a_explorar)} pesos (incluye actual {PESO_REVAL:.2f})...")
 
@@ -308,6 +325,9 @@ else:
                         (pd.notna(r["fisicStatus"]) and r["fisicStatus"] != "fit")
             if lesionado:
                 prob += vender[i] == 1
+
+    aplicar_blindados(prob, vender)
+
     prob.solve(pulp.PULP_CBC_CMD(msg=0))
 
     cambios = []

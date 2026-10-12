@@ -1,11 +1,11 @@
 idPlayer,shortName,fullName,nameTeam,position,initialPrice,fisicStatus,injuredDays,isExtraCommunity,license,isNational,prox_rival_logo,prox_local,rival
-50,M. Pantzar,Melwin Pantzar,Unicaja,1,470000.0,fit,0,False,JFL,True,202526KidsUsManresa.png,False,Kids&Us Manresa
-57,W. Tavares,Edy Tavares,Real Madrid,5,750000.0,fit,0,False,JFL,True,logo_surnebb_pos.png,True,Surne Bilbao
+7,J. Soriano,Joel Soriano,Monbus Obradoiro,5,350000.0,fit,0,False,COT,False,2526SanPabloLogo.png,False,Recoletas Salud San Pablo Burgos
 58,J. Pradilla,Jaime Pradilla,Real Madrid,5,610000.0,fit,0,False,JFL,True,logo_surnebb_pos.png,True,Surne Bilbao
-65,T. Maledon,Theo Maledon,Real Madrid,1,590000.0,fit,0,False,EUR,False,logo_surnebb_pos.png,True,Surne Bilbao
 76,T. Hlinason,Tryggvi Hlinason,Surne Bilbao,5,650000.0,fit,0,False,EUR,False,2324RealMadrid_Logoweb.png,False,Real Madrid
-113,J. Puerto,Josep Puerto,Valencia Basket,3,200000.0,fit,0,False,JFL,True,202627ucamcblogoverticalcolor.png,True,UCAM Murcia
-137,J. Pérez,Jassel Perez,FIATC Girona,3,400000.0,fit,0,False,COT,False,202627LeymaCorunaLogoPositivoOK.png,True,Leyma Coruña
-157,T. Nakic,Toni Nakic,UCAM Murcia,3,220000.0,fit,0,False,EUR,False,202627ValenciaBasket40Anys.png,False,Valencia Basket
+80,M. Normantas,Margiris Normantas,Surne Bilbao,3,290000.0,fit,0,False,EUR,False,2324RealMadrid_Logoweb.png,False,Real Madrid
 170,O. Balcerowski,Olek Balcerowski,Barça,5,350000.0,fit,0,False,JFL,True,202526AsisaJoventutLogoPosisitvo.png,False,Asisa Joventut
-222,C. Duarte,Chris Duarte,Kosner Baskonia,3,420000.0,fit,0,False,COT,False,2425LaLagunaTenerifeLogo.png,False,La Laguna Tenerife
+182,J. Núñez,Juan Núñez,Barça,1,200000.0,fit,0,False,JFL,True,202526AsisaJoventutLogoPosisitvo.png,False,Asisa Joventut
+209,T. Brown,Tevin Brown,Río Breogán,3,520000.0,fit,0,True,EXT,False,20252026MorabancAndorraLogoPositivoOK.png,False,MoraBanc Andorra
+218,F. Alonso,Francis Alonso,Río Breogán,3,610000.0,fit,0,False,JFL,True,20252026MorabancAndorraLogoPositivoOK.png,False,MoraBanc Andorra
+220,D. Mavra,Dominik Mavra,Río Breogán,1,460000.0,fit,0,False,EUR,False,20252026MorabancAndorraLogoPositivoOK.png,False,MoraBanc Andorra
+227,M. Spagnolo,Matteo Spagnolo,Kosner Baskonia,3,380000.0,fit,0,False,JFL,True,2425LaLagunaTenerifeLogo.png,False,La Laguna Tenerife

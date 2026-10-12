@@ -1,7 +1,7 @@
-suavizado,w,top1,top2,top3,top4,top5,top6
-0,1.0,F. Alonso (25.0),A. Noua (23.5),J. Soriano (23.5),T. Brown (23.4),D. Mavra (23.4),T. Allen (23.3)
-2,0.5,F. Alonso (21.3),TJ Shorts (19.3),Luwawu-Cabarrot (19.3),D. Brankovic (19.2),M. Huertas (19.2),D. Mavra (18.9)
-3,0.4,F. Alonso (20.3),Luwawu-Cabarrot (19.4),M. Huertas (19.0),J. Batemon (18.5),TJ Shorts (18.5),D. Brankovic (18.4)
-4,0.333,F. Alonso (19.6),Luwawu-Cabarrot (19.4),M. Huertas (18.8),J. Batemon (18.6),R. Rubio (18.1),TJ Shorts (17.9)
-6,0.25,Luwawu-Cabarrot (19.5),J. Batemon (18.6),F. Alonso (18.6),M. Huertas (18.6),R. Rubio (18.1),TJ Shorts (17.1)
-8,0.2,Luwawu-Cabarrot (19.5),J. Batemon (18.7),M. Huertas (18.4),R. Rubio (18.1),F. Alonso (17.9),TJ Shorts (16.7)
+suavizado,n_partidos,w,vender,fichar
+0,3,1.0,"J. Pradilla, M. Normantas, J. Núñez, M. Spagnolo","Z. Samar, J. Pérez, J. Puerto, T. Allen"
+2,3,0.6,"J. Pradilla, J. Núñez, T. Brown, M. Spagnolo","Z. Samar, J. Pérez, C. Duarte, T. Sedekerskis"
+3,3,0.5,"J. Pradilla, J. Núñez, T. Brown, M. Spagnolo","Z. Samar, J. Pérez, C. Duarte, T. Sedekerskis"
+4,3,0.429,"J. Pradilla, J. Núñez, T. Brown, M. Spagnolo","Z. Samar, J. Pérez, C. Duarte, T. Sedekerskis"
+6,3,0.333,"J. Pradilla, J. Núñez, T. Brown, M. Spagnolo","Z. Samar, J. Pérez, C. Duarte, T. Sedekerskis"
+8,3,0.273,"J. Pradilla, J. Núñez, T. Brown, M. Spagnolo","Z. Samar, J. Pérez, C. Duarte, T. Sedekerskis"

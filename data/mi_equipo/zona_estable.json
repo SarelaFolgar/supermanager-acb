@@ -1,8 +1,8 @@
 {
   "peso_actual": 10.33,
-  "peso_min": 8.0,
-  "peso_max": 10.33,
-  "n_valores": 2,
-  "robustez": "MEDIA",
+  "peso_min": 2.0,
+  "peso_max": 15.0,
+  "n_valores": 5,
+  "robustez": "ALTA",
   "soluciones_casi_equivalentes": []
 }

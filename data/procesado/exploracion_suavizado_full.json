@@ -1,398 +1,104 @@
 [
   {
     "suavizado": 0,
+    "n_partidos": 3,
     "w": 1.0,
-    "top": [
-      {
-        "shortName": "F. Alonso",
-        "nameTeam": "Río Breogán",
-        "position": 3,
-        "puntos_esperados": 24.99
-      },
-      {
-        "shortName": "A. Noua",
-        "nameTeam": "Unicaja",
-        "position": 5,
-        "puntos_esperados": 23.547845040390357
-      },
-      {
-        "shortName": "J. Soriano",
-        "nameTeam": "Monbus Obradoiro",
-        "position": 5,
-        "puntos_esperados": 23.547845040390357
-      },
-      {
-        "shortName": "T. Brown",
-        "nameTeam": "Río Breogán",
-        "position": 3,
-        "puntos_esperados": 23.40333333333333
-      },
-      {
-        "shortName": "D. Mavra",
-        "nameTeam": "Río Breogán",
-        "position": 1,
-        "puntos_esperados": 23.40333333333333
-      },
-      {
-        "shortName": "T. Allen",
-        "nameTeam": "Kids&Us Manresa",
-        "position": 5,
-        "puntos_esperados": 23.33293915055221
-      },
-      {
-        "shortName": "TJ Shorts",
-        "nameTeam": "Valencia Basket",
-        "position": 1,
-        "puntos_esperados": 22.489837324807414
-      },
-      {
-        "shortName": "D. Brankovic",
-        "nameTeam": "Río Breogán",
-        "position": 5,
-        "puntos_esperados": 22.21333333333333
-      },
-      {
-        "shortName": "J. Akinjo",
-        "nameTeam": "MoraBanc Andorra",
-        "position": 1,
-        "puntos_esperados": 20.705
-      },
-      {
-        "shortName": "A. Pustovyi",
-        "nameTeam": "MoraBanc Andorra",
-        "position": 5,
-        "puntos_esperados": 20.2
-      }
+    "vender": [
+      "J. Pradilla",
+      "M. Normantas",
+      "J. Núñez",
+      "M. Spagnolo"
+    ],
+    "fichar": [
+      "Z. Samar",
+      "J. Pérez",
+      "J. Puerto",
+      "T. Allen"
     ]
   },
   {
     "suavizado": 2,
-    "w": 0.5,
-    "top": [
-      {
-        "shortName": "F. Alonso",
-        "nameTeam": "Río Breogán",
-        "position": 3,
-        "puntos_esperados": 21.31081548600092
-      },
-      {
-        "shortName": "TJ Shorts",
-        "nameTeam": "Valencia Basket",
-        "position": 1,
-        "puntos_esperados": 19.271892275269938
-      },
-      {
-        "shortName": "Luwawu-Cabarrot",
-        "nameTeam": "Real Madrid",
-        "position": 3,
-        "puntos_esperados": 19.26133297946069
-      },
-      {
-        "shortName": "D. Brankovic",
-        "nameTeam": "Río Breogán",
-        "position": 5,
-        "puntos_esperados": 19.20604358614898
-      },
-      {
-        "shortName": "M. Huertas",
-        "nameTeam": "La Laguna Tenerife",
-        "position": 1,
-        "puntos_esperados": 19.203518256138334
-      },
-      {
-        "shortName": "D. Mavra",
-        "nameTeam": "Río Breogán",
-        "position": 1,
-        "puntos_esperados": 18.942947098667485
-      },
-      {
-        "shortName": "J. Batemon",
-        "nameTeam": "iLERNA Lleida",
-        "position": 3,
-        "puntos_esperados": 18.510463005129004
-      },
-      {
-        "shortName": "T. Brown",
-        "nameTeam": "Río Breogán",
-        "position": 3,
-        "puntos_esperados": 18.388086711270528
-      },
-      {
-        "shortName": "R. Rubio",
-        "nameTeam": "Asisa Joventut",
-        "position": 1,
-        "puntos_esperados": 18.07666349535353
-      },
-      {
-        "shortName": "A. Pustovyi",
-        "nameTeam": "MoraBanc Andorra",
-        "position": 5,
-        "puntos_esperados": 17.556303346960775
-      }
+    "n_partidos": 3,
+    "w": 0.6,
+    "vender": [
+      "J. Pradilla",
+      "J. Núñez",
+      "T. Brown",
+      "M. Spagnolo"
+    ],
+    "fichar": [
+      "Z. Samar",
+      "J. Pérez",
+      "C. Duarte",
+      "T. Sedekerskis"
     ]
   },
   {
     "suavizado": 3,
-    "w": 0.4,
-    "top": [
-      {
-        "shortName": "F. Alonso",
-        "nameTeam": "Río Breogán",
-        "position": 3,
-        "puntos_esperados": 20.311059048759915
-      },
-      {
-        "shortName": "Luwawu-Cabarrot",
-        "nameTeam": "Real Madrid",
-        "position": 3,
-        "puntos_esperados": 19.358712404328926
-      },
-      {
-        "shortName": "M. Huertas",
-        "nameTeam": "La Laguna Tenerife",
-        "position": 1,
-        "puntos_esperados": 18.96525025762308
-      },
-      {
-        "shortName": "J. Batemon",
-        "nameTeam": "iLERNA Lleida",
-        "position": 3,
-        "puntos_esperados": 18.54765525041995
-      },
-      {
-        "shortName": "TJ Shorts",
-        "nameTeam": "Valencia Basket",
-        "position": 1,
-        "puntos_esperados": 18.47273463045604
-      },
-      {
-        "shortName": "D. Brankovic",
-        "nameTeam": "Río Breogán",
-        "position": 5,
-        "puntos_esperados": 18.38076381485352
-      },
-      {
-        "shortName": "R. Rubio",
-        "nameTeam": "Asisa Joventut",
-        "position": 1,
-        "puntos_esperados": 18.07223563076761
-      },
-      {
-        "shortName": "D. Mavra",
-        "nameTeam": "Río Breogán",
-        "position": 1,
-        "puntos_esperados": 17.76215287935829
-      },
-      {
-        "shortName": "A. Pustovyi",
-        "nameTeam": "MoraBanc Andorra",
-        "position": 5,
-        "puntos_esperados": 17.117042723173498
-      },
-      {
-        "shortName": "T. Brown",
-        "nameTeam": "Río Breogán",
-        "position": 3,
-        "puntos_esperados": 17.073599896651668
-      }
+    "n_partidos": 3,
+    "w": 0.5,
+    "vender": [
+      "J. Pradilla",
+      "J. Núñez",
+      "T. Brown",
+      "M. Spagnolo"
+    ],
+    "fichar": [
+      "Z. Samar",
+      "J. Pérez",
+      "C. Duarte",
+      "T. Sedekerskis"
     ]
   },
   {
     "suavizado": 4,
-    "w": 0.333,
-    "top": [
-      {
-        "shortName": "F. Alonso",
-        "nameTeam": "Río Breogán",
-        "position": 3,
-        "puntos_esperados": 19.579905084701107
-      },
-      {
-        "shortName": "Luwawu-Cabarrot",
-        "nameTeam": "Real Madrid",
-        "position": 3,
-        "puntos_esperados": 19.42285594014146
-      },
-      {
-        "shortName": "M. Huertas",
-        "nameTeam": "La Laguna Tenerife",
-        "position": 1,
-        "puntos_esperados": 18.79450394866615
-      },
-      {
-        "shortName": "J. Batemon",
-        "nameTeam": "iLERNA Lleida",
-        "position": 3,
-        "puntos_esperados": 18.580817768877925
-      },
-      {
-        "shortName": "R. Rubio",
-        "nameTeam": "Asisa Joventut",
-        "position": 1,
-        "puntos_esperados": 18.08395085773312
-      },
-      {
-        "shortName": "TJ Shorts",
-        "nameTeam": "Valencia Basket",
-        "position": 1,
-        "puntos_esperados": 17.90325867499908
-      },
-      {
-        "shortName": "D. Brankovic",
-        "nameTeam": "Río Breogán",
-        "position": 5,
-        "puntos_esperados": 17.775080749539324
-      },
-      {
-        "shortName": "D. Mavra",
-        "nameTeam": "Río Breogán",
-        "position": 1,
-        "puntos_esperados": 16.906813907218247
-      },
-      {
-        "shortName": "A. Pustovyi",
-        "nameTeam": "MoraBanc Andorra",
-        "position": 5,
-        "puntos_esperados": 16.849053810675475
-      },
-      {
-        "shortName": "T. Brown",
-        "nameTeam": "Río Breogán",
-        "position": 3,
-        "puntos_esperados": 16.12497824343129
-      }
+    "n_partidos": 3,
+    "w": 0.429,
+    "vender": [
+      "J. Pradilla",
+      "J. Núñez",
+      "T. Brown",
+      "M. Spagnolo"
+    ],
+    "fichar": [
+      "Z. Samar",
+      "J. Pérez",
+      "C. Duarte",
+      "T. Sedekerskis"
     ]
   },
   {
     "suavizado": 6,
-    "w": 0.25,
-    "top": [
-      {
-        "shortName": "Luwawu-Cabarrot",
-        "nameTeam": "Real Madrid",
-        "position": 3,
-        "puntos_esperados": 19.502043611861016
-      },
-      {
-        "shortName": "J. Batemon",
-        "nameTeam": "iLERNA Lleida",
-        "position": 3,
-        "puntos_esperados": 18.631568614960365
-      },
-      {
-        "shortName": "F. Alonso",
-        "nameTeam": "Río Breogán",
-        "position": 3,
-        "puntos_esperados": 18.5846158472698
-      },
-      {
-        "shortName": "M. Huertas",
-        "nameTeam": "La Laguna Tenerife",
-        "position": 1,
-        "puntos_esperados": 18.565984427280448
-      },
-      {
-        "shortName": "R. Rubio",
-        "nameTeam": "Asisa Joventut",
-        "position": 1,
-        "puntos_esperados": 18.11699988007733
-      },
-      {
-        "shortName": "TJ Shorts",
-        "nameTeam": "Valencia Basket",
-        "position": 1,
-        "puntos_esperados": 17.145733771000096
-      },
-      {
-        "shortName": "D. Brankovic",
-        "nameTeam": "Río Breogán",
-        "position": 5,
-        "puntos_esperados": 16.94766786557089
-      },
-      {
-        "shortName": "A. Pustovyi",
-        "nameTeam": "MoraBanc Andorra",
-        "position": 5,
-        "puntos_esperados": 16.547613288955105
-      },
-      {
-        "shortName": "D. Mavra",
-        "nameTeam": "Río Breogán",
-        "position": 1,
-        "puntos_esperados": 15.7537470899281
-      },
-      {
-        "shortName": "O. Paulí",
-        "nameTeam": "iLERNA Lleida",
-        "position": 3,
-        "puntos_esperados": 15.743264340193786
-      }
+    "n_partidos": 3,
+    "w": 0.333,
+    "vender": [
+      "J. Pradilla",
+      "J. Núñez",
+      "T. Brown",
+      "M. Spagnolo"
+    ],
+    "fichar": [
+      "Z. Samar",
+      "J. Pérez",
+      "C. Duarte",
+      "T. Sedekerskis"
     ]
   },
   {
     "suavizado": 8,
-    "w": 0.2,
-    "top": [
-      {
-        "shortName": "Luwawu-Cabarrot",
-        "nameTeam": "Real Madrid",
-        "position": 3,
-        "puntos_esperados": 19.548968401781305
-      },
-      {
-        "shortName": "J. Batemon",
-        "nameTeam": "iLERNA Lleida",
-        "position": 3,
-        "puntos_esperados": 18.666501910533167
-      },
-      {
-        "shortName": "M. Huertas",
-        "nameTeam": "La Laguna Tenerife",
-        "position": 1,
-        "puntos_esperados": 18.41998229015464
-      },
-      {
-        "shortName": "R. Rubio",
-        "nameTeam": "Asisa Joventut",
-        "position": 1,
-        "puntos_esperados": 18.147238223460505
-      },
-      {
-        "shortName": "F. Alonso",
-        "nameTeam": "Río Breogán",
-        "position": 3,
-        "puntos_esperados": 17.941478881889545
-      },
-      {
-        "shortName": "TJ Shorts",
-        "nameTeam": "Valencia Basket",
-        "position": 1,
-        "puntos_esperados": 16.66474153231573
-      },
-      {
-        "shortName": "D. Brankovic",
-        "nameTeam": "Río Breogán",
-        "position": 5,
-        "puntos_esperados": 16.41130178390984
-      },
-      {
-        "shortName": "A. Pustovyi",
-        "nameTeam": "MoraBanc Andorra",
-        "position": 5,
-        "puntos_esperados": 16.386160948611323
-      },
-      {
-        "shortName": "G. Shermadini",
-        "nameTeam": "La Laguna Tenerife",
-        "position": 5,
-        "puntos_esperados": 16.26423524030927
-      },
-      {
-        "shortName": "G. Corbalán",
-        "nameTeam": "Valencia Basket",
-        "position": 3,
-        "puntos_esperados": 15.896377312018869
-      }
+    "n_partidos": 3,
+    "w": 0.273,
+    "vender": [
+      "J. Pradilla",
+      "J. Núñez",
+      "T. Brown",
+      "M. Spagnolo"
+    ],
+    "fichar": [
+      "Z. Samar",
+      "J. Pérez",
+      "C. Duarte",
+      "T. Sedekerskis"
     ]
   }
 ]

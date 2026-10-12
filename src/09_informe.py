@@ -155,12 +155,21 @@ valor_proyectado_nueva = nueva_plantilla["precio_actual"].fillna(0).sum() + reva
 
 
 def motivo_venta(r):
+    """Motivo por el que el optimizador vende al jugador.
+
+    - Lesionado: injuredDays > 0 o fisicStatus != fit.
+    - Bajo rendimiento: pts esp. < mediana Y sin reval clara.
+    - Sacrificio: pts esp. < mediana pero con reval positiva. Duele venderlo.
+    - Liberar caja: pts esp. >= mediana, se vende para financiar fichajes.
+    """
     lesionado = (pd.notna(r.get("injuredDays", 0)) and r.get("injuredDays", 0) > 0) \
                 or (pd.notna(r.get("fisicStatus")) and r.get("fisicStatus") != "fit")
     if lesionado:
         return "Lesionado"
-    if r["pts_esp"] < mediana_plantilla:
+    if r["pts_esp"] < mediana_plantilla and r.get("p_sube_15", 0) < 0.5:
         return "Bajo rendimiento"
+    if r["pts_esp"] < mediana_plantilla:
+        return "Sacrificio"
     return "Liberar caja"
 
 
@@ -197,6 +206,11 @@ L.append("")
 L.append("Esta sección es la más importante del informe. Propone los 4 cambios que maximizan "
          "el score del optimizador respetando todas las reglas del juego.")
 L.append("")
+
+if config.JUGADORES_MANTENER:
+    L.append(f"**Jugadores blindados** (nunca se venderán): "
+             f"{', '.join(config.JUGADORES_MANTENER)}")
+    L.append("")
 
 if zona_estable:
     L.append(f"**Robustez del optimizador:** **{zona_estable['robustez']}**")
@@ -253,7 +267,10 @@ else:
     L.append("- **Pronóstico**: resumen visual del cruce entre P(↑15%) y P(↓15%).")
     L.append("- **Motivo**: por qué el optimizador quiere venderlo:")
     L.append("  - **Lesionado**: `injuredDays > 0` o `fisicStatus != \"fit\"`.")
-    L.append(f"  - **Bajo rendimiento**: pts esp. por debajo de la mediana ({mediana_plantilla:.2f}).")
+    L.append(f"  - **Bajo rendimiento**: pts esp. por debajo de la mediana ({mediana_plantilla:.2f}) "
+             f"y sin expectativa clara de subir.")
+    L.append("  - **Sacrificio**: puntúa algo por debajo de la mediana pero tiene reval positiva. "
+             "Duele venderlo, pero es necesario para financiar los fichajes.")
     L.append("  - **Liberar caja**: puntúa bien pero se vende para financiar fichajes.")
     L.append("")
 
@@ -416,31 +433,30 @@ L.append("")
 ruta_suav = Path("data/procesado/exploracion_suavizado.csv")
 if ruta_suav.exists():
     suav = pd.read_csv(ruta_suav)
+    n_part = int(suav["n_partidos"].iloc[0]) if "n_partidos" in suav.columns else 2
+
     L.append("## Sensibilidad al peso del histórico")
     L.append("")
     L.append("Igual que con el broker, aquí exploramos cuánto tarda la temporada actual en "
              "pesar más que el histórico. El modelo se ejecuta con distintos valores de "
-             "`SUAVIZADO_JORNADAS` y se ve qué candidatos salen en cada caso.")
+             "`SUAVIZADO_JORNADAS` y se muestran los **cambios recomendados** en cada caso.")
     L.append("")
-    L.append("| SUAVIZADO | W (2 partidos) | Top 6 candidatos |")
-    L.append("|----------:|---------------:|------------------|")
+    L.append(f"Con **{n_part} partidos jugados** esta temporada, W vale lo siguiente:")
+    L.append("")
+    L.append(f"| SUAVIZADO | W ({n_part} partidos) | Vender | Fichar |")
+    L.append("|----------:|---------------------:|--------|--------|")
     for _, r in suav.iterrows():
-        top_str = " · ".join(
-            str(r[f"top{i}"]) for i in range(1, 7)
-            if f"top{i}" in r and pd.notna(r[f"top{i}"])
-        )
-        w_val = r["w"] if "w" in r else r.get("w_j2", 0)
-        L.append(f"| {int(r['suavizado'])} | {w_val:.2f} | {top_str} |")
+        L.append(f"| {int(r['suavizado'])} | {r['w']:.2f} | {r['vender']} | {r['fichar']} |")
     L.append("")
     L.append("**Cómo se lee:**")
     L.append("")
-    L.append("- **SUAVIZADO bajo (2)**: W sube rápido. Con 2 partidos ya está 50/50.")
-    L.append("- **SUAVIZADO alto (8)**: W sube despacio. Con 8 partidos aún no llega a 50/50.")
+    L.append("- **SUAVIZADO bajo (2)**: W sube rápido. Con 3 partidos ya pesa más la actual.")
+    L.append("- **SUAVIZADO alto (8)**: W sube despacio. El histórico manda durante más jornadas.")
     L.append("- **SUAVIZADO = 4** (valor actual): el óptimo según el backtest.")
     L.append("")
-    L.append("**Qué mirar:** si los candidatos del top son parecidos en todos los valores, "
-             "el modelo es robusto al peso del histórico. Si cambian mucho, el parámetro "
-             "es sensible y conviene fiarse del valor óptimo (4).")
+    L.append("**Qué mirar:** si las ventas y fichajes son parecidos en todos los valores, "
+             "la decisión es robusta. Si cambian mucho (jugadores distintos), el peso del "
+             "histórico es determinante y conviene fiarse del valor óptimo (4).")
     L.append("")
     L.append("**Tabla de pesos por jornada:**")
     L.append("")
@@ -867,6 +883,8 @@ L.append("- Caja + ventas − compras ≥ 0 (nunca negativa).")
 L.append("- Máximo 4 cambios en total.")
 L.append("- Si `FORZAR_VENTA_LESIONADOS`, todo jugador con `injuredDays > 0` o `fisicStatus != 'fit'` "
          "se vende obligatoriamente.")
+if config.JUGADORES_MANTENER:
+    L.append(f"- Jugadores blindados (nunca se venden): {', '.join(config.JUGADORES_MANTENER)}.")
 L.append("")
 
 # --- 10. Frontera Pareto ---
@@ -923,6 +941,8 @@ L.append("| **Zona estable** | Rango de pesos donde la solución no cambia. |")
 L.append("| **Robustez** | ALTA/MEDIA/BAJA según el tamaño de la zona estable. |")
 L.append("| **MAE** | Error medio absoluto. |")
 L.append("| **Monte Carlo** | Simulación de la distribución del próximo partido. |")
+L.append("| **Sacrificio** | Venta necesaria para liberar caja aunque el jugador tenga reval positiva. |")
+L.append("| **Blindado** | Jugador que el optimizador no puede vender. |")
 L.append("")
 
 # --- 14. Limitaciones ---
